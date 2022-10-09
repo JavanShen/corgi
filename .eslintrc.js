@@ -73,7 +73,8 @@ module.exports = {
     // 解决报错unable resolve
     settings: {
         'import/resolver': {
-            typescript: {}
+            typescript: {},
+            node: ['.js', '.jsx', '.ts', '.tsx']
         }
     },
     ignorePatterns: ['!.*', 'node_modules']
