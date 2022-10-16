@@ -1,0 +1,84 @@
+import { useEffect, useRef, useState } from 'react'
+import { Player, secondsToMinutes } from '@corgi/utils'
+
+import type React from 'react'
+import type { Source } from '@corgi/types'
+
+let player: null | Player = null
+
+export default function usePlayAudio(source: Source) {
+    const [currentTime, setCurrentTime] = useState(0)
+    const [currentTimeText, setCurrentTimeText] = useState('00:00')
+    const [totalTime, setTotalTime] = useState(0)
+    const [totalTimeText, setTotalTimeText] = useState('00:00')
+    const [imageSrc, setImageSrc] = useState('')
+    const [title, setTitle] = useState('未知')
+    const [artist, setArtist] = useState('未知')
+
+    const [isPlay, setIsPlay] = useState(false)
+    const isManualUpdating = useRef(false)
+
+    useEffect(() => {
+        player = new Player(source)
+
+        player.loadedData(() => {
+            setTotalTime(Math.floor(player?.duration || 0))
+            setTotalTimeText(player?.totalTimeText || '00:00')
+        })
+
+        player.timeUpdate(() => {
+            if (!isManualUpdating.current && player) {
+                setCurrentTime(Math.floor(player.currentTime))
+                setCurrentTimeText(player.currentTimeText)
+            }
+        })
+
+        player.audioInfo.then(res => {
+            const { title: t, imageSrc: i, artist: a } = res
+            if (t) setTitle(t)
+            if (a) setArtist(a)
+            if (i) setImageSrc(i)
+        })
+    }, [])
+
+    const play = () => {
+        player?.play()
+        setIsPlay(true)
+    }
+
+    const pause = () => {
+        player?.pause()
+        setIsPlay(false)
+    }
+
+    const updateTime = (_event: Event, val: number | number[]) => {
+        if (!isManualUpdating.current) isManualUpdating.current = true
+        setCurrentTime(val as number)
+        setCurrentTimeText(secondsToMinutes(val as number))
+    }
+
+    const jump = (
+        _event: Event | React.SyntheticEvent,
+        val: number | number[]
+    ) => {
+        if (player) {
+            player.currentTime = val as number
+        }
+        isManualUpdating.current = false
+    }
+
+    return {
+        currentTime,
+        totalTime,
+        totalTimeText,
+        play,
+        pause,
+        updateTime,
+        jump,
+        isPlay,
+        imageSrc,
+        title,
+        artist,
+        currentTimeText
+    }
+}
