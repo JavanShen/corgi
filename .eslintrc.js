@@ -69,7 +69,14 @@ module.exports = {
         // 不强制解构
         'prefer-destructuring': ['error', { object: false, array: false }],
         // 单个方法时不强制默认导出
-        'import/prefer-default-export': 'off'
+        'import/prefer-default-export': 'off',
+        // 允许jsx文件中不引入react
+        'react/react-in-jsx-scope': 'off',
+        // 允许在以下后缀文件中写jsx
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['js', 'jsx', 'ts', 'tsx'] }
+        ]
     },
     // 解决报错unable resolve
     settings: {
