@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "apine",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@corgi/types": "workspace:^1.0.0"
+  }
 }
