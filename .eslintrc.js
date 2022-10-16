@@ -7,6 +7,7 @@ module.exports = {
     },
     extends: [
         'plugin:vue/vue3-essential',
+        'plugin:react/recommended',
         '@vue/airbnb',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended'
@@ -23,7 +24,7 @@ module.exports = {
         'import/no-extraneous-dependencies': [
             'error',
             {
-                packageDir: ['./', 'examples', 'packages/utils'],
+                packageDir: ['./'],
                 devDependencies: true
             }
         ],
