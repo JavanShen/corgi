@@ -24,7 +24,7 @@ module.exports = {
         'import/no-extraneous-dependencies': [
             'error',
             {
-                packageDir: ['./'],
+                packageDir: ['./', 'packages/react', 'packages/vue'],
                 devDependencies: true
             }
         ],
