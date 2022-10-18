@@ -39,7 +39,7 @@ const AudioPlayer = ({ source }: Props) => {
     } = usePlayAudio(source)
 
     return (
-        <Card sx={{ display: 'flex', width: 'max-content' }}>
+        <Card sx={{ display: 'inline-flex', width: 'max-content' }}>
             <Box sx={{ display: 'flex', flexFlow: 'column nowrap', pr: 2 }}>
                 <CardContent sx={{ flex: '1 0 auto', maxWidth: 170 }}>
                     <Typography component="div" variant="h5" sx={textOmission}>
