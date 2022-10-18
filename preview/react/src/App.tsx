@@ -1,5 +1,10 @@
-import RAudioPlayer from '@corgi/demo/AudioPlayer/index'
+import { RAudioPlayerLink, RAudioPlayerPath } from '@corgi/demo/react'
 
 export default function Preview() {
-    return <RAudioPlayer />
+    return (
+        <>
+            <RAudioPlayerLink />
+            <RAudioPlayerPath />
+        </>
+    )
 }
