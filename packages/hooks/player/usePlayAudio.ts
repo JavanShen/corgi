@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
 import { Player, secondsToMinutes } from '@corgi/utils'
 
-import type React from 'react'
+import type { SyntheticEvent } from 'react'
 import type { Source } from '@corgi/types'
 
 export default function usePlayAudio(source: Source) {
@@ -55,10 +54,7 @@ export default function usePlayAudio(source: Source) {
         setCurrentTimeText(secondsToMinutes(val as number))
     }
 
-    const jump = (
-        _event: Event | React.SyntheticEvent,
-        val: number | number[]
-    ) => {
+    const jump = (_event: Event | SyntheticEvent, val: number | number[]) => {
         if (player) {
             player.currentTime = val as number
         }
