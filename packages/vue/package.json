@@ -1,0 +1,13 @@
+{
+  "name": "@corgi/vue",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "@corgi/composables": "workspace:^1.0.0",
+    "@corgi/utils": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "@corgi/types": "workspace:^1.0.0"
+  }
+}
