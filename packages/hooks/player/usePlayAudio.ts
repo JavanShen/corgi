@@ -4,9 +4,9 @@ import { Player, secondsToMinutes } from '@corgi/utils'
 import type React from 'react'
 import type { Source } from '@corgi/types'
 
-let player: null | Player = null
-
 export default function usePlayAudio(source: Source) {
+    const [player] = useState(new Player(source))
+
     const [currentTime, setCurrentTime] = useState(0)
     const [currentTimeText, setCurrentTimeText] = useState('00:00')
     const [totalTime, setTotalTime] = useState(0)
@@ -19,11 +19,9 @@ export default function usePlayAudio(source: Source) {
     const isManualUpdating = useRef(false)
 
     useEffect(() => {
-        player = new Player(source)
-
         player.loadedData(() => {
-            setTotalTime(Math.floor(player?.duration || 0))
-            setTotalTimeText(player?.totalTimeText || '00:00')
+            setTotalTime(Math.floor(player.duration || 0))
+            setTotalTimeText(player.totalTimeText || '00:00')
         })
 
         player.timeUpdate(() => {
@@ -42,12 +40,12 @@ export default function usePlayAudio(source: Source) {
     }, [])
 
     const play = () => {
-        player?.play()
+        player.play()
         setIsPlay(true)
     }
 
     const pause = () => {
-        player?.pause()
+        player.pause()
         setIsPlay(false)
     }
 
