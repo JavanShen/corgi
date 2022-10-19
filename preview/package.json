@@ -2,7 +2,6 @@
   "name": "preview",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "dev": "pnpm run dev:vue && pnpm run dev:react",
     "dev:vue": "vite serve vue",
