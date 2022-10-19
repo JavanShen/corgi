@@ -12,3 +12,5 @@ updates:
     # commit信息
     commit-message:
       prefix: ":arrow_up: "
+    ignore:
+      - dependency-name: "lint-staged"
