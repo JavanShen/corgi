@@ -1,5 +1,5 @@
 const zeroFill = (num: number) => {
-    if (num < 10) return `0${num}`
+    if (num < 10 && num >= 0) return `0${num}`
     return num.toString()
 }
 
