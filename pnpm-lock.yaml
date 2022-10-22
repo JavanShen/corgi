@@ -135,7 +135,10 @@ importers:
 
   packages/utils:
     specifiers:
+      '@corgi/demo': workspace:^1.0.0
       '@corgi/types': workspace:^1.0.0
+    dependencies:
+      '@corgi/demo': link:../../demo
     devDependencies:
       '@corgi/types': link:../types
 

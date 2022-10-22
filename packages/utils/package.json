@@ -11,5 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "@corgi/types": "workspace:^1.0.0"
+  },
+  "dependencies": {
+    "@corgi/demo": "workspace:^1.0.0"
   }
 }
