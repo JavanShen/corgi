@@ -14,6 +14,7 @@ import type { Source } from '@corgi/types'
 
 interface Props {
     source: Source
+    loaded?: () => void
 }
 
 const textOmission = {
@@ -22,7 +23,7 @@ const textOmission = {
     whiteSpace: 'nowrap'
 } as const
 
-const AudioPlayer = ({ source }: Props) => {
+const AudioPlayer = ({ source, loaded }: Props) => {
     const {
         currentTime,
         currentTimeText,
@@ -36,13 +37,18 @@ const AudioPlayer = ({ source }: Props) => {
         updateTime,
         jump,
         isPlay
-    } = usePlayAudio(source)
+    } = usePlayAudio(source, loaded)
 
     return (
         <Card sx={{ display: 'inline-flex', width: 'max-content' }}>
             <Box sx={{ display: 'flex', flexFlow: 'column nowrap', pr: 2 }}>
                 <CardContent sx={{ flex: '1 0 auto', maxWidth: 170 }}>
-                    <Typography component="div" variant="h5" sx={textOmission}>
+                    <Typography
+                        component="div"
+                        variant="h5"
+                        sx={textOmission}
+                        aria-label="title"
+                    >
                         {title}
                     </Typography>
                     <Typography
@@ -50,6 +56,7 @@ const AudioPlayer = ({ source }: Props) => {
                         variant="subtitle1"
                         color="text.secondary"
                         sx={textOmission}
+                        aria-label="artist"
                     >
                         {artist}
                     </Typography>
@@ -80,6 +87,7 @@ const AudioPlayer = ({ source }: Props) => {
                         component="div"
                         variant="subtitle2"
                         color="text.secondary"
+                        aria-label="currentTimeText"
                     >
                         {currentTimeText}
                     </Typography>
@@ -87,6 +95,7 @@ const AudioPlayer = ({ source }: Props) => {
                         component="div"
                         variant="subtitle2"
                         color="text.secondary"
+                        aria-label="totalTimeText"
                     >
                         {totalTimeText}
                     </Typography>
@@ -95,7 +104,7 @@ const AudioPlayer = ({ source }: Props) => {
                     sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}
                 >
                     <IconButton
-                        aria-label={isPlay ? 'play' : 'pause'}
+                        aria-label={isPlay ? 'pause' : 'play'}
                         onClick={() => {
                             return isPlay ? pause() : play()
                         }}

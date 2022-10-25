@@ -3,7 +3,7 @@ import { Player, secondsToMinutes } from '@corgi/utils'
 import type { SyntheticEvent } from 'react'
 import type { Source } from '@corgi/types'
 
-export default function usePlayAudio(source: Source) {
+export default function usePlayAudio(source: Source, loaded?: () => void) {
     const [player] = useState(new Player(source))
 
     const [currentTime, setCurrentTime] = useState(0)
@@ -21,6 +21,7 @@ export default function usePlayAudio(source: Source) {
         player.loadedData(() => {
             setTotalTime(Math.floor(player.duration || 0))
             setTotalTimeText(player.totalTimeText || '00:00')
+            loaded?.()
         })
 
         player.timeUpdate(() => {
