@@ -127,9 +127,11 @@ importers:
 
   packages/react:
     specifiers:
+      '@corgi/demo': workspace:^1.0.0
       '@corgi/hooks': workspace:^1.0.0
       '@corgi/types': workspace:^1.0.0
     dependencies:
+      '@corgi/demo': link:../../demo
       '@corgi/hooks': link:../hooks
       '@corgi/types': link:../types
 
