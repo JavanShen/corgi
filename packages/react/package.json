@@ -5,9 +5,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "pnpm run test:component",
+    "test:component": "cypress open --component -b edge"
   },
   "dependencies": {
+    "@corgi/demo": "workspace:^1.0.0",
     "@corgi/hooks": "workspace:^1.0.0",
     "@corgi/types": "workspace:^1.0.0"
   }
