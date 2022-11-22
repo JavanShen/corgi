@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@babel/core': ^7.19.3
       '@babel/eslint-parser': ^7.19.1
-      '@edge-runtime/vm': 2.0.1
+      '@edge-runtime/vm': 2.0.2
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
       '@mui/icons-material': ^5.10.9
@@ -20,7 +20,7 @@ importers:
       '@vitejs/plugin-vue': ^3.1.2
       '@vitejs/plugin-vue-jsx': ^2.0.1
       '@vue/eslint-config-airbnb': ^7.0.0
-      cypress: ^10.10.0
+      cypress: ^11.1.0
       eslint: ^8.25.0
       eslint-config-prettier: ^8.5.0
       eslint-import-resolver-typescript: ^3.5.1
@@ -42,7 +42,7 @@ importers:
       unplugin-auto-import: ^0.11.2
       unplugin-vue-components: ^0.22.8
       vite: ^3.1.6
-      vitest: ^0.24.3
+      vitest: ^0.25.2
       vue: ^3.2.40
       vue-tsc: ^1.0.8
     dependencies:
@@ -58,7 +58,7 @@ importers:
     devDependencies:
       '@babel/core': 7.19.3
       '@babel/eslint-parser': 7.19.1_v37dtiefj2fmp2s4n57pt7n35y
-      '@edge-runtime/vm': 2.0.1
+      '@edge-runtime/vm': 2.0.2
       '@types/node': 18.11.0
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -68,7 +68,7 @@ importers:
       '@vitejs/plugin-vue': 3.1.2_vite@3.1.6+vue@3.2.40
       '@vitejs/plugin-vue-jsx': 2.0.1_vite@3.1.6+vue@3.2.40
       '@vue/eslint-config-airbnb': 7.0.0_67dn5eetsnpko4hnxsr6t7dm7u
-      cypress: 10.10.0
+      cypress: 11.1.0
       eslint: 8.25.0
       eslint-config-prettier: 8.5.0_eslint@8.25.0
       eslint-import-resolver-typescript: 3.5.1_fyln4uq2tv75svthy6prqvt6lm
@@ -86,7 +86,7 @@ importers:
       unplugin-auto-import: 0.11.2
       unplugin-vue-components: 0.22.8_vue@3.2.40
       vite: 3.1.6
-      vitest: 0.24.3_dabvbq7vp7y5m74dytjdduw4um
+      vitest: 0.25.2_7l6ry5ww7y773zrwijthyjyvby
       vue-tsc: 1.0.8_typescript@4.8.4
 
   demo:
@@ -572,14 +572,14 @@ packages:
       - supports-color
     dev: true
 
-  /@edge-runtime/primitives/2.0.1:
-    resolution: {integrity: sha512-ZNOK+bHPGNM8WphjADFgH1ikWnN1mqeGvOGPlGJRS0PeG35WoPYxo8EMziyvcn/7mj1oNORza9rM8tkAFOAwvQ==}
+  /@edge-runtime/primitives/2.0.2:
+    resolution: {integrity: sha512-pE/VlEMzF2+WOdQUR8vgecd0b5kY4/d2Z5rA8tdq2uANQvqallJQ6tJvLmWxResq75kMFln4NDXrtzNBw3mgXA==}
     dev: true
 
-  /@edge-runtime/vm/2.0.1:
-    resolution: {integrity: sha512-+5UtwEL08QidClBAPc+7NBrbKvF/Kkz0jPSOf6rsMlDs5Ac7F3k9ZwBknf81nfCQvo0gkuVtDjOPbcLR5qvYeg==}
+  /@edge-runtime/vm/2.0.2:
+    resolution: {integrity: sha512-yQFE4H5R7jy98xRMnH3dOt3PQkORVtKTT2gn0U86JBHWMvoSZxvd1hw8UXxJtyp+bqW3yV7N1oTwDdX71It+Gg==}
     dependencies:
-      '@edge-runtime/primitives': 2.0.1
+      '@edge-runtime/primitives': 2.0.2
     dev: true
 
   /@emotion/babel-plugin/11.10.2_@babel+core@7.19.3:
@@ -2069,8 +2069,8 @@ packages:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
     dev: false
 
-  /cypress/10.10.0:
-    resolution: {integrity: sha512-bU8r44x1NIYAUNNXt3CwJpLOVth7HUv2hUhYCxZmgZ1IugowDvuHNpevnoZRQx1KKOEisLvIJW+Xen5Pjn41pg==}
+  /cypress/11.1.0:
+    resolution: {integrity: sha512-kzizbG9s3p3ahWqxUwG/21NqLWEGtScMevMyUPeYlcmMX9RzVxWM18MkA3B4Cb3jKx72hSyIE2mHgHymfCM1bg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -5301,8 +5301,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.24.3_dabvbq7vp7y5m74dytjdduw4um:
-    resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
+  /vitest/0.25.2_7l6ry5ww7y773zrwijthyjyvby:
+    resolution: {integrity: sha512-qqkzfzglEFbQY7IGkgSJkdOhoqHjwAao/OrphnHboeYHC5JzsVFoLCaB2lnAy8krhj7sbrFTVRApzpkTOeuDWQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -5323,15 +5323,18 @@ packages:
       jsdom:
         optional: true
     dependencies:
-      '@edge-runtime/vm': 2.0.1
+      '@edge-runtime/vm': 2.0.2
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
       '@types/node': 18.11.0
+      acorn: 8.8.0
+      acorn-walk: 8.2.0
       chai: 4.3.6
       debug: 4.3.4
       happy-dom: 7.6.0
       jsdom: 20.0.1
       local-pkg: 0.4.2
+      source-map: 0.6.1
       strip-literal: 0.4.2
       tinybench: 2.3.1
       tinypool: 0.3.0
