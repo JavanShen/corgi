@@ -85,8 +85,8 @@ const AudioPlayer = ({ source, loaded }: Props) => {
         >
             <AudioContainer>
                 <AudioContent>
-                    <Title>{title}</Title>
-                    <SubTitle>{artist}</SubTitle>
+                    <Title aria-label="title">{title}</Title>
+                    <SubTitle aria-label="artist">{artist}</SubTitle>
                     <Slider
                         value={currentTime}
                         max={totalTime}
@@ -95,13 +95,18 @@ const AudioPlayer = ({ source, loaded }: Props) => {
                         onAfterChange={jump}
                     />
                     <FlexBetween>
-                        <SubTitle2>{currentTimeText}</SubTitle2>
-                        <SubTitle2>{totalTimeText}</SubTitle2>
+                        <SubTitle2 aria-label="currentTimeText">
+                            {currentTimeText}
+                        </SubTitle2>
+                        <SubTitle2 aria-label="totalTimeText">
+                            {totalTimeText}
+                        </SubTitle2>
                     </FlexBetween>
                     <Button
                         size="large"
                         type="text"
                         shape="circle"
+                        aria-label={isPlay ? 'pause' : 'play'}
                         icon={isPlay ? <PauseIcon /> : <PlayIcon />}
                         onClick={() => {
                             return isPlay ? pause() : play()
