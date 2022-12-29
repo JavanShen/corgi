@@ -11,7 +11,8 @@
     "lint:eslint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx --no-fix",
     "lint-staged": "lint-staged",
     "test": "pnpm run test:utils",
-    "test:utils": "pnpm run -C packages/utils test",
+    "test:utils": "pnpm run --filter @corgi/utils test",
+    "test:components": "pnpm run --filter @corgi/react test",
     "prepare": "husky install"
   },
   "keywords": [],
