@@ -1,16 +1,9 @@
+import { Card, Slider, Button, Image } from 'antd'
 import { usePlayAudio } from '@corgi/hooks'
-import {
-    Slider,
-    IconButton,
-    Card,
-    CardMedia,
-    Box,
-    CardContent,
-    Typography
-} from '@mui/material'
-import { PauseRounded, PlayArrowRounded } from '@mui/icons-material'
+import styled from '@emotion/styled'
 
 import type { Source } from '@corgi/types'
+import { PlayIcon, PauseIcon } from '../icons'
 
 interface Props {
     source: Source
@@ -22,6 +15,50 @@ const textOmission = {
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap'
 } as const
+
+const AudioContent = styled.div({
+    display: 'flex',
+    flexFlow: 'column nowrap',
+    minWidth: 170,
+    maxWidth: 200,
+    flex: 2,
+    justifyContent: 'space-between'
+})
+
+const AudioContainer = styled.div({
+    display: 'flex',
+    flexFlow: 'row nowrap'
+})
+
+const AudioMedia = styled.div({
+    marginLeft: 10,
+    flex: 1,
+    borderRadius: 5,
+    overflow: 'hidden'
+})
+
+const Title = styled.div({
+    fontSize: 22,
+    color: 'black',
+    ...textOmission
+})
+
+const SubTitle = styled.div({
+    fontSize: 16,
+    color: '#838383',
+    ...textOmission
+})
+
+const SubTitle2 = styled.div({
+    fontSize: 14,
+    color: '#838383',
+    ...textOmission
+})
+
+const FlexBetween = styled.div({
+    display: 'flex',
+    justifyContent: 'space-between'
+})
 
 const AudioPlayer = ({ source, loaded }: Props) => {
     const {
@@ -40,86 +77,43 @@ const AudioPlayer = ({ source, loaded }: Props) => {
     } = usePlayAudio(source, loaded)
 
     return (
-        <Card sx={{ display: 'inline-flex', width: 'max-content' }}>
-            <Box sx={{ display: 'flex', flexFlow: 'column nowrap', pr: 2 }}>
-                <CardContent sx={{ flex: '1 0 auto', maxWidth: 170 }}>
-                    <Typography
-                        component="div"
-                        variant="h5"
-                        sx={textOmission}
-                        aria-label="title"
-                    >
-                        {title}
-                    </Typography>
-                    <Typography
-                        component="div"
-                        variant="subtitle1"
-                        color="text.secondary"
-                        sx={textOmission}
-                        aria-label="artist"
-                    >
-                        {artist}
-                    </Typography>
-                </CardContent>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        pl: 2,
-                        minWidth: 170
-                    }}
-                >
+        <Card
+            style={{
+                display: 'inline-flex',
+                width: 'max-content'
+            }}
+        >
+            <AudioContainer>
+                <AudioContent>
+                    <Title>{title}</Title>
+                    <SubTitle>{artist}</SubTitle>
                     <Slider
                         value={currentTime}
                         max={totalTime}
+                        tooltip={{ formatter: null }}
                         onChange={updateTime}
-                        onChangeCommitted={jump}
+                        onAfterChange={jump}
                     />
-                </Box>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        pl: 2
-                    }}
-                >
-                    <Typography
-                        component="div"
-                        variant="subtitle2"
-                        color="text.secondary"
-                        aria-label="currentTimeText"
-                    >
-                        {currentTimeText}
-                    </Typography>
-                    <Typography
-                        component="div"
-                        variant="subtitle2"
-                        color="text.secondary"
-                        aria-label="totalTimeText"
-                    >
-                        {totalTimeText}
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}
-                >
-                    <IconButton
-                        aria-label={isPlay ? 'pause' : 'play'}
+                    <FlexBetween>
+                        <SubTitle2>{currentTimeText}</SubTitle2>
+                        <SubTitle2>{totalTimeText}</SubTitle2>
+                    </FlexBetween>
+                    <Button
+                        size="large"
+                        type="text"
+                        shape="circle"
+                        icon={isPlay ? <PauseIcon /> : <PlayIcon />}
                         onClick={() => {
                             return isPlay ? pause() : play()
                         }}
-                    >
-                        {isPlay ? <PauseRounded /> : <PlayArrowRounded />}
-                    </IconButton>
-                </Box>
-            </Box>
-            {imageSrc ? (
-                <CardMedia
-                    image={imageSrc}
-                    component="div"
-                    sx={{ width: 175 }}
-                />
-            ) : null}
+                    />
+                </AudioContent>
+                {imageSrc ? (
+                    <AudioMedia>
+                        <Image preview={false} src={imageSrc} width={175} />
+                    </AudioMedia>
+                ) : null}
+            </AudioContainer>
         </Card>
     )
 }

@@ -1,6 +1,5 @@
 import { Player, secondsToMinutes } from '@corgi/utils'
 
-import type { SyntheticEvent } from 'react'
 import type { Source } from '@corgi/types'
 
 export default function usePlayAudio(source: Source, loaded?: () => void) {
@@ -49,15 +48,15 @@ export default function usePlayAudio(source: Source, loaded?: () => void) {
         setIsPlay(false)
     }
 
-    const updateTime = (_event: Event, val: number | number[]) => {
+    const updateTime = (val: number) => {
         if (!isManualUpdating.current) isManualUpdating.current = true
-        setCurrentTime(val as number)
-        setCurrentTimeText(secondsToMinutes(val as number))
+        setCurrentTime(val)
+        setCurrentTimeText(secondsToMinutes(val))
     }
 
-    const jump = (_event: Event | SyntheticEvent, val: number | number[]) => {
+    const jump = (val: number) => {
         if (player) {
-            player.currentTime = val as number
+            player.currentTime = val
         }
         isManualUpdating.current = false
     }
