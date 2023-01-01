@@ -9,6 +9,8 @@
     "test": "pnpm run test:component",
     "test:component": "cypress open --component -b edge"
   },
+  "files": ["lib", "es"],
+  "keywords": ["react", "antd", "components", "corgi"],
   "dependencies": {
     "@corgi/demo": "workspace:^1.0.0",
     "@corgi/hooks": "workspace:^1.0.0",

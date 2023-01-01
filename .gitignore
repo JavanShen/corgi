@@ -30,3 +30,6 @@ components.d.ts
 auto-imports.d.ts
 auto-imports-vue.d.ts
 auto-import-react.d.ts
+
+lib
+es
