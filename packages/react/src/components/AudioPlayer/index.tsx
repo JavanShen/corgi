@@ -3,7 +3,7 @@ import { usePlayAudio } from '@corgi/hooks'
 import styled from '@emotion/styled'
 
 import type { Source } from '@corgi/types'
-import { PlayIcon, PauseIcon } from '../icons'
+import { PlayIcon, PauseIcon } from '../../icons'
 
 interface Props {
     source: Source

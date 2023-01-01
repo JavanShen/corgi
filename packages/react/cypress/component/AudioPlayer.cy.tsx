@@ -1,5 +1,5 @@
 import { path, link } from '@corgi/demo/AudioPlayer/source'
-import AudioPlayer from '../../AudioPlayer'
+import AudioPlayer from '../../src/components/AudioPlayer'
 import selector from '../data/selector'
 
 const {
