@@ -1,9 +1,10 @@
+import { useState, useRef, useEffect } from 'react'
 import { Player, secondsToMinutes } from '@corgi/utils'
 
 import type { Source } from '@corgi/types'
 
 export default function usePlayAudio(source: Source, loaded?: () => void) {
-    const [player] = useState(new Player(source))
+    const [player] = useState(new Player(source || ''))
 
     const [currentTime, setCurrentTime] = useState(0)
     const [currentTimeText, setCurrentTimeText] = useState('00:00')

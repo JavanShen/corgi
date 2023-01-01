@@ -1,4 +1,4 @@
-import * as id3 from 'id3js'
+import { fromFile, fromUrl } from 'id3js'
 import type { Source } from '@corgi/types'
 import { secondsToMinutes } from '../time'
 import { arrayBufferToBase64 } from '../file'
@@ -16,8 +16,13 @@ export default class Player extends Audio {
     isCanPlay: boolean
 
     constructor(source: Source) {
+        /* eslint no-nested-ternary: "off" */
         const url =
-            typeof source === 'string' ? source : URL.createObjectURL(source)
+            typeof source === 'string'
+                ? source
+                : /^audio\//.test(source?.type)
+                ? URL.createObjectURL(source)
+                : ''
         super(url)
         this.source = source
         this.isCanPlay = super.canPlayType(url) === 'probably'
@@ -30,8 +35,8 @@ export default class Player extends Audio {
             const { source } = this
             const tags =
                 typeof source === 'string'
-                    ? await id3.fromUrl(source)
-                    : await id3.fromFile(source)
+                    ? await fromUrl(source)
+                    : await fromFile(source)
             const images = tags?.images as Image[]
 
             let imageSrc = ''
