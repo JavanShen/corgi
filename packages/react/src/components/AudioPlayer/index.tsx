@@ -21,7 +21,6 @@ const AudioContent = styled.div({
     flexFlow: 'column nowrap',
     minWidth: 170,
     maxWidth: 200,
-    flex: 2,
     justifyContent: 'space-between'
 })
 
@@ -32,9 +31,10 @@ const AudioContainer = styled.div({
 
 const AudioMedia = styled.div({
     marginLeft: 10,
-    flex: 1,
     borderRadius: 5,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    height: 175,
+    width: 175
 })
 
 const Title = styled.div({
@@ -73,7 +73,8 @@ const AudioPlayer = ({ source, loaded }: Props) => {
         pause,
         updateTime,
         jump,
-        isPlay
+        isPlay,
+        isCanPlay
     } = usePlayAudio(source, loaded)
 
     return (
@@ -93,6 +94,7 @@ const AudioPlayer = ({ source, loaded }: Props) => {
                         tooltip={{ formatter: null }}
                         onChange={updateTime}
                         onAfterChange={jump}
+                        disabled={!isCanPlay}
                     />
                     <FlexBetween>
                         <SubTitle2 aria-label="currentTimeText">
@@ -106,6 +108,7 @@ const AudioPlayer = ({ source, loaded }: Props) => {
                         size="large"
                         type="text"
                         shape="circle"
+                        disabled={!isCanPlay}
                         aria-label={isPlay ? 'pause' : 'play'}
                         icon={isPlay ? <PauseIcon /> : <PlayIcon />}
                         onClick={() => {

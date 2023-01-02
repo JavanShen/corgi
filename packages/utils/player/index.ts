@@ -27,7 +27,9 @@ export default class Player extends Audio {
         this.source = source
         this.isCanPlay = super.canPlayType(url) === 'probably'
 
-        URL.revokeObjectURL(url)
+        super.addEventListener('canplay', () => {
+            URL.revokeObjectURL(url)
+        })
     }
 
     get audioInfo() {
@@ -57,6 +59,24 @@ export default class Player extends Audio {
 
     timeUpdate(fn: () => void) {
         super.addEventListener('timeupdate', fn)
+    }
+
+    canPlay(fn: () => void) {
+        super.addEventListener('canplaythrough', fn)
+    }
+
+    bePaused(fn: () => void) {
+        super.addEventListener('pause', fn)
+    }
+
+    onEnded(fn: () => void) {
+        super.addEventListener('ended', fn)
+    }
+
+    destroy() {
+        super.pause()
+        super.src = ''
+        super.remove()
     }
 
     get totalTimeText() {

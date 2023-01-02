@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import AutoImport from 'unplugin-auto-import/vite'
 import dts from 'vite-plugin-dts'
 import { resolve } from 'path'
 
@@ -12,10 +11,7 @@ export default defineConfig({
             tsConfigFilePath: resolve(__dirname, './tsconfig.json'),
             outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')]
         }),
-        react(),
-        AutoImport({
-            imports: ['react']
-        })
+        react()
     ],
     server: {
         fs: {
