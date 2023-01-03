@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm run -C preview dev",
-    "dev:vue": "pnpm run -C preview dev:vue",
-    "dev:react": "pnpm run -C preview dev:react",
     "build:vue": "pnpm run --filter @corgi/vue build",
     "build:react": "pnpm run --filter @corgi/react build",
     "docs:react": "pnpm run --C docs/react start",
