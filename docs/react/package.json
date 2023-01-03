@@ -1,12 +1,13 @@
 {
-  "name": "react-dumi",
+  "name": "@corgi/docs-react",
   "version": "0.0.1",
   "description": "",
+  "private": true,
   "scripts": {
     "start": "npm run dev",
     "dev": "dumi dev",
     "build": "dumi build",
-    "prepare": "husky install && dumi setup"
+    "prepare": "dumi setup"
   },
   "authors": [],
   "license": "MIT",

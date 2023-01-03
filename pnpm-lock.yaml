@@ -99,15 +99,7 @@ importers:
       vitest: 0.26.2_7l6ry5ww7y773zrwijthyjyvby
       vue-tsc: 1.0.8_typescript@4.8.4
 
-  demo:
-    specifiers:
-      '@corgi/react': workspace:^1.0.0
-      '@corgi/vue': workspace:^1.0.0
-    dependencies:
-      '@corgi/react': link:../packages/react
-      '@corgi/vue': link:../packages/vue
-
-  docs/react-dumi:
+  docs/react:
     specifiers:
       '@corgi/react': workspace:^1.0.0
     dependencies:
@@ -132,12 +124,11 @@ importers:
 
   packages/react:
     specifiers:
-      '@corgi/demo': workspace:^1.0.0
       '@corgi/hooks': workspace:^1.0.0
       '@corgi/types': workspace:^1.0.0
     dependencies:
-      '@corgi/demo': link:../../demo
       '@corgi/hooks': link:../hooks
+    devDependencies:
       '@corgi/types': link:../types
 
   packages/types:
@@ -145,10 +136,7 @@ importers:
 
   packages/utils:
     specifiers:
-      '@corgi/demo': workspace:^1.0.0
       '@corgi/types': workspace:^1.0.0
-    dependencies:
-      '@corgi/demo': link:../../demo
     devDependencies:
       '@corgi/types': link:../types
 
