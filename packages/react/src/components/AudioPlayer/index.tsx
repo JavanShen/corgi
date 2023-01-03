@@ -124,7 +124,7 @@ const AudioPlayer = ({ source, loaded, cover, title, artist }: Props) => {
                     />
                 </AudioContent>
                 {(imageSrc || cover) && cover !== false ? (
-                    <AudioMedia>
+                    <AudioMedia aria-label="cover">
                         <Image
                             preview={false}
                             src={cover || imageSrc}
