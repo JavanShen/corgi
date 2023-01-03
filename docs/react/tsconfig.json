@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@@/*": [".dumi/tmp/*"]
+    }
+  },
+  "include": [".dumi/**/*", ".dumirc.ts"],
+  "references": [{ "path": "./tsconfig.react.json" }]
+}
