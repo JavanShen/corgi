@@ -1,5 +1,8 @@
-const prefix = (val: string, pre = 'aria-label=') => {
-    return pre + val
+const prefix = <V extends string, P extends string>(
+    val: V,
+    pre: P = 'aria-label=' as P
+): `${P}${V}` => {
+    return `${pre}${val}`
 }
 
 export { prefix }

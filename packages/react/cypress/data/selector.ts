@@ -6,13 +6,26 @@ const collect = [
     'play',
     'pause',
     'currentTimeText',
-    'totalTimeText'
-]
+    'totalTimeText',
+    'cover'
+] as const
 
-const selector: { [key: string]: string } = {}
+type Collect = typeof collect[number]
 
-new Set(collect).forEach(val => {
-    selector[prefix('Selector', val)] = `[${prefix(val)}]`
-})
+type SelectorCollect = {
+    [key in Collect as `${key}Selector`]: `[aria-label=${key}]`
+}
+
+const generateSelectors = () => {
+    const obj: Record<string, string> = {}
+
+    new Set(collect).forEach(val => {
+        obj[prefix('Selector', val)] = `[${prefix(val)}]`
+    })
+
+    return obj as SelectorCollect
+}
+
+const selector: SelectorCollect = generateSelectors()
 
 export default selector
