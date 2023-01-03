@@ -6,7 +6,10 @@ import type { Source } from '@corgi/types'
 import { PlayIcon, PauseIcon } from '../../icons'
 
 interface Props {
-    source: Source
+    source: Source | null
+    cover?: false | string
+    title?: string
+    artist?: string
     loaded?: () => void
 }
 
@@ -60,22 +63,22 @@ const FlexBetween = styled.div({
     justifyContent: 'space-between'
 })
 
-const AudioPlayer = ({ source, loaded }: Props) => {
+const AudioPlayer = ({ source, loaded, cover, title, artist }: Props) => {
     const {
         currentTime,
         currentTimeText,
         totalTime,
         totalTimeText,
         imageSrc,
-        title,
-        artist,
+        title: id3Title,
+        artist: id3Artist,
         play,
         pause,
         updateTime,
         jump,
         isPlay,
         isCanPlay
-    } = usePlayAudio(source, loaded)
+    } = usePlayAudio(source || '', loaded)
 
     return (
         <Card
@@ -86,8 +89,12 @@ const AudioPlayer = ({ source, loaded }: Props) => {
         >
             <AudioContainer>
                 <AudioContent>
-                    <Title aria-label="title">{title}</Title>
-                    <SubTitle aria-label="artist">{artist}</SubTitle>
+                    <Title aria-label="title" title={title || id3Title}>
+                        {title || id3Title}
+                    </Title>
+                    <SubTitle aria-label="artist" title={artist || id3Artist}>
+                        {artist || id3Artist}
+                    </SubTitle>
                     <Slider
                         value={currentTime}
                         max={totalTime}
@@ -116,9 +123,14 @@ const AudioPlayer = ({ source, loaded }: Props) => {
                         }}
                     />
                 </AudioContent>
-                {imageSrc ? (
+                {(imageSrc || cover) && cover !== false ? (
                     <AudioMedia>
-                        <Image preview={false} src={imageSrc} width={175} />
+                        <Image
+                            preview={false}
+                            src={cover || imageSrc}
+                            height={175}
+                            width={175}
+                        />
                     </AudioMedia>
                 ) : null}
             </AudioContainer>
