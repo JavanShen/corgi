@@ -34,22 +34,26 @@ export default class Player extends Audio {
 
     get audioInfo() {
         return (async () => {
-            const { source } = this
-            const tags =
-                typeof source === 'string'
-                    ? await fromUrl(source)
-                    : await fromFile(source)
-            const images = tags?.images as Image[]
+            try {
+                const { source } = this
+                const tags =
+                    typeof source === 'string'
+                        ? await fromUrl(source)
+                        : await fromFile(source)
+                const images = tags?.images as Image[]
 
-            let imageSrc = ''
-            if (images?.length > 0) {
-                const img = images[0]
-                imageSrc = `data:${img.mime};base64,${arrayBufferToBase64(
-                    img.data
-                )}`
+                let imageSrc = ''
+                if (images?.length > 0) {
+                    const img = images[0]
+                    imageSrc = `data:${img.mime};base64,${arrayBufferToBase64(
+                        img.data
+                    )}`
+                }
+
+                return { imageSrc, ...tags }
+            } catch (e) {
+                return {}
             }
-
-            return { imageSrc, ...tags }
         })()
     }
 
