@@ -1,5 +1,5 @@
 {
-  "name": "@corgi/composables",
+  "name": "@corgii/composables",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@corgi/types": "workspace:^1.0.0"
+    "@corgii/types": "workspace:^1.0.0"
   },
   "dependencies": {
-    "@corgi/utils": "workspace:^1.0.0"
+    "@corgii/utils": "workspace:^1.0.0"
   }
 }

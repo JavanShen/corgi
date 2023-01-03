@@ -1,5 +1,5 @@
 import { fromFile, fromUrl } from 'id3js'
-import type { Source } from '@corgi/types'
+import type { Source } from '@corgii/types'
 import { secondsToMinutes } from '../time'
 import { arrayBufferToBase64 } from '../file'
 

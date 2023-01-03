@@ -1,5 +1,5 @@
 {
-  "name": "@corgi/utils",
+  "name": "@corgii/utils",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,6 @@
   "author": "apine",
   "license": "MIT",
   "devDependencies": {
-    "@corgi/types": "workspace:^1.0.0"
+    "@corgii/types": "workspace:^1.0.0"
   }
 }

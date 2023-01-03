@@ -101,55 +101,56 @@ importers:
 
   docs/react:
     specifiers:
-      '@corgi/react': workspace:^1.0.0
+      '@corgii/react': workspace:^1.0.0
     dependencies:
-      '@corgi/react': link:../../packages/react
+      '@corgii/react': link:../../packages/react
 
   packages/composables:
     specifiers:
-      '@corgi/types': workspace:^1.0.0
-      '@corgi/utils': workspace:^1.0.0
+      '@corgii/types': workspace:^1.0.0
+      '@corgii/utils': workspace:^1.0.0
     dependencies:
-      '@corgi/utils': link:../utils
+      '@corgii/utils': link:../utils
     devDependencies:
-      '@corgi/types': link:../types
+      '@corgii/types': link:../types
 
   packages/hooks:
     specifiers:
-      '@corgi/types': workspace:^1.0.0
-      '@corgi/utils': workspace:^1.0.0
+      '@corgii/types': workspace:^1.0.0
+      '@corgii/utils': workspace:^1.0.0
     dependencies:
-      '@corgi/types': link:../types
-      '@corgi/utils': link:../utils
+      '@corgii/utils': link:../utils
+    devDependencies:
+      '@corgii/types': link:../types
 
   packages/react:
     specifiers:
-      '@corgi/hooks': workspace:^1.0.0
-      '@corgi/types': workspace:^1.0.0
+      '@corgii/hooks': workspace:^1.0.0
+      '@corgii/types': workspace:^1.0.0
     dependencies:
-      '@corgi/hooks': link:../hooks
+      '@corgii/hooks': link:../hooks
     devDependencies:
-      '@corgi/types': link:../types
+      '@corgii/types': link:../types
 
   packages/types:
     specifiers: {}
 
   packages/utils:
     specifiers:
-      '@corgi/types': workspace:^1.0.0
+      '@corgii/types': workspace:^1.0.0
     devDependencies:
-      '@corgi/types': link:../types
+      '@corgii/types': link:../types
 
   packages/vue:
     specifiers:
-      '@corgi/composables': workspace:^1.0.0
-      '@corgi/types': workspace:^1.0.0
-      '@corgi/utils': workspace:^1.0.0
+      '@corgii/composables': workspace:^1.0.0
+      '@corgii/types': workspace:^1.0.0
+      '@corgii/utils': workspace:^1.0.0
     dependencies:
-      '@corgi/composables': link:../composables
-      '@corgi/utils': link:../utils
+      '@corgii/composables': link:../composables
+      '@corgii/utils': link:../utils
     devDependencies:
-      '@corgi/types': link:../types
+      '@corgii/types': link:../types
 
 packages:
 

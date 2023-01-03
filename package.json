@@ -1,8 +1,9 @@
 {
-  "name": "corgi",
+  "name": "corgii",
   "version": "1.0.0",
-  "description": "",
+  "description": "find utils components what you need",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build:vue": "pnpm run --filter @corgi/vue build",
     "build:react": "pnpm run --filter @corgi/react build",
@@ -16,7 +17,7 @@
     "test:components": "pnpm run --filter @corgi/react test",
     "prepare": "husky install"
   },
-  "keywords": [],
+  "keywords": ["components", "vue", "react", "utils", "antd", "element"],
   "author": "apine",
   "license": "MIT",
   "dependencies": {

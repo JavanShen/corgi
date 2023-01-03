@@ -1,4 +1,4 @@
-import { AudioPlayer } from '@corgi/react'
+import { AudioPlayer } from '@corgii/react'
 
 const AudioPlayerDemo = () => (
     <AudioPlayer

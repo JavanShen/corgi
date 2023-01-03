@@ -1,8 +1,8 @@
 import { Card, Slider, Button, Image } from 'antd'
-import { usePlayAudio } from '@corgi/hooks'
+import { usePlayAudio } from '@corgii/hooks'
 import styled from '@emotion/styled'
 
-import type { Source } from '@corgi/types'
+import type { Source } from '@corgii/types'
 import { PlayIcon, PauseIcon } from '../../icons'
 
 interface Props {

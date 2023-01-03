@@ -81,9 +81,7 @@ module.exports = {
         'react/jsx-filename-extension': [
             2,
             { extensions: ['js', 'jsx', 'ts', 'tsx'] }
-        ],
-        // 忽略某些引入
-        'import/no-unresolved': [2, { ignore: ['@corgi/react'] }]
+        ]
     },
     // 解决报错unable resolve
     settings: {

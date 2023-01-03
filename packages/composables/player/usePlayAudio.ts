@@ -1,5 +1,5 @@
-import { Player } from '@corgi/utils'
-import type { Source } from '@corgi/types'
+import { Player } from '@corgii/utils'
+import type { Source } from '@corgii/types'
 import debounce from 'lodash/debounce'
 
 export default function usePlayAudio(source: Source) {

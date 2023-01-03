@@ -1,5 +1,5 @@
 {
-  "name": "@corgi/docs-react",
+  "name": "@corgii/docs-react",
   "version": "0.0.1",
   "description": "",
   "private": true,
@@ -12,6 +12,6 @@
   "authors": [],
   "license": "MIT",
   "dependencies": {
-    "@corgi/react": "workspace:^1.0.0"
+    "@corgii/react": "workspace:^1.0.0"
   }
 }
