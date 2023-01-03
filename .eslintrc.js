@@ -24,7 +24,12 @@ module.exports = {
         'import/no-extraneous-dependencies': [
             'error',
             {
-                packageDir: ['./', 'packages/react', 'packages/vue'],
+                packageDir: [
+                    './',
+                    'packages/react',
+                    'packages/vue',
+                    'docs/react'
+                ],
                 devDependencies: true
             }
         ],
@@ -90,5 +95,14 @@ module.exports = {
             node: ['.js', '.jsx', '.ts', '.tsx']
         }
     },
-    ignorePatterns: ['!.*', 'node_modules']
+    ignorePatterns: [
+        '!.*',
+        'node_modules',
+        'dist',
+        'es',
+        'lib',
+        '.dumi',
+        'auto-imports-vue.d.ts',
+        'components.d.ts'
+    ]
 }
