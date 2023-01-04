@@ -48,6 +48,6 @@ jobs:
         # 通过package.js定义的命令行执行代码扫描
         run: pnpm run lint
       # 运行自动化测试
-      - name: Running Test
+      - name: Running Unit Test
         # 通过package.js定义的命令行执行自动化测试
-        run: pnpm run test
+        run: pnpm run test:utils
