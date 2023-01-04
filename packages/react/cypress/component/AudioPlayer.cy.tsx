@@ -55,6 +55,14 @@ describe('<AudioPlayer>', () => {
         cy.get(coverSelector).find('img').should('have.attr', 'src', picLink)
     })
 
+    it('隐藏封面', () => {
+        readMP3File().then(file => {
+            cy.mount(<AudioPlayer source={file} cover={false} />)
+
+            cy.get(coverSelector).should('not.exist')
+        })
+    })
+
     it('加载完成后触发回调', () => {
         readMP3File().then(file => {
             const onLoaded = cy.spy().as('onLoaded')
@@ -88,6 +96,7 @@ describe('<AudioPlayer>', () => {
                 'Super Mario Bros. / プレイヤーダウン'
             )
             cy.get(artistSelector).should('have.text', '近藤浩治')
+            cy.get(coverSelector).find('img').should('have.attr', 'src')
         })
     })
 
