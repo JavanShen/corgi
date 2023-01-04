@@ -7,6 +7,7 @@
   "scripts": {
     "build:vue": "pnpm run --filter @corgii/vue build",
     "build:react": "pnpm run --filter @corgii/react build",
+    "build:types": "pnpm run --filter @corgii/types build",
     "docs:react": "pnpm run --filter @corgii/docs-react start",
     "docs-build:react": "pnpm run --filter @corgii/docs-react build",
     "lint": "npm run lint:eslint",
