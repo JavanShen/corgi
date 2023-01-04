@@ -22,7 +22,7 @@ importers:
       '@vitejs/plugin-vue-jsx': ^2.0.1
       '@vue/eslint-config-airbnb': ^7.0.0
       antd: ^5.1.1
-      cypress: ^11.1.0
+      cypress: ^12.0.0
       dumi: ^2.0.2
       element-plus: ^2.2.27
       eslint: ^8.25.0
@@ -76,7 +76,7 @@ importers:
       '@vitejs/plugin-vue': 3.1.2_vite@4.0.4+vue@3.2.40
       '@vitejs/plugin-vue-jsx': 2.0.1_vite@4.0.4+vue@3.2.40
       '@vue/eslint-config-airbnb': 7.0.0_67dn5eetsnpko4hnxsr6t7dm7u
-      cypress: 11.1.0
+      cypress: 12.3.0
       dumi: 2.0.18_hpaol53fxxxi6zrdoox5fbaaue
       eslint: 8.25.0
       eslint-config-prettier: 8.5.0_eslint@8.25.0
@@ -1339,7 +1339,7 @@ packages:
       mime-types: 2.1.35
       performance-now: 2.1.0
       qs: 6.5.3
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
       tough-cookie: 2.5.0
       tunnel-agent: 0.6.0
       uuid: 8.3.2
@@ -5318,9 +5318,9 @@ packages:
     resolution: {integrity: sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==}
     dev: true
 
-  /cypress/11.1.0:
-    resolution: {integrity: sha512-kzizbG9s3p3ahWqxUwG/21NqLWEGtScMevMyUPeYlcmMX9RzVxWM18MkA3B4Cb3jKx72hSyIE2mHgHymfCM1bg==}
-    engines: {node: '>=12.0.0'}
+  /cypress/12.3.0:
+    resolution: {integrity: sha512-ZQNebibi6NBt51TRxRMYKeFvIiQZ01t50HSy7z/JMgRVqBUey3cdjog5MYEbzG6Ktti5ckDt1tfcC47lmFwXkw==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     requiresBuild: true
     dependencies:
