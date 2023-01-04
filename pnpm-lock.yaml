@@ -17,7 +17,7 @@ importers:
       '@types/react-dom': ^18.0.6
       '@typescript-eslint/eslint-plugin': ^5.39.0
       '@typescript-eslint/parser': ^5.39.0
-      '@vitejs/plugin-react': ^2.1.0
+      '@vitejs/plugin-react': ^3.0.0
       '@vitejs/plugin-vue': ^3.1.2
       '@vitejs/plugin-vue-jsx': ^2.0.1
       '@vue/eslint-config-airbnb': ^7.0.0
@@ -72,7 +72,7 @@ importers:
       '@types/react-dom': 18.0.6
       '@typescript-eslint/eslint-plugin': 5.39.0_cfd7h3iktziq6hcwahu2qxhjhy
       '@typescript-eslint/parser': 5.39.0_z4bbprzjrhnsfa24uvmcbu7f5q
-      '@vitejs/plugin-react': 2.2.0_vite@4.0.4
+      '@vitejs/plugin-react': 3.0.0_vite@4.0.4
       '@vitejs/plugin-vue': 3.1.2_vite@4.0.4+vue@3.2.40
       '@vitejs/plugin-vue-jsx': 2.0.1_vite@4.0.4+vue@3.2.40
       '@vue/eslint-config-airbnb': 7.0.0_67dn5eetsnpko4hnxsr6t7dm7u
@@ -3492,18 +3492,16 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react/2.2.0_vite@4.0.4:
-    resolution: {integrity: sha512-FFpefhvExd1toVRlokZgxgy2JtnBOdp4ZDsq7ldCWaqGSGn9UhWMAVm/1lxPL14JfNS5yGz+s9yFrQY6shoStA==}
+  /@vitejs/plugin-react/3.0.0_vite@4.0.4:
+    resolution: {integrity: sha512-1mvyPc0xYW5G8CHQvJIJXLoMjl5Ct3q2g5Y2s6Ccfgwm45y48LBvsla7az+GkkAtYikWQ4Lxqcsq5RHLcZgtNQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^3.0.0
+      vite: ^4.0.0
     dependencies:
       '@babel/core': 7.20.7
-      '@babel/plugin-transform-react-jsx': 7.19.0_@babel+core@7.20.7
-      '@babel/plugin-transform-react-jsx-development': 7.18.6_@babel+core@7.20.7
       '@babel/plugin-transform-react-jsx-self': 7.18.6_@babel+core@7.20.7
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.20.7
-      magic-string: 0.26.7
+      magic-string: 0.27.0
       react-refresh: 0.14.0
       vite: 4.0.4_@types+node@18.11.0
     transitivePeerDependencies:
@@ -9135,6 +9133,13 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       sourcemap-codec: 1.4.8
+    dev: true
+
+  /magic-string/0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
   /make-dir/1.3.0:
