@@ -19,7 +19,7 @@ importers:
       '@typescript-eslint/parser': ^5.39.0
       '@vitejs/plugin-react': ^3.0.0
       '@vitejs/plugin-vue': ^3.1.2
-      '@vitejs/plugin-vue-jsx': ^2.0.1
+      '@vitejs/plugin-vue-jsx': ^3.0.0
       '@vue/eslint-config-airbnb': ^7.0.0
       antd: ^5.1.1
       cypress: ^11.1.0
@@ -74,7 +74,7 @@ importers:
       '@typescript-eslint/parser': 5.39.0_z4bbprzjrhnsfa24uvmcbu7f5q
       '@vitejs/plugin-react': 3.0.0_vite@4.0.4
       '@vitejs/plugin-vue': 3.1.2_vite@4.0.4+vue@3.2.40
-      '@vitejs/plugin-vue-jsx': 2.0.1_vite@4.0.4+vue@3.2.40
+      '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.0.4+vue@3.2.40
       '@vue/eslint-config-airbnb': 7.0.0_67dn5eetsnpko4hnxsr6t7dm7u
       cypress: 11.1.0
       dumi: 2.0.18_hpaol53fxxxi6zrdoox5fbaaue
@@ -400,8 +400,8 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /@babel/helper-create-class-features-plugin/7.19.0_@babel+core@7.20.7:
-    resolution: {integrity: sha512-NRz8DwF4jT3UfrmUoZjd0Uph9HQnP30t7Ash+weACcyNkiYTywpIjDBgReJMKgr+n86sn2nPVVmJ28Dm053Kqw==}
+  /@babel/helper-create-class-features-plugin/7.20.7_@babel+core@7.20.7:
+    resolution: {integrity: sha512-LtoWbDXOaidEf50hmdDqn9g8VEzsorMexoWMQdQODbvmqYmaF23pBP5VNPAGIFHsFQCIeKokDiz3CH5Y2jlY6w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -618,15 +618,6 @@ packages:
       '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
-  /@babel/plugin-syntax-import-meta/7.10.4_@babel+core@7.20.7:
-    resolution: {integrity: sha512-Yqfm+XDx0+Prh3VSeEQCPU81yC+JWZ2pDPFSS4ZdpfZhp4MkFMaDC1UqseovEKwSUpnIL7+vK+Clp7bfh0iD7g==}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.20.7
-      '@babel/helper-plugin-utils': 7.20.2
-    dev: true
-
   /@babel/plugin-syntax-json-strings/7.8.3_@babel+core@7.19.3:
     resolution: {integrity: sha512-lY6kdGpWHvjoe2vk4WrAapEuBR69EMxZl+RoGRhrFGNYVK8mOPAW8VfbT/ZgrFbXlDNiiaxQnAtgVCZ6jv30EA==}
     peerDependencies:
@@ -720,8 +711,8 @@ packages:
       '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
-  /@babel/plugin-syntax-typescript/7.18.6_@babel+core@7.20.7:
-    resolution: {integrity: sha512-mAWAuq4rvOepWCBid55JuRNvpTNf2UGVgoz4JV0fXEKolsVZDzsa4NqCef758WZJj/GDu0gVGItjKFiClTAmZA==}
+  /@babel/plugin-syntax-typescript/7.20.0_@babel+core@7.20.7:
+    resolution: {integrity: sha512-rd9TkG+u1CExzS4SM1BlMEhMXwFLKVjOAFFCDx9PbX5ycJWDoWMcwdJH9RhkPu1dOgn5TrxLot/Gx6lWFuAUNQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -789,16 +780,16 @@ packages:
       '@babel/types': 7.20.7
     dev: true
 
-  /@babel/plugin-transform-typescript/7.19.3_@babel+core@7.20.7:
-    resolution: {integrity: sha512-z6fnuK9ve9u/0X0rRvI9MY0xg+DOUaABDYOe+/SQTxtlptaBB/V9JIUxJn6xp3lMBeb9qe8xSFmHU35oZDXD+w==}
+  /@babel/plugin-transform-typescript/7.20.7_@babel+core@7.20.7:
+    resolution: {integrity: sha512-m3wVKEvf6SoszD8pu4NZz3PvfKRCMgk6D6d0Qi9hNnlM5M6CFS92EgF4EiHVLKbU0r/r7ty1hg7NPZwE7WRbYw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.7
-      '@babel/helper-create-class-features-plugin': 7.19.0_@babel+core@7.20.7
+      '@babel/helper-create-class-features-plugin': 7.20.7_@babel+core@7.20.7
       '@babel/helper-plugin-utils': 7.20.2
-      '@babel/plugin-syntax-typescript': 7.18.6_@babel+core@7.20.7
+      '@babel/plugin-syntax-typescript': 7.20.0_@babel+core@7.20.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3508,16 +3499,15 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue-jsx/2.0.1_vite@4.0.4+vue@3.2.40:
-    resolution: {integrity: sha512-lmiR1k9+lrF7LMczO0pxtQ8mOn6XeppJDHxnpxkJQpT5SiKz4SKhKdeNstXaTNuR8qZhUo5X0pJlcocn72Y4Jg==}
+  /@vitejs/plugin-vue-jsx/3.0.0_vite@4.0.4+vue@3.2.40:
+    resolution: {integrity: sha512-vurkuzgac5SYuxd2HUZqAFAWGTF10diKBwJNbCvnWijNZfXd+7jMtqjPFbGt7idOJUn584fP1Ar9j/GN2jQ3Ew==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^3.0.0
+      vite: ^4.0.0
       vue: ^3.0.0
     dependencies:
       '@babel/core': 7.20.7
-      '@babel/plugin-syntax-import-meta': 7.10.4_@babel+core@7.20.7
-      '@babel/plugin-transform-typescript': 7.19.3_@babel+core@7.20.7
+      '@babel/plugin-transform-typescript': 7.20.7_@babel+core@7.20.7
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.7
       vite: 4.0.4_@types+node@18.11.0
       vue: 3.2.40
