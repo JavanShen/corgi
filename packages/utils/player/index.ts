@@ -52,7 +52,7 @@ export default class Player extends Audio {
 
                 return { imageSrc, ...tags }
             } catch (e) {
-                return {}
+                return null
             }
         })()
     }
