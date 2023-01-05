@@ -1,16 +1,18 @@
-import { Card, List } from 'antd'
+import { Card, List, Image } from 'antd'
 import { Link } from 'react-router-dom'
 import componentsList from '../componentsList'
 
 const Overview = () => (
     <List
-        grid={{ gutter: 16, column: 4 }}
+        grid={{ gutter: 16, column: 3 }}
         dataSource={componentsList}
         renderItem={({ name, label }) => (
             <List.Item>
-                <Card title={label}>
-                    <Link to={`/components/${name}`}>点我跳转</Link>
-                </Card>
+                <Link to={`/components/${name}`}>
+                    <Card title={`${name} ${label}`} hoverable>
+                        <Image src={`../assets/${name}.png`} preview={false} />
+                    </Card>
+                </Link>
             </List.Item>
         )}
     />
