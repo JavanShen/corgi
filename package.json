@@ -10,6 +10,7 @@
     "build:types": "pnpm run --filter @corgii/types build",
     "docs:react": "pnpm run --filter @corgii/docs-react start",
     "docs-build:react": "pnpm run --filter @corgii/docs-react build",
+    "demo:react": "pnpm run --filter @corgii/demo-react dev",
     "lint": "npm run lint:eslint",
     "lint:eslint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx --no-fix",
     "lint-staged": "lint-staged",
