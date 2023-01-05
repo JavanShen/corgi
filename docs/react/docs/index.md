@@ -1,4 +1,5 @@
 ---
+title: 'Corgii'
 hero:
   title: Corgii
   description: 

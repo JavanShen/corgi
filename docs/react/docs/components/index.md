@@ -1,9 +1,16 @@
 ---
+title: 总览
 nav:
     title: 组件
     order: -1
 ---
 
-# 简介
+```jsx
+/**
+ * inline: true
+ */
 
-在这里集合许多实用的工具类组件，挑选几个你想要的，然后开始打造你的产品吧！
+import Overview from '@corgii/demo-react/examples/Overview.tsx'
+
+export default () => <Overview />
+```
