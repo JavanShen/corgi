@@ -12,6 +12,7 @@
   "authors": [],
   "license": "MIT",
   "dependencies": {
+    "@corgii/demo-react": "workspace:^1.0.0",
     "@corgii/react": "workspace:^1.0.0"
   }
 }

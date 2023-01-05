@@ -1,0 +1,16 @@
+{
+  "name": "@corgii/demo-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "apine",
+  "license": "MIT",
+  "dependencies": {
+    "@corgii/react": "workspace:^1.0.0"
+  }
+}
