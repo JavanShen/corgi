@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
+import svgr from 'vite-plugin-svgr'
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
@@ -11,7 +12,8 @@ export default defineConfig({
             tsConfigFilePath: resolve(__dirname, './tsconfig.json'),
             outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')]
         }),
-        react()
+        react(),
+        svgr()
     ],
     server: {
         fs: {
