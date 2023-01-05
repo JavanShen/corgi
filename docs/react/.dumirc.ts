@@ -5,6 +5,7 @@ export default defineConfig({
         name: 'Corgii',
         logo: '/corgi.png'
     },
+    favicons: ['/corgi.png'],
     autoAlias: false,
     theme: {
         '@c-primary': '#e0b55b'
