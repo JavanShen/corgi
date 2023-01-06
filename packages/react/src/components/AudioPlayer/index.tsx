@@ -2,18 +2,9 @@ import { useCallback } from 'react'
 import { Card, Slider, Button, Image } from 'antd'
 import { usePlayAudio } from '@corgii/hooks'
 import styled from '@emotion/styled'
-import type { Source } from '@corgii/types'
+import type { AudioPlayerProps as Props } from '@corgii/types'
 import Volume from './components/Volume'
 import { PlayIcon, PauseIcon } from '../../icons'
-
-interface Props {
-    source: Source | null
-    cover?: false | string
-    title?: string
-    artist?: string
-    showVolumeControl?: boolean
-    loaded?: () => void
-}
 
 const textOmission = {
     overflow: 'hidden',
