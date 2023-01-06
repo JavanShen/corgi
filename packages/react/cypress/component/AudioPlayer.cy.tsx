@@ -24,7 +24,10 @@ const {
     pauseSelector,
     currentTimeTextSelector,
     totalTimeTextSelector,
-    coverSelector
+    coverSelector,
+    volumeButtonSelector,
+    muteIconSelector,
+    volumeIconSelector
 } = selector
 
 const AudioLink = () => <AudioPlayer source={link} />
@@ -53,6 +56,48 @@ describe('<AudioPlayer>', () => {
         cy.get(titleSelector).should('have.text', '标题')
         cy.get(artistSelector).should('have.text', '创作者')
         cy.get(coverSelector).find('img').should('have.attr', 'src', picLink)
+    })
+
+    it('使用音量控件', () => {
+        readMP3File().then(file => {
+            cy.mount(<AudioPlayer source={file} showVolumeControl />)
+
+            cy.get(volumeButtonSelector).as('volumeBtn')
+
+            cy.get(volumeIconSelector)
+                .should('be.visible')
+                .get('@volumeBtn')
+                .click()
+                .find(muteIconSelector)
+                .should('be.visible')
+                .get('@volumeBtn')
+                .click()
+                .find(volumeIconSelector)
+                .should('be.visible')
+
+            cy.get('@volumeBtn')
+                .trigger('mouseover')
+                .get('.volume-control')
+                .should('be.visible')
+                .find('.ant-slider-handle')
+                .as('slider')
+                .then(el => {
+                    const offset = el.offset()
+                    const x = offset?.left
+                    const y = offset?.top
+
+                    cy.get('@slider')
+                        .trigger('mousedown', { button: 0 })
+                        .trigger('mousemove', {
+                            pageX: x,
+                            pageY: y && y + 50
+                        })
+                        .trigger('mouseup', { force: true })
+
+                    cy.get(playSelector).click()
+                    cy.wait(3000)
+                })
+        })
     })
 
     it('隐藏封面', () => {
@@ -84,6 +129,12 @@ describe('<AudioPlayer>', () => {
             cy.get(currentTimeTextSelector).should('have.text', '00:03')
             cy.get(pauseSelector).click()
             cy.get(playSelector).should('be.visible')
+        })
+    })
+
+    it.skip('拖动进度条', () => {
+        readMP3File().then(file => {
+            cy.mount(<AudioPlayer source={file} />)
         })
     })
 

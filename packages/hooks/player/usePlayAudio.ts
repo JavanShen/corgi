@@ -10,6 +10,7 @@ export default function usePlayAudio(source: Source, loaded?: () => void) {
     const [currentTimeText, setCurrentTimeText] = useState('00:00')
     const [totalTime, setTotalTime] = useState(0)
     const [totalTimeText, setTotalTimeText] = useState('00:00')
+    const [volume, setVolume] = useState<null | number>(null)
     const [imageSrc, setImageSrc] = useState('')
     const [title, setTitle] = useState('未知')
     const [artist, setArtist] = useState('未知')
@@ -31,6 +32,7 @@ export default function usePlayAudio(source: Source, loaded?: () => void) {
         player?.canPlay(() => {
             setTotalTime(Math.floor(player.duration || 0))
             setTotalTimeText(player.totalTimeText || '00:00')
+            setVolume(player.muted ? null : player.volume * 100)
             setIsCanPlay(true)
             loaded?.()
         })
@@ -77,6 +79,24 @@ export default function usePlayAudio(source: Source, loaded?: () => void) {
         isManualUpdating.current = false
     }
 
+    const updateVolume = (val: number) => {
+        if (val > 0 && player?.muted) {
+            player.unmute()
+        }
+        player?.setVolume(val)
+        setVolume(val)
+    }
+
+    const mute = () => {
+        player?.mute()
+        setVolume(null)
+    }
+
+    const unmute = () => {
+        player?.unmute()
+        setVolume((player?.volume || 0) * 100)
+    }
+
     return {
         currentTime,
         totalTime,
@@ -90,6 +110,10 @@ export default function usePlayAudio(source: Source, loaded?: () => void) {
         title,
         artist,
         currentTimeText,
-        isCanPlay
+        isCanPlay,
+        volume,
+        updateVolume,
+        mute,
+        unmute
     }
 }

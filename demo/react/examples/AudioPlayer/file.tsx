@@ -14,7 +14,7 @@ const AudioPlayerDemo = () => {
             <Upload beforeUpload={beforeUpload} showUploadList={false}>
                 <Button>选择文件</Button>
             </Upload>
-            <AudioPlayer source={file} />
+            <AudioPlayer source={file} showVolumeControl />
         </Space>
     )
 }

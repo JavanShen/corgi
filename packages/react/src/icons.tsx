@@ -5,10 +5,13 @@ import type {
 } from '@ant-design/icons/lib/components/Icon'
 import { ReactComponent as Pause } from './svg/pause.svg'
 import { ReactComponent as Play } from './svg/play.svg'
+import { ReactComponent as Volume } from './svg/volume.svg'
+import { ReactComponent as Mute } from './svg/mute.svg'
 
 const PauseSvg = () => <Pause />
-
 const PlaySvg = () => <Play />
+const VolumeSvg = () => <Volume />
+const MuteSvg = () => <Mute />
 
 const generateIcon = (component: IconComponentProps['component']) => {
     const CustomIcon = (props: Partial<CustomIconComponentProps>) => (
@@ -19,7 +22,8 @@ const generateIcon = (component: IconComponentProps['component']) => {
 }
 
 const PlayIcon = generateIcon(PlaySvg)
-
 const PauseIcon = generateIcon(PauseSvg)
+const VolumeIcon = generateIcon(VolumeSvg)
+const MuteIcon = generateIcon(MuteSvg)
 
-export { PlayIcon, PauseIcon }
+export { PlayIcon, PauseIcon, VolumeIcon, MuteIcon }

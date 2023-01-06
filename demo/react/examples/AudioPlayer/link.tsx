@@ -6,6 +6,7 @@ const AudioPlayerDemo = () => (
         cover="https://github.com/JavanShen/corgi/blob/main/docs/react/public/corgi.png?raw=true"
         title="corgii"
         artist="apine"
+        showVolumeControl
     />
 )
 

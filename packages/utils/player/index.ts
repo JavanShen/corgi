@@ -77,6 +77,19 @@ export default class Player extends Audio {
         super.addEventListener('ended', fn)
     }
 
+    mute() {
+        super.muted = true
+    }
+
+    unmute() {
+        super.muted = false
+    }
+
+    setVolume(val: number) {
+        const volume = Math.min(Math.max(0, val), 100) / 100
+        super.volume = volume
+    }
+
     destroy() {
         super.pause()
         super.src = ''

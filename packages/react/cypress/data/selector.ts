@@ -7,7 +7,10 @@ const collect = [
     'pause',
     'currentTimeText',
     'totalTimeText',
-    'cover'
+    'cover',
+    'volumeButton',
+    'muteIcon',
+    'volumeIcon'
 ] as const
 
 type Collect = typeof collect[number]

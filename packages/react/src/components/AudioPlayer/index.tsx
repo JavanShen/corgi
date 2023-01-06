@@ -1,8 +1,9 @@
+import { useCallback } from 'react'
 import { Card, Slider, Button, Image } from 'antd'
 import { usePlayAudio } from '@corgii/hooks'
 import styled from '@emotion/styled'
-
 import type { Source } from '@corgii/types'
+import Volume from './components/Volume'
 import { PlayIcon, PauseIcon } from '../../icons'
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
     cover?: false | string
     title?: string
     artist?: string
+    showVolumeControl?: boolean
     loaded?: () => void
 }
 
@@ -63,7 +65,14 @@ const FlexBetween = styled.div({
     justifyContent: 'space-between'
 })
 
-const AudioPlayer = ({ source, loaded, cover, title, artist }: Props) => {
+const AudioPlayer = ({
+    source,
+    loaded,
+    cover,
+    title,
+    artist,
+    showVolumeControl = false
+}: Props) => {
     const {
         currentTime,
         currentTimeText,
@@ -77,7 +86,11 @@ const AudioPlayer = ({ source, loaded, cover, title, artist }: Props) => {
         updateTime,
         jump,
         isPlay,
-        isCanPlay
+        isCanPlay,
+        volume,
+        updateVolume,
+        mute,
+        unmute
     } = usePlayAudio(source || '', loaded)
 
     return (
@@ -111,17 +124,31 @@ const AudioPlayer = ({ source, loaded, cover, title, artist }: Props) => {
                             {totalTimeText}
                         </SubTitle2>
                     </FlexBetween>
-                    <Button
-                        size="large"
-                        type="text"
-                        shape="circle"
-                        disabled={!isCanPlay}
-                        aria-label={isPlay ? 'pause' : 'play'}
-                        icon={isPlay ? <PauseIcon /> : <PlayIcon />}
-                        onClick={() => {
-                            return isPlay ? pause() : play()
-                        }}
-                    />
+                    <FlexBetween>
+                        <Button
+                            size="large"
+                            type="text"
+                            shape="circle"
+                            disabled={!isCanPlay}
+                            aria-label={isPlay ? 'pause' : 'play'}
+                            icon={isPlay ? <PauseIcon /> : <PlayIcon />}
+                            onClick={() => {
+                                return isPlay ? pause() : play()
+                            }}
+                        />
+                        {showVolumeControl ? (
+                            <Volume
+                                isMute={!volume}
+                                volume={volume || 0}
+                                onClick={useCallback(volume ? mute : unmute, [
+                                    volume
+                                ])}
+                                updateVolume={useCallback(updateVolume, [
+                                    volume
+                                ])}
+                            />
+                        ) : null}
+                    </FlexBetween>
                 </AudioContent>
                 {(imageSrc || cover) && cover !== false ? (
                     <AudioMedia aria-label="cover">

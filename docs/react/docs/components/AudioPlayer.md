@@ -20,6 +20,7 @@ group:
 | title | 标题 | `string` | [ID3](#id3) |
 | artist | 创作者 | `string` | [ID3](#id3) |
 | cover | 图片链接，传入 `false` 将一直不显示 | `string \| false` | [ID3](#id3) |
+| showVolumeControl | 是否显示音量控件 | `boolean` | false |
 | loaded | 音频加载完成后的回调 | `() => void` | - |
 
 ### ID3
