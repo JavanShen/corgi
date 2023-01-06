@@ -2,7 +2,9 @@
   "name": "@corgii/types",
   "version": "1.0.0",
   "description": "",
-  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "types": "dist/index.d.ts"
+  },
   "scripts": {
     "build": "tsc"
   },
