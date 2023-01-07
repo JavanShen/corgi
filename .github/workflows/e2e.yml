@@ -9,6 +9,8 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -49,3 +51,7 @@ jobs:
           install: false
           working-directory: packages/react
           component: true
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
