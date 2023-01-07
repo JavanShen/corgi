@@ -48,6 +48,7 @@ jobs:
         with:
           install: false
           working-directory: packages/react
+          browser: chrome
           component: true
           record: true
         env:
