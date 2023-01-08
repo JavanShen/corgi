@@ -8,9 +8,18 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+      matrix:
+        os: [ubuntu-latest, windows-latest, ubuntu-latest]
+        browser: [chrome, edge, firefox]
+    runs-on: ${{ matrix.os }}
+
+    if: matrix.browser == 'firefox'
+    container:
+      image: cypress/browser:node12.16.1-chrome80-ff73
+      options: --user 1001
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -51,10 +60,11 @@ jobs:
         with:
           install: false
           working-directory: packages/react
-          browser: chrome
-          headed: true
+          browser: ${{ matrix.browser }}
           component: true
           record: true
+          group: ${{ matrix.browser }}
+          tag: ${{ matrix.browser }},react
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
