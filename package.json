@@ -1,7 +1,7 @@
 {
   "name": "corgii",
   "version": "1.0.0",
-  "description": "find utils components what you need",
+  "description": "Explore the components you need",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -26,6 +26,7 @@
     "utils",
     "antd",
     "element"
+    "corgii"
   ],
   "author": "apine",
   "license": "MIT",
