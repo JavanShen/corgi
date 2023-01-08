@@ -108,11 +108,25 @@ describe('<AudioPlayer>', () => {
         })
 
         describe('音量控件', () => {
-            it('调整音量', () => {
+            const hoverVolumeBtnTest = () => {
+                return cy
+                    .get('@volumeBtn')
+                    .trigger('mouseover')
+                    .get('.volume-control')
+                    .should('be.visible')
+                    .find('.ant-slider-handle')
+                    .as('sliderBtn')
+            }
+
+            it('切换静音', () => {
                 readMP3File().then(file => {
                     cy.mount(<AudioPlayer source={file} showVolumeControl />)
 
                     cy.get(volumeButtonSelector).as('volumeBtn')
+
+                    hoverVolumeBtnTest()
+
+                    cy.get(playSelector).click().wait(1000)
 
                     cy.get(volumeIconSelector)
                         .should('be.visible')
@@ -120,22 +134,38 @@ describe('<AudioPlayer>', () => {
                         .click()
                         .find(muteIconSelector)
                         .should('be.visible')
-                        .get('@volumeBtn')
+                        .get('@sliderBtn')
+                        .should('have.attr', 'aria-valuenow', '0')
+                        .wait(1000)
+
+                    cy.get('@volumeBtn')
                         .click()
                         .find(volumeIconSelector)
                         .should('be.visible')
+                        .get('@sliderBtn')
+                        .should('have.attr', 'aria-valuenow', '100')
+                        .wait(1000)
 
-                    cy.get('@volumeBtn')
-                        .trigger('mouseover')
-                        .get('.volume-control')
-                        .should('be.visible')
-                        .find('.ant-slider-handle')
-                        .as('slider')
+                    cy.get(pauseSelector).click()
+                })
+            })
 
-                    move('@slider', 0, 50).then(() => {
-                        cy.get(playSelector).click()
-                        cy.wait(3000)
-                    })
+            it('调整音量', () => {
+                readMP3File().then(file => {
+                    cy.mount(<AudioPlayer source={file} showVolumeControl />)
+
+                    cy.get(volumeButtonSelector).as('volumeBtn')
+
+                    hoverVolumeBtnTest()
+
+                    move('@sliderBtn', 0, 50)
+                        .get(playSelector)
+                        .click()
+                        .wait(1000)
+                    move('@sliderBtn', 0, -50)
+                        .wait(1000)
+                        .get(pauseSelector)
+                        .click()
                 })
             })
         })
