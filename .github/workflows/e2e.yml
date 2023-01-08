@@ -43,6 +43,7 @@ jobs:
           path: |
             **/node_modules
             ~/.cache/Cypress
+            C:\Users\runneradmin\AppData\Local\Cypress\Cache
             
           key: ${{runner.OS}}-${{hashFiles('pnpm-lock.yaml')}}
       # 安装依赖
