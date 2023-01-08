@@ -11,8 +11,9 @@ jobs:
     strategy:
       fail-fast: false # https://github.com/cypress-io/github-action/issues/48
       matrix:
-        os: [ubuntu-latest, windows-latest, ubuntu-latest]
         browser: [chrome, edge, firefox]
+        os: 
+          - ${{ matrix.browser == 'edge' ? 'windows-latest' : 'ubuntu-latest' }}
     runs-on: ${{ matrix.os }}
 
     steps:
