@@ -1,21 +1,13 @@
 import AudioPlayer from '../../src/components/AudioPlayer'
 import selector from '../data/selector'
+import { readMP3File } from '../utils/file'
+import { move } from '../utils/action'
 
 const link =
     'https://howlerjs.com/assets/howler.js/examples/player/audio/rave_digger.webm'
 
 const picLink =
     'https://github.com/JavanShen/corgi/blob/main/docs/react/public/corgi.png?raw=true'
-
-const generateMP3File = (buf: Buffer) =>
-    new File([buf], 'demo.mp3', { type: 'audio/mpeg' })
-
-const readMP3File = () =>
-    new Promise<File>(res => {
-        cy.readFile('cypress/assets/demo.mp3', null).then((mp3: Buffer) => {
-            res(generateMP3File(mp3))
-        })
-    })
 
 const {
     titleSelector,
@@ -81,22 +73,11 @@ describe('<AudioPlayer>', () => {
                 .should('be.visible')
                 .find('.ant-slider-handle')
                 .as('slider')
-                .then(el => {
-                    const offset = el.offset()
-                    const x = offset?.left
-                    const y = offset?.top
 
-                    cy.get('@slider')
-                        .trigger('mousedown', { button: 0 })
-                        .trigger('mousemove', {
-                            pageX: x,
-                            pageY: y && y + 50
-                        })
-                        .trigger('mouseup', { force: true })
-
-                    cy.get(playSelector).click()
-                    cy.wait(3000)
-                })
+            move('@slider', 0, 20).then(() => {
+                cy.get(playSelector).click()
+                cy.wait(3000)
+            })
         })
     })
 
