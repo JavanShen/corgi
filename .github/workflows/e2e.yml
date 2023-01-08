@@ -15,7 +15,7 @@ jobs:
         browser: [chrome, edge, firefox]
     runs-on: ${{ matrix.os }}
 
-    if: matrix.browser == 'firefox'
+    if: ${{ matrix.browser }} == 'firefox'
     container:
       image: cypress/browser:node12.16.1-chrome80-ff73
       options: --user 1001
