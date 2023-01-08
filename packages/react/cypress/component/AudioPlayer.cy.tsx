@@ -74,7 +74,7 @@ describe('<AudioPlayer>', () => {
                 .find('.ant-slider-handle')
                 .as('slider')
 
-            move('@slider', 0, 20).then(() => {
+            move('@slider', 0, 50).then(() => {
                 cy.get(playSelector).click()
                 cy.wait(3000)
             })
@@ -113,9 +113,15 @@ describe('<AudioPlayer>', () => {
         })
     })
 
-    it.skip('拖动进度条', () => {
+    it('拖动进度条', () => {
         readMP3File().then(file => {
-            cy.mount(<AudioPlayer source={file} />)
+            cy.mount(<AudioPlayer source={file} />).wait(1500)
+
+            cy.get('.progress-bar').find('.ant-slider-handle').as('sliderBtn')
+
+            move('@sliderBtn', 120, 0)
+                .get(currentTimeTextSelector)
+                .should('have.text', '00:03')
         })
     })
 

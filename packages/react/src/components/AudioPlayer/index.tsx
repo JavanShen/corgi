@@ -64,6 +64,7 @@ const AudioPlayer = ({
                         onChange={updateTime}
                         onAfterChange={jump}
                         disabled={!isCanPlay}
+                        className="progress-bar"
                     />
                     <FlexBetween>
                         <SubTitle2 aria-label="currentTimeText">
