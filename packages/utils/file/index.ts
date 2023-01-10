@@ -8,4 +8,10 @@ const arrayBufferToBase64 = (buffer: ArrayBuffer) => {
     return window.btoa(binary)
 }
 
-export { arrayBufferToBase64 }
+const fileToBlob = async (file: File) => {
+    return new Blob([new Uint8Array(await file.arrayBuffer())], {
+        type: file.type
+    })
+}
+
+export { arrayBufferToBase64, fileToBlob }

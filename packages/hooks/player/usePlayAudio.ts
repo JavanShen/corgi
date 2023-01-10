@@ -49,10 +49,14 @@ export default function usePlayAudio(source: Source, loaded?: () => void) {
         })
 
         player?.audioInfo.then(res => {
-            const { title: t, imageSrc: i, artist: a } = res || {}
+            const {
+                title: t = '未知',
+                imageSrc: i = '',
+                artist: a = '未知'
+            } = res || {}
             if (t) setTitle(t)
             if (a) setArtist(a)
-            if (i) setImageSrc(i)
+            setImageSrc(i)
         })
     }, [player])
 

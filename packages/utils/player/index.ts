@@ -1,7 +1,8 @@
 import { fromFile, fromUrl } from 'id3js'
 import type { Source } from '@corgii/types'
 import { secondsToMinutes } from '../time'
-import { arrayBufferToBase64 } from '../file'
+import { arrayBufferToBase64, fileToBlob } from '../file'
+import { getType } from '../verify'
 
 interface Image {
     type: string
@@ -39,7 +40,11 @@ export default class Player extends Audio {
                 const tags =
                     typeof source === 'string'
                         ? await fromUrl(source)
-                        : await fromFile(source)
+                        : await fromFile(
+                              getType(source) === 'File'
+                                  ? ((await fileToBlob(source as File)) as File)
+                                  : (source as File)
+                          )
                 const images = tags?.images as Image[]
 
                 let imageSrc = ''

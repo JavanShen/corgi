@@ -1,3 +1,3 @@
-type Source = string | File
+type Source = string | File | Blob
 
 export type { Source }
