@@ -153,8 +153,10 @@ importers:
     specifiers:
       '@corgii/hooks': workspace:^1.0.0
       '@corgii/types': workspace:^1.0.0
+      '@corgii/utils': workspace:^1.0.0
     dependencies:
       '@corgii/hooks': link:../hooks
+      '@corgii/utils': link:../utils
     devDependencies:
       '@corgii/types': link:../types
 

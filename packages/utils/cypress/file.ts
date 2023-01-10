@@ -3,7 +3,7 @@ const generateMP3File = (buf: Buffer) =>
 
 const readMP3File = () =>
     new Promise<File>(res => {
-        cy.readFile('cypress/assets/demo.mp3', null).then((mp3: Buffer) => {
+        cy.readFile('../utils/assets/demo.mp3', null).then((mp3: Buffer) => {
             res(generateMP3File(mp3))
         })
     })

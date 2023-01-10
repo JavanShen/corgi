@@ -1,4 +1,4 @@
-import { prefix } from '../utils/selector'
+import { prefix } from '@corgii/utils/cypress/selector'
 
 const collect = [
     'title',
