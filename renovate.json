@@ -3,5 +3,5 @@
   "extends": [
     "config:base"
   ],
-  "commitMessagePrefix": ":arrow_up: "
+  "commitMessagePrefix": "⬆️ "
 }
