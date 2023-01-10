@@ -31,4 +31,4 @@ group:
 
 ### Source
 
-`File | string | null`
+`File | Blob | string | null`

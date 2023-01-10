@@ -3,12 +3,10 @@ import { Upload, Button, Space } from 'antd'
 import { AudioPlayer } from '@corgii/react'
 
 const AudioPlayerDemo = () => {
-    const [file, setFile] = useState<null | Blob>(null)
+    const [file, setFile] = useState<null | File>(null)
 
     const beforeUpload = async (val: File) => {
-        const arrayBuffer = await val.arrayBuffer()
-        const blob = new Blob([new Uint8Array(arrayBuffer)], { type: val.type })
-        setFile(blob)
+        setFile(val)
     }
 
     return (
