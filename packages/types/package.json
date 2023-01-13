@@ -1,15 +1,27 @@
 {
   "name": "@corgii/types",
   "version": "1.0.0",
-  "description": "",
+  "description": "types for corgii",
   "publishConfig": {
-    "types": "dist/index.d.ts"
+    "types": "dist/index.d.ts",
+    "access": "public"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build"
   },
-  "keywords": ["corgii"],
-  "files": ["dist/**/*"],
+  "keywords": ["corgii", "type"],
+  "files": ["dist/**"],
   "author": "apine",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JavanShen/corgi"
+  },
+  "bugs": {
+    "url": "https://github.com/JavanShen/corgi/issues"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": "^4.6.4"
+  }
 }
