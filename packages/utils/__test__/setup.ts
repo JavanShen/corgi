@@ -6,6 +6,7 @@ const audio = jsdom.window.document.createElement('audio')
 
 globalThis.URL = URL as unknown as typeof globalThis.URL
 
+/* c8 ignore start */
 class MyAudio {
     audio: HTMLAudioElement
 
@@ -70,6 +71,7 @@ class MyAudio {
         this.audio.addEventListener(event, fn)
     }
 }
+/* c8 ignore stop */
 
 globalThis.Audio = MyAudio as unknown as new (
     src?: string | undefined

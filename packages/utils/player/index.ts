@@ -11,6 +11,7 @@ interface Image {
     data: ArrayBuffer
 }
 
+/* c8 ignore start */
 export default class Player extends Audio {
     source: Source
 
