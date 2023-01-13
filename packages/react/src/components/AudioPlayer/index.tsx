@@ -2,6 +2,7 @@ import { useCallback } from 'react'
 import { Card, Slider, Button, Image } from 'antd'
 import { usePlayAudio } from '@corgii/hooks'
 import type { AudioPlayerProps as Props } from '@corgii/types'
+import type { CSSProperties } from 'react'
 import Volume from './components/Volume'
 import { PlayIcon, PauseIcon } from '../../icons'
 import {
@@ -20,8 +21,9 @@ const AudioPlayer = ({
     cover,
     title,
     artist,
-    showVolumeControl = false
-}: Props) => {
+    showVolumeControl = false,
+    style
+}: Props & { style: CSSProperties }) => {
     const {
         currentTime,
         currentTimeText,
@@ -46,7 +48,8 @@ const AudioPlayer = ({
         <Card
             style={{
                 display: 'inline-flex',
-                width: 'max-content'
+                width: 'max-content',
+                ...style
             }}
         >
             <AudioContainer>
