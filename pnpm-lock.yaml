@@ -12,6 +12,7 @@ importers:
       '@edge-runtime/vm': 2.0.2
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
+      '@types/jsdom': ^20.0.1
       '@types/node': ^18.11.0
       '@types/react': ^18.0.21
       '@types/react-dom': ^18.0.6
@@ -77,6 +78,7 @@ importers:
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
       '@edge-runtime/vm': 2.0.2
+      '@types/jsdom': 20.0.1
       '@types/node': 18.11.0
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
@@ -2773,6 +2775,14 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
+  /@types/jsdom/20.0.1:
+    resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==}
+    dependencies:
+      '@types/node': 18.11.0
+      '@types/tough-cookie': 4.0.2
+      parse5: 7.1.1
+    dev: true
+
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
@@ -2877,6 +2887,10 @@ packages:
 
   /@types/sizzle/2.3.3:
     resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
+    dev: true
+
+  /@types/tough-cookie/4.0.2:
+    resolution: {integrity: sha512-Q5vtl1W5ue16D+nIaW8JWebSSraJVlK+EthKn7e7UcD4KWsaSJ8BqGPXNaPghgtcn/fhvrN17Tv8ksUsQpiplw==}
     dev: true
 
   /@types/unist/2.0.6:
