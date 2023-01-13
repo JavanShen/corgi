@@ -14,8 +14,6 @@ interface Image {
 export default class Player extends Audio {
     source: Source
 
-    isCanPlay: boolean
-
     constructor(source: Source) {
         /* eslint no-nested-ternary: "off" */
         const url =
@@ -26,7 +24,6 @@ export default class Player extends Audio {
                 : ''
         super(url)
         this.source = source
-        this.isCanPlay = super.canPlayType(url) === 'probably'
 
         super.addEventListener('canplay', () => {
             URL.revokeObjectURL(url)
