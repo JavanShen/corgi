@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import { Player, secondsToMinutes } from '@corgii/utils'
 
-import type { Source } from '@corgii/types'
+import type { Source } from '@corgii/utils'
+
+export type { Source }
 
 export default function usePlayAudio(source: Source, loaded?: () => void) {
     const [player, setPlayer] = useState<null | Player>(null)

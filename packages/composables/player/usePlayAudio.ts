@@ -1,6 +1,8 @@
 import { Player } from '@corgii/utils'
-import type { Source } from '@corgii/types'
+import type { Source } from '@corgii/utils'
 import debounce from 'lodash/debounce'
+
+export type { Source }
 
 export default function usePlayAudio(source: Source) {
     const currentTime = ref(0)

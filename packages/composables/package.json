@@ -9,9 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "@corgii/types": "workspace:^1.0.0"
-  },
   "dependencies": {
     "@corgii/utils": "workspace:^1.0.0"
   }

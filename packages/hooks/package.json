@@ -10,8 +10,5 @@
   "license": "MIT",
   "dependencies": {
     "@corgii/utils": "workspace:^1.0.0"
-  },
-  "devDependencies": {
-    "@corgii/types": "workspace:^1.0.0"
   }
 }

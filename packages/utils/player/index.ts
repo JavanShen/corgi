@@ -4,6 +4,8 @@ import { secondsToMinutes } from '../time'
 import { arrayBufferToBase64, fileToBlob } from '../file'
 import { getType } from '../verify'
 
+export type { Source }
+
 interface Image {
     type: string
     description: string
