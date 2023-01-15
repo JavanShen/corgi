@@ -1,15 +1,29 @@
 {
   "name": "@corgii/utils",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "utils for corgii",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "files": ["es", "lib"],
+  "publishConfig": {
+    "types": "./es/utils.d.ts",
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    }
+  },
   "scripts": {
+    "build": "tsc && vite build",
     "test": "vitest --coverage"
   },
-  "keywords": [],
+  "keywords": ["corgii", "utils"],
   "author": "apine",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
+    "id3js": "^2.1.1",
     "@corgii/types": "workspace:^1.0.0"
   }
 }

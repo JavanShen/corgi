@@ -135,21 +135,15 @@ importers:
 
   packages/composables:
     specifiers:
-      '@corgii/types': workspace:^1.0.0
       '@corgii/utils': workspace:^1.0.0
     dependencies:
       '@corgii/utils': link:../utils
-    devDependencies:
-      '@corgii/types': link:../types
 
   packages/hooks:
     specifiers:
-      '@corgii/types': workspace:^1.0.0
       '@corgii/utils': workspace:^1.0.0
     dependencies:
       '@corgii/utils': link:../utils
-    devDependencies:
-      '@corgii/types': link:../types
 
   packages/react:
     specifiers:
@@ -168,8 +162,10 @@ importers:
   packages/utils:
     specifiers:
       '@corgii/types': workspace:^1.0.0
-    devDependencies:
+      id3js: ^2.1.1
+    dependencies:
       '@corgii/types': link:../types
+      id3js: 2.1.1
 
   packages/vue:
     specifiers:
