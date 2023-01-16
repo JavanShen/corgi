@@ -13,7 +13,7 @@ const collect = [
     'volumeIcon'
 ] as const
 
-type Collect = typeof collect[number]
+type Collect = (typeof collect)[number]
 
 type SelectorCollect = {
     [key in Collect as `${key}Selector`]: `[aria-label=${key}]`
