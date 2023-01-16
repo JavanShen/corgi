@@ -2,17 +2,17 @@
   "name": "@corgii/utils",
   "version": "1.0.0",
   "description": "utils for corgii",
-  "main": "./lib/index.js",
-  "module": "./es/index.js",
   "files": ["es", "lib"],
   "publishConfig": {
+    "main": "./lib/index.js",
+    "module": "./es/index.js",
     "types": "./es/utils.d.ts",
-    "access": "public"
-  },
-  "exports": {
-    ".": {
-      "import": "./es/index.js",
-      "require": "./lib/index.js"
+    "access": "public",
+    "exports": {
+      ".": {
+        "import": "./es/index.js",
+        "require": "./lib/index.js"
+      }
     }
   },
   "scripts": {
