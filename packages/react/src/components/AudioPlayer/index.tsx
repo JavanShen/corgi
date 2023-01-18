@@ -26,7 +26,7 @@ const AudioPlayer = ({
     artist,
     showVolumeControl = false,
     style
-}: AudioPlayerProps & { style: CSSProperties }) => {
+}: AudioPlayerProps & { style?: CSSProperties }) => {
     const {
         currentTime,
         currentTimeText,
