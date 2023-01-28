@@ -15,11 +15,6 @@ export default defineConfig({
         react(),
         svgr()
     ],
-    server: {
-        fs: {
-            strict: false
-        }
-    },
     build: {
         lib: {
             entry: resolve(__dirname, './index.ts'),
@@ -27,13 +22,7 @@ export default defineConfig({
             fileName: 'components'
         },
         rollupOptions: {
-            external: [
-                'React',
-                'ReactDOM',
-                'antd',
-                '@emotion/react',
-                '@emotion/styled'
-            ],
+            external: ['react', 'antd'],
             input: [resolve(__dirname, './index.ts')],
             output: [
                 {

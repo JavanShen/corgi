@@ -1,10 +1,10 @@
 import { fromFile, fromUrl } from 'id3js'
-import type { Source } from '@corgii/types'
+import type { AudioSource } from '@corgii/types'
 import { secondsToMinutes } from '../time'
 import { arrayBufferToBase64, fileToBlob } from '../file'
 import { getType } from '../verify'
 
-export type { Source }
+export type { AudioSource }
 
 interface Image {
     type: string
@@ -15,9 +15,9 @@ interface Image {
 
 /* c8 ignore start */
 export default class Player extends Audio {
-    source: Source
+    source: AudioSource
 
-    constructor(source: Source) {
+    constructor(source: AudioSource) {
         /* eslint no-nested-ternary: "off" */
         const url =
             typeof source === 'string'

@@ -1,7 +1,7 @@
-import type { Source } from '../player'
+import type { AudioSource } from '../player'
 
 interface AudioPlayerProps {
-    source: Source | null
+    source: AudioSource | null
     cover?: false | string
     title?: string
     artist?: string

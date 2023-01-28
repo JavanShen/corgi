@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react'
 import { Player, secondsToMinutes } from '@corgii/utils'
 
-import type { Source } from '@corgii/utils'
+import type { AudioSource } from '@corgii/utils'
 
-export type { Source }
+export type { AudioSource }
 
-export default function usePlayAudio(source: Source, loaded?: () => void) {
+export default function usePlayAudio(source: AudioSource, loaded?: () => void) {
     const [player, setPlayer] = useState<null | Player>(null)
 
     const [currentTime, setCurrentTime] = useState(0)

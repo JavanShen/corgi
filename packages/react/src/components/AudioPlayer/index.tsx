@@ -16,7 +16,7 @@ import {
 } from './styled'
 
 export type { AudioPlayerProps }
-export type { Source } from '@corgii/hooks'
+export type { AudioSource } from '@corgii/hooks'
 
 const AudioPlayer = ({
     source,

@@ -1,3 +1,3 @@
-type Source = string | File | Blob
+type AudioSource = string | File | Blob
 
-export type { Source }
+export type { AudioSource }
