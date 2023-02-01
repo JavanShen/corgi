@@ -5,6 +5,7 @@ import type { AudioSource } from '@corgii/utils'
 
 export type { AudioSource }
 
+// TODO 卸载后移除监听事件
 export default function usePlayAudio(source: AudioSource, loaded?: () => void) {
     const [player, setPlayer] = useState<null | Player>(null)
 

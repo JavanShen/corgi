@@ -19,6 +19,7 @@ interface AddTodoRef {
 
 interface Props {
     onAdd?: (val: string) => void
+    loading?: boolean
 }
 
 export type { AddTodoRef }
@@ -65,10 +66,12 @@ const CancelBtn = ({
 
 const ConfirmBtn = ({
     token,
-    onConfirm
+    onConfirm,
+    loading
 }: {
     token: { colorSuccess: string }
     onConfirm: () => void
+    loading?: boolean
 }) => (
     <Button
         style={{
@@ -91,11 +94,12 @@ const ConfirmBtn = ({
             />
         }
         onClick={onConfirm}
+        loading={loading}
     />
 )
 
 /* eslint-disable react/display-name */
-const AddTodo = forwardRef<AddTodoRef, Props>(({ onAdd }, ref) => {
+const AddTodo = forwardRef<AddTodoRef, Props>(({ onAdd, loading }, ref) => {
     const { token } = useToken()
     const inputRef = useRef<InputRef>(null)
     const [isAdding, setIsAdding] = useState(false)
@@ -120,7 +124,7 @@ const AddTodo = forwardRef<AddTodoRef, Props>(({ onAdd }, ref) => {
     }
 
     const handleConfirm = () => {
-        if (addVal.length > 0) {
+        if (addVal.length > 0 && !loading) {
             onAdd?.(addVal)
         }
     }
@@ -157,8 +161,12 @@ const AddTodo = forwardRef<AddTodoRef, Props>(({ onAdd }, ref) => {
                 keyMap={['confirm', 'cancel']}
                 state={addVal.length > 0}
             >
-                {addVal.length > 0 ? (
-                    <ConfirmBtn token={token} onConfirm={handleConfirm} />
+                {addVal.length > 0 || loading ? (
+                    <ConfirmBtn
+                        token={token}
+                        onConfirm={handleConfirm}
+                        loading={loading}
+                    />
                 ) : (
                     <CancelBtn
                         token={token}

@@ -1,124 +1,209 @@
 import { useMemo, useState } from 'react'
-import produce from 'immer'
+import { useImmerReducer } from 'use-immer'
+import type { ImmerReducer } from 'use-immer'
 import { EventEmitter } from '@corgii/utils'
 import type {
     TodoList,
     TodoListItem,
+    TodoListWithLoad,
+    TodoListItemWithLoad,
     TodoUpdate,
-    TodoUpdateCb
+    TodoUpdateCb,
+    TodoUpdatedCb,
+    TodoEvent,
+    TodoEventInfo,
+    LoadMap
 } from '@corgii/types'
 
-export type { TodoList, TodoListItem, TodoUpdate, TodoUpdateCb }
+export type {
+    TodoList,
+    TodoListItem,
+    TodoListWithLoad,
+    TodoListItemWithLoad,
+    TodoUpdate,
+    TodoUpdateCb,
+    TodoUpdatedCb,
+    TodoEvent,
+    TodoEventInfo
+}
+
+type EventEmitterInit = {
+    update: TodoUpdateCb
+    updated: TodoUpdatedCb
+}
+
+type reducerAction =
+    | (TodoEvent extends infer T
+          ? T extends 'add'
+              ? { type: 'add'; newTodo: TodoListItemWithLoad }
+              : T extends 'change'
+              ? { type: 'change'; name: string; newVal: string }
+              : { type: T; name: string }
+          : never)
+    | {
+          type: 'loading'
+          state: boolean
+          name: string
+          event: Exclude<TodoEvent, 'add'>
+      }
 
 /* eslint no-param-reassign: ["error", { "ignorePropertyModificationsFor": ["draft"] }] */
+/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "^_$" }] */
 
-const useTodo = (todoList: TodoList) => {
-    const [todos, setTodos] = useState(todoList)
-    const eventEmitter = useMemo(
-        () =>
-            new EventEmitter<{
-                update: TodoUpdate
-                updated: (...arg: Parameters<TodoUpdate>) => void
-            }>(),
-        []
-    )
+const defaultLoadMap = (): LoadMap => ({
+    remove: false,
+    change: false,
+    complete: false,
+    uncomplete: false
+})
 
-    const findTodoIndexByName = (name: string) => {
-        return todos.findIndex(item => item.name === name)
+const handleLoadProp = <T extends 'load' | 'unload'>(
+    todoList: T extends 'load' ? TodoList : TodoListWithLoad,
+    type: T
+) => {
+    return (
+        type === 'load'
+            ? todoList.map(todo => ({
+                  ...todo,
+                  loadMap: defaultLoadMap()
+              }))
+            : ((todoList as TodoListWithLoad).map(todo => {
+                  const { loadMap: _, ...rest } = todo
+                  return { ...rest }
+              }) as TodoList)
+    ) as T extends 'load' ? TodoListWithLoad : TodoList
+}
+
+const findTodoIndexByName = (
+    name: string,
+    todos: TodoList | TodoListWithLoad
+) => {
+    return todos.findIndex(item => item.name === name)
+}
+
+const initReducer = (emitter: EventEmitter<EventEmitterInit>) => {
+    const reducer: ImmerReducer<TodoListWithLoad, reducerAction> = (
+        todos,
+        action
+    ) => {
+        const index =
+            action.type === 'add' ? -1 : findTodoIndexByName(action.name, todos)
+
+        switch (action.type) {
+            case 'add':
+                todos.push(action.newTodo)
+                break
+            case 'complete':
+                todos[index].done = true
+                break
+            case 'uncomplete':
+                todos[index].done = false
+                break
+            case 'remove':
+                todos.splice(index, 1)
+                break
+            case 'change':
+                todos[index].label = action.newVal
+                break
+            case 'loading':
+                todos[index].loadMap[action.event] = action.state
+                break
+            default:
+        }
+
+        if (action.type !== 'loading')
+            emitter.emit('updated', action.type, todos)
     }
 
-    const update: TodoUpdate = async (type, newTodo, payload) => {
+    return reducer
+}
+
+const useTodo = (todoList: TodoList) => {
+    const eventEmitter = useMemo(
+        () => new EventEmitter<EventEmitterInit>(),
+        [todoList]
+    )
+    const reducer = useMemo(() => initReducer(eventEmitter), [todoList])
+    const todoListWithLoad = useMemo(
+        () => handleLoadProp(todoList, 'load'),
+        [todoList]
+    )
+    const [todos, dispatchTodos] = useImmerReducer(reducer, todoListWithLoad)
+    const [addLoading, setAddLoading] = useState(false)
+
+    const setLoad = (
+        name: string,
+        event: Exclude<TodoEvent, 'add'>,
+        state: boolean
+    ) => {
+        dispatchTodos({ type: 'loading', name, event, state })
+    }
+
+    const update: TodoUpdate = async (...arg) => {
+        const [type, payload] = arg
+
         let res = true
-        const callbackRes = await eventEmitter.emit(
-            'update',
-            type,
-            newTodo,
-            payload
-        )
 
-        if (callbackRes instanceof Array) {
-            res = (await callbackRes[0]) ?? true
-        } else {
-            res = callbackRes ?? true
+        if (type !== 'add') setLoad(payload.name, type, true)
+
+        try {
+            const callbackRes = await eventEmitter.emit('update', ...arg)
+
+            if (callbackRes instanceof Array) {
+                res = (await callbackRes[0]) ?? true
+            } else {
+                res = callbackRes ?? true
+            }
+        } catch (e) {
+            res = false
         }
 
-        if (res) {
-            setTodos(newTodo)
-            eventEmitter.emit('updated', type, newTodo, payload)
-        }
+        if (type !== 'add') setLoad(payload.name, type, false)
 
         return res
     }
 
-    const add = (val: TodoListItem) => {
-        update(
-            'add',
-            produce(todos, draft => {
-                draft.push({ ...val })
-            }),
-            {
-                newTodo: { ...val }
-            }
-        )
+    const add = async (val: TodoListItem) => {
+        setAddLoading(true)
+
+        const res = await update('add', {
+            newTodo: { ...val }
+        })
+
+        if (res)
+            dispatchTodos({
+                type: 'add',
+                newTodo: { ...val, loadMap: defaultLoadMap() }
+            })
+
+        setAddLoading(false)
     }
 
-    const toggleTodo = (name: string, val: boolean) => {
-        const index = findTodoIndexByName(name)
-        if (index > -1) {
-            update(
-                val ? 'complete' : 'uncomplete',
-                produce(todos, draft => {
-                    draft[index].done = val
-                }),
-                val
-                    ? {
-                          completeName: name
-                      }
-                    : {
-                          uncompleteName: name
-                      }
-            )
-        }
+    const complete = async (name: string) => {
+        const res = await update('complete', { name })
+        if (res) dispatchTodos({ type: 'complete', name })
     }
 
-    const complete = (name: string) => {
-        toggleTodo(name, true)
+    const uncomplete = async (name: string) => {
+        const res = await update('uncomplete', { name })
+        if (res) dispatchTodos({ type: 'uncomplete', name })
     }
 
-    const uncomplete = (name: string) => {
-        toggleTodo(name, false)
+    const remove = async (name: string) => {
+        const res = await update('remove', {
+            name
+        })
+        if (res) dispatchTodos({ type: 'remove', name })
     }
 
-    const remove = (name: string) => {
-        const index = findTodoIndexByName(name)
-        if (index > -1) {
-            update(
-                'remove',
-                produce(todos, draft => {
-                    draft.splice(index, 1)
-                }),
-                {
-                    removeName: name
-                }
-            )
-        }
-    }
-
-    const change = (name: string, newVal: string) => {
-        const index = findTodoIndexByName(name)
-        if (index > -1) {
-            update(
-                'change',
-                produce(todos, draft => {
-                    draft[index].label = newVal
-                }),
-                {
-                    changeName: name,
-                    newVal,
-                    oldVal: todos[index].label
-                }
-            )
-        }
+    const change = async (name: string, newVal: string) => {
+        const index = findTodoIndexByName(name, todos)
+        const res = await update('change', {
+            name,
+            newVal,
+            oldVal: todos[index].label
+        })
+        if (res) dispatchTodos({ type: 'change', name, newVal })
     }
 
     return {
@@ -128,7 +213,8 @@ const useTodo = (todoList: TodoList) => {
         uncomplete,
         remove,
         change,
-        event: eventEmitter.subscribe.bind(eventEmitter)
+        event: eventEmitter.subscribe.bind(eventEmitter),
+        addLoading
     }
 }
 

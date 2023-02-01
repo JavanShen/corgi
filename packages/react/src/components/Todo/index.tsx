@@ -32,7 +32,7 @@ const Todo = ({
     style,
     update
 }: TodoProps & { style?: CSSProperties }) => {
-    const { todos, complete, uncomplete, add, remove, event } =
+    const { todos, complete, uncomplete, add, remove, event, addLoading } =
         useTodo(todoList)
     const { token } = useToken()
     const addTodoRef = useRef<AddTodoRef>(null)
@@ -68,13 +68,17 @@ const Todo = ({
             }}
         >
             <Header>
-                <AddTodo onAdd={handleAdd} ref={addTodoRef} />
+                <AddTodo
+                    onAdd={handleAdd}
+                    ref={addTodoRef}
+                    loading={addLoading}
+                />
             </Header>
             <Divider style={{ margin: '14px 0' }} />
             <List>
                 <Space direction="vertical">
                     <TransitionGroup>
-                        {todos.map(({ label, done, name }) => (
+                        {todos.map(({ label, done, name, loadMap }) => (
                             <Transition
                                 key={name}
                                 duration={220}
@@ -126,6 +130,7 @@ const Todo = ({
                                             />
                                         }
                                         type="link"
+                                        loading={loadMap.remove}
                                         onClick={() => {
                                             remove(name)
                                         }}

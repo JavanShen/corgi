@@ -5,6 +5,11 @@ export { default as useTodo } from './todo/useTodo'
 export type {
     TodoList,
     TodoListItem,
+    TodoListWithLoad,
+    TodoListItemWithLoad,
     TodoUpdate,
-    TodoUpdateCb
+    TodoUpdateCb,
+    TodoUpdatedCb,
+    TodoEvent,
+    TodoEventInfo
 } from './todo/useTodo'
