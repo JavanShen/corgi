@@ -1,9 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { CSSProperties } from 'react'
-import { Card, Space, Checkbox, Button, Divider, theme } from 'antd'
-import type { CheckboxChangeEvent } from 'antd/es/checkbox'
+import { Card, Space, Divider } from 'antd'
 import { useTodo } from '@corgii/hooks'
-import { css } from '@emotion/react'
 import { TransitionGroup } from 'react-transition-group'
 import type {
     TodoProps,
@@ -13,19 +11,12 @@ import type {
     TodoListItem
 } from '@corgii/types'
 import Transition from '../../common/components/Transition'
-import { DeleteIcon } from '../../icons'
-import StrikethroughText from './components/StrikethroughText'
 import AddTodo from './components/AddTodo'
 import type { AddTodoRef } from './components/AddTodo'
-import { List, ListItem, Header } from './styled'
+import TodoItem from './components/TodoItem'
+import { List, Header } from './styled'
 
 export type { TodoProps, TodoUpdateCb, TodoEvent, TodoList, TodoListItem }
-
-interface CheckboxChangeEventCustome extends CheckboxChangeEvent {
-    target: CheckboxChangeEvent['target'] & { 'aria-label': string }
-}
-
-const { useToken } = theme
 
 const Todo = ({
     todoList,
@@ -34,7 +25,6 @@ const Todo = ({
 }: TodoProps & { style?: CSSProperties }) => {
     const { todos, complete, uncomplete, add, remove, event, addLoading } =
         useTodo(todoList)
-    const { token } = useToken()
     const addTodoRef = useRef<AddTodoRef>(null)
 
     useEffect(() => {
@@ -46,9 +36,8 @@ const Todo = ({
         })
     }, [])
 
-    const handleChange = ({ target }: CheckboxChangeEventCustome) => {
-        const name = target['aria-label']
-        if (target.checked) {
+    const handleChange = (state: boolean, name: string) => {
+        if (state) {
             complete(name)
         } else {
             uncomplete(name)
@@ -101,41 +90,14 @@ const Todo = ({
                                     transition: 'all 220ms ease-in-out'
                                 }}
                             >
-                                <ListItem key={name}>
-                                    <Checkbox
-                                        aria-label={name}
-                                        checked={done}
-                                        onChange={
-                                            handleChange as (
-                                                e: CheckboxChangeEvent
-                                            ) => void
-                                        }
-                                    >
-                                        <StrikethroughText isStrike={done}>
-                                            {label}
-                                        </StrikethroughText>
-                                    </Checkbox>
-                                    <Button
-                                        aria-label="removeBtn"
-                                        icon={
-                                            <DeleteIcon
-                                                css={css({
-                                                    fill: '#666666',
-                                                    '&:hover': {
-                                                        fill: token.colorError
-                                                    },
-                                                    transition:
-                                                        'fill 220ms ease-in-out'
-                                                })}
-                                            />
-                                        }
-                                        type="link"
-                                        loading={loadMap.remove}
-                                        onClick={() => {
-                                            remove(name)
-                                        }}
-                                    />
-                                </ListItem>
+                                <TodoItem
+                                    name={name}
+                                    label={label}
+                                    done={done}
+                                    removeLoading={loadMap.remove}
+                                    onChange={handleChange}
+                                    onRemove={remove}
+                                />
                             </Transition>
                         ))}
                     </TransitionGroup>
