@@ -13,6 +13,7 @@ interface TransitionProps {
     mountOnEnter?: boolean
     unmountOnExit?: boolean
     children: ReactNode
+    in?: boolean
 }
 
 /* eslint-disable react/jsx-props-no-spreading */
@@ -29,6 +30,7 @@ const Transition = ({
     mountOnEnter = true,
     unmountOnExit = true,
     children,
+    in: inProp,
     ...props
 }: TransitionProps) => {
     const nodeRef = useRef(null)
@@ -62,6 +64,7 @@ const Transition = ({
             nodeRef={nodeRef}
             mountOnEnter={mountOnEnter}
             unmountOnExit={unmountOnExit}
+            in={inProp}
             {...props}
         >
             {transitionState => (

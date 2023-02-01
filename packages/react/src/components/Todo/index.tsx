@@ -6,6 +6,7 @@ import { TransitionGroup } from 'react-transition-group'
 import type {
     TodoProps,
     TodoUpdateCb,
+    TodoUpdatedCb,
     TodoEvent,
     TodoList,
     TodoListItem
@@ -16,7 +17,14 @@ import type { AddTodoRef } from './components/AddTodo'
 import TodoItem from './components/TodoItem'
 import { List, Header } from './styled'
 
-export type { TodoProps, TodoUpdateCb, TodoEvent, TodoList, TodoListItem }
+export type {
+    TodoProps,
+    TodoUpdateCb,
+    TodoUpdatedCb,
+    TodoEvent,
+    TodoList,
+    TodoListItem
+}
 
 const Todo = ({
     todoList,
@@ -103,6 +111,8 @@ const Todo = ({
                                     label={label}
                                     done={done}
                                     removeLoading={loadMap.remove}
+                                    completeLoading={loadMap.complete}
+                                    uncompleteLoading={loadMap.uncomplete}
                                     onChange={handleChange}
                                     onRemove={remove}
                                 />

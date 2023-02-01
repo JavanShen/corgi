@@ -6,5 +6,6 @@ export type {
     TodoList,
     TodoListItem,
     TodoEvent,
-    TodoUpdateCb
+    TodoUpdateCb,
+    TodoUpdatedCb
 } from './Todo'

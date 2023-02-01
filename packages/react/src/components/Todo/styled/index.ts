@@ -18,7 +18,10 @@ const ListItem = styled.div({
 })
 
 const TodoText = styled.span({
-    letterSpacing: 1
+    letterSpacing: 1,
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center'
 })
 
 const Header = styled.div({
@@ -35,4 +38,11 @@ const AddTodoContainer = styled.div({
     flex: 1
 })
 
-export { List, ListItem, TodoText, Header, AddTodoContainer }
+const Line = styled.div({
+    height: 2,
+    width: '100%',
+    backgroundColor: '#2d2d2d',
+    borderRadius: 3
+})
+
+export { List, ListItem, TodoText, Header, AddTodoContainer, Line }

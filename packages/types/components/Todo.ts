@@ -48,7 +48,7 @@ type TodoUpdate = (...arg: TodoUpdateArg) => boolean | Promise<boolean> | void
 
 type TodoUpdateCb = TodoUpdate
 
-type TodoUpdatedCb = (type: TodoEvent, newTodos: TodoListWithLoad) => void
+type TodoUpdatedCb = (type: TodoEvent, newTodos: TodoList) => void
 
 interface TodoProps {
     todoList: TodoList

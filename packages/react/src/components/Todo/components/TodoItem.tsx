@@ -10,6 +10,9 @@ interface TodoItemProps {
     label: string
     done: boolean
     removeLoading: boolean
+    completeLoading: boolean
+    uncompleteLoading: boolean
+    disabled?: boolean
     onChange: (state: boolean, name: string) => void
     onRemove: (name: string) => void
 }
@@ -24,7 +27,10 @@ const TodoItem = ({
     name,
     done,
     label,
+    disabled,
     removeLoading,
+    completeLoading,
+    uncompleteLoading,
     onChange,
     onRemove
 }: TodoItemProps) => {
@@ -36,13 +42,20 @@ const TodoItem = ({
     }
 
     return (
-        <ListItem key={name}>
+        <ListItem
+            key={name}
+            style={{
+                opacity: done && !uncompleteLoading ? 0.6 : 1,
+                transition: 'opacity 200ms'
+            }}
+        >
             <Checkbox
                 aria-label={name}
                 checked={done}
+                disabled={disabled || completeLoading || uncompleteLoading}
                 onChange={handleChange as (e: CheckboxChangeEvent) => void}
             >
-                <StrikethroughText isStrike={done}>{label}</StrikethroughText>
+                <StrikethroughText isStriked={done}>{label}</StrikethroughText>
             </Checkbox>
             <Button
                 aria-label="removeBtn"

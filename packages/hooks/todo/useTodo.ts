@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { current } from 'immer'
 import { useImmerReducer } from 'use-immer'
 import type { ImmerReducer } from 'use-immer'
 import { EventEmitter } from '@corgii/utils'
@@ -112,7 +113,11 @@ const initReducer = (emitter: EventEmitter<EventEmitterInit>) => {
         }
 
         if (action.type !== 'loading')
-            emitter.emit('updated', action.type, todos)
+            emitter.emit(
+                'updated',
+                action.type,
+                handleLoadProp(current(todos), 'unload')
+            )
     }
 
     return reducer
