@@ -90,34 +90,36 @@ const initReducer = (emitter: EventEmitter<EventEmitterInit>) => {
         const index =
             action.type === 'add' ? -1 : findTodoIndexByName(action.name, todos)
 
-        switch (action.type) {
-            case 'add':
-                todos.push(action.newTodo)
-                break
-            case 'complete':
-                todos[index].done = true
-                break
-            case 'uncomplete':
-                todos[index].done = false
-                break
-            case 'remove':
-                todos.splice(index, 1)
-                break
-            case 'change':
-                todos[index].label = action.newVal
-                break
-            case 'loading':
-                todos[index].loadMap[action.event] = action.state
-                break
-            default:
-        }
+        if (index > -1 || action.type === 'add') {
+            switch (action.type) {
+                case 'add':
+                    todos.push(action.newTodo)
+                    break
+                case 'complete':
+                    todos[index].done = true
+                    break
+                case 'uncomplete':
+                    todos[index].done = false
+                    break
+                case 'remove':
+                    todos.splice(index, 1)
+                    break
+                case 'change':
+                    todos[index].label = action.newVal
+                    break
+                case 'loading':
+                    todos[index].loadMap[action.event] = action.state
+                    break
+                default:
+            }
 
-        if (action.type !== 'loading')
-            emitter.emit(
-                'updated',
-                action.type,
-                handleLoadProp(current(todos), 'unload')
-            )
+            if (action.type !== 'loading')
+                emitter.emit(
+                    'updated',
+                    action.type,
+                    handleLoadProp(current(todos), 'unload')
+                )
+        }
     }
 
     return reducer
