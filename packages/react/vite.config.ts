@@ -15,6 +15,11 @@ export default defineConfig({
         react(),
         svgr()
     ],
+    server: {
+        fs: {
+            strict: false
+        }
+    },
     build: {
         lib: {
             entry: resolve(__dirname, './index.ts'),
