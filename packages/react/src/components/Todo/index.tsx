@@ -21,18 +21,26 @@ export type { TodoProps, TodoUpdateCb, TodoEvent, TodoList, TodoListItem }
 const Todo = ({
     todoList,
     style,
-    update
+    update,
+    updated
 }: TodoProps & { style?: CSSProperties }) => {
     const { todos, complete, uncomplete, add, remove, event, addLoading } =
         useTodo(todoList)
     const addTodoRef = useRef<AddTodoRef>(null)
 
     useEffect(() => {
-        event('update', update)
-        event('updated', type => {
+        event(
+            'update',
+            update ||
+                (() => {
+                    // 默认 update
+                })
+        )
+        event('updated', (type, newTodos) => {
             if (type === 'add') {
                 addTodoRef?.current?.clear()
             }
+            updated?.(type, newTodos)
         })
     }, [])
 
