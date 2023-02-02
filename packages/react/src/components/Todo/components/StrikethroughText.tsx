@@ -1,15 +1,43 @@
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 import { TodoText, Line } from '../styled'
 import Transition from '../../../common/components/Transition'
 
-interface Props {
+interface StrikethroughTextProps {
     isStriked: boolean
     children: string
 }
 
-const StrikethroughText = ({ isStriked, children }: Props) => {
+interface StrikethroughTextRef {
+    isEllipsis: boolean
+}
+
+export type { StrikethroughTextRef }
+
+/* eslint-disable react/display-name */
+const StrikethroughText = forwardRef<
+    StrikethroughTextRef,
+    StrikethroughTextProps
+>(({ isStriked, children }, ref) => {
+    const spanRef = useRef<HTMLSpanElement>(null)
+
+    useImperativeHandle(ref, () => ({
+        isEllipsis: spanRef.current
+            ? spanRef.current.scrollWidth > spanRef.current.clientWidth
+            : false
+    }))
+
     return (
         <TodoText>
-            {children}
+            <span
+                ref={spanRef}
+                style={{
+                    overflow: 'hidden',
+                    whiteSpace: 'nowrap',
+                    textOverflow: 'ellipsis'
+                }}
+            >
+                {children}
+            </span>
             <Transition
                 defaultStyle={{ position: 'absolute', left: 0 }}
                 in={!isStriked}
@@ -23,6 +51,6 @@ const StrikethroughText = ({ isStriked, children }: Props) => {
             </Transition>
         </TodoText>
     )
-}
+})
 
 export default StrikethroughText

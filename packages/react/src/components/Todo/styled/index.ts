@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 
 const padding = '5px 12px'
 const width = 200
+const textWidth = width - 70
 
 const List = styled.div()
 
@@ -9,7 +10,7 @@ const ListItem = styled.div({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    minWidth: width,
+    width,
     borderRadius: 5,
     padding,
     '&:hover': {
@@ -17,7 +18,8 @@ const ListItem = styled.div({
     }
 })
 
-const TodoText = styled.span({
+const TodoText = styled.div({
+    maxWidth: textWidth,
     letterSpacing: 1,
     position: 'relative',
     display: 'flex',

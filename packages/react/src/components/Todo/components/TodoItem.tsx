@@ -1,7 +1,9 @@
-import { Checkbox, Button, theme } from 'antd'
+import { useRef, useState } from 'react'
+import { Checkbox, Button, theme, Tooltip } from 'antd'
 import type { CheckboxChangeEvent } from 'antd/es/checkbox'
 import { css } from '@emotion/react'
 import StrikethroughText from './StrikethroughText'
+import type { StrikethroughTextRef as StrikeTextRef } from './StrikethroughText'
 import { ListItem } from '../styled'
 import { DeleteIcon } from '../../../icons'
 
@@ -35,48 +37,69 @@ const TodoItem = ({
     onRemove
 }: TodoItemProps) => {
     const { token } = useToken()
+    const StrikethroughTextRef = useRef<StrikeTextRef>(null)
+    const [tooltipShow, setTooltipShow] = useState(false)
 
     const handleChange = ({ target }: CheckboxChangeEventCustome) => {
         const targetName = target['aria-label']
         onChange(target.checked, targetName)
     }
 
+    const openTooltip = () => {
+        if (StrikethroughTextRef.current?.isEllipsis) {
+            setTooltipShow(true)
+        }
+    }
+
+    const closeTooltip = () => {
+        setTooltipShow(false)
+    }
+
     return (
-        <ListItem
-            key={name}
-            style={{
-                opacity: done && !uncompleteLoading ? 0.6 : 1,
-                transition: 'opacity 200ms'
-            }}
-        >
-            <Checkbox
-                aria-label={name}
-                checked={done}
-                disabled={disabled || completeLoading || uncompleteLoading}
-                onChange={handleChange as (e: CheckboxChangeEvent) => void}
-            >
-                <StrikethroughText isStriked={done}>{label}</StrikethroughText>
-            </Checkbox>
-            <Button
-                aria-label="removeBtn"
-                icon={
-                    <DeleteIcon
-                        css={css({
-                            fill: '#666666',
-                            '&:hover': {
-                                fill: token.colorError
-                            },
-                            transition: 'fill 220ms ease-in-out'
-                        })}
-                    />
-                }
-                type="link"
-                loading={removeLoading}
-                onClick={() => {
-                    onRemove(name)
+        <Tooltip title={label} open={tooltipShow}>
+            <ListItem
+                key={name}
+                style={{
+                    opacity: done && !uncompleteLoading ? 0.6 : 1,
+                    transition: 'opacity 200ms'
                 }}
-            />
-        </ListItem>
+                onMouseEnter={openTooltip}
+                onMouseLeave={closeTooltip}
+            >
+                <Checkbox
+                    aria-label={name}
+                    checked={done}
+                    disabled={disabled || completeLoading || uncompleteLoading}
+                    onChange={handleChange as (e: CheckboxChangeEvent) => void}
+                >
+                    <StrikethroughText
+                        ref={StrikethroughTextRef}
+                        isStriked={done}
+                    >
+                        {label}
+                    </StrikethroughText>
+                </Checkbox>
+                <Button
+                    aria-label="removeBtn"
+                    icon={
+                        <DeleteIcon
+                            css={css({
+                                fill: '#666666',
+                                '&:hover': {
+                                    fill: token.colorError
+                                },
+                                transition: 'fill 220ms ease-in-out'
+                            })}
+                        />
+                    }
+                    type="link"
+                    loading={removeLoading}
+                    onClick={() => {
+                        onRemove(name)
+                    }}
+                />
+            </ListItem>
+        </Tooltip>
     )
 }
 
