@@ -49,7 +49,6 @@ type reducerAction =
       }
 
 /* eslint no-param-reassign: ["error", { "ignorePropertyModificationsFor": ["draft"] }] */
-/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "^_$" }] */
 
 const defaultLoadMap = (): LoadMap => ({
     remove: false,
@@ -69,7 +68,7 @@ const handleLoadProp = <T extends 'load' | 'unload'>(
                   loadMap: defaultLoadMap()
               }))
             : ((todoList as TodoListWithLoad).map(todo => {
-                  const { loadMap: _, ...rest } = todo
+                  const { loadMap, ...rest } = todo
                   return { ...rest }
               }) as TodoList)
     ) as T extends 'load' ? TodoListWithLoad : TodoList
@@ -110,6 +109,7 @@ const initReducer = (emitter: EventEmitter<EventEmitterInit>) => {
                 case 'loading':
                     todos[index].loadMap[action.event] = action.state
                     break
+                /* c8 ignore next */
                 default:
             }
 

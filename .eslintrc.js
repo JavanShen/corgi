@@ -81,6 +81,11 @@ module.exports = {
         'react/jsx-filename-extension': [
             2,
             { extensions: ['js', 'jsx', 'ts', 'tsx'] }
+        ],
+        // 可以不使用解构剩余属性前的变量
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            { ignoreRestSiblings: true }
         ]
     },
     // 解决报错unable resolve

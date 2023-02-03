@@ -12,6 +12,7 @@ importers:
       '@edge-runtime/vm': 2.0.2
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
+      '@testing-library/react-hooks': ^8.0.1
       '@types/jsdom': ^20.0.1
       '@types/node': ^18.11.0
       '@types/react': ^18.0.21
@@ -49,6 +50,7 @@ importers:
       react-dom: ^18.2.0
       react-is: ^18.2.0
       react-router-dom: ^6.6.1
+      react-test-renderer: ^18.2.0
       react-transition-group: ^4.4.5
       rollup: ^3.9.1
       styled-components: ^5.3.6
@@ -85,6 +87,7 @@ importers:
       '@commitlint/cli': 17.4.2
       '@commitlint/config-conventional': 17.4.2
       '@edge-runtime/vm': 2.0.2
+      '@testing-library/react-hooks': 8.0.1_ukj6e7lljkv3jczigzxc3nf53a
       '@types/jsdom': 20.0.1
       '@types/node': 18.11.18
       '@types/react': 18.0.26
@@ -114,6 +117,7 @@ importers:
       postcss: 8.4.21
       prettier: 2.8.3
       react-is: 18.2.0
+      react-test-renderer: 18.2.0_react@18.2.0
       rollup: 3.10.0
       styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
       stylelint: 14.16.1
@@ -2429,6 +2433,30 @@ packages:
   /@sxzz/popperjs-es/2.11.7:
     resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
     dev: false
+
+  /@testing-library/react-hooks/8.0.1_ukj6e7lljkv3jczigzxc3nf53a:
+    resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@types/react': ^16.9.0 || ^17.0.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+      react-test-renderer: ^16.9.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react-dom:
+        optional: true
+      react-test-renderer:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.20.7
+      '@types/react': 18.0.26
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-error-boundary: 3.1.4_react@18.2.0
+      react-test-renderer: 18.2.0_react@18.2.0
+    dev: true
 
   /@tootallnate/once/2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -12201,6 +12229,27 @@ packages:
       '@remix-run/router': 1.2.1
       react: 18.2.0
     dev: false
+
+  /react-shallow-renderer/16.15.0_react@18.2.0:
+    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      object-assign: 4.1.1
+      react: 18.2.0
+      react-is: 18.2.0
+    dev: true
+
+  /react-test-renderer/18.2.0_react@18.2.0:
+    resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-is: 18.2.0
+      react-shallow-renderer: 16.15.0_react@18.2.0
+      scheduler: 0.23.0
+    dev: true
 
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
