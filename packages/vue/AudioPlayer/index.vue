@@ -14,10 +14,10 @@
 
 <script setup lang="ts">
 import { usePlayAudio } from '@corgii/composables'
-import type { Source } from '@corgii/types'
+import type { AudioSource } from '@corgii/types'
 
 interface Props {
-    source: Source
+    source: AudioSource
 }
 
 const props = withDefaults(defineProps<Props>(), {

@@ -1,10 +1,9 @@
 import { Player } from '@corgii/utils'
-import type { Source } from '@corgii/utils'
-import debounce from 'lodash/debounce'
+import type { AudioSource } from '@corgii/utils'
 
-export type { Source }
+export type { AudioSource }
 
-export default function usePlayAudio(source: Source) {
+export default function usePlayAudio(source: AudioSource) {
     const currentTime = ref(0)
     const totalTime = ref(0)
     const totalTimeText = ref('00:00')
@@ -31,9 +30,9 @@ export default function usePlayAudio(source: Source) {
         player.pause()
     }
 
-    const updateAudioTime = debounce((val: number) => {
+    const updateAudioTime = (val: number) => {
         player.currentTime = val
-    }, 500)
+    }
     const updateTime = (val: number) => {
         isManualUpdating.value = true
         currentTime.value = val
