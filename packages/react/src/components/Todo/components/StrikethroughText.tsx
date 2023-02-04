@@ -27,7 +27,7 @@ const StrikethroughText = forwardRef<
     }))
 
     return (
-        <TodoText>
+        <TodoText aria-label="todoLabel">
             <span
                 ref={spanRef}
                 style={{
@@ -47,7 +47,7 @@ const StrikethroughText = forwardRef<
                 mountOnEnter={false}
                 unmountOnExit={false}
             >
-                <Line />
+                <Line aria-label="strikethrough" />
             </Transition>
         </TodoText>
     )

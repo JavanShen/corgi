@@ -147,6 +147,7 @@ const AddTodo = forwardRef<AddTodoRef, Props>(({ onAdd, loading }, ref) => {
             >
                 {isAdding ? (
                     <Input
+                        aria-label="addInput"
                         ref={inputRef}
                         value={addVal}
                         onChange={handleInput}
@@ -163,12 +164,14 @@ const AddTodo = forwardRef<AddTodoRef, Props>(({ onAdd, loading }, ref) => {
             >
                 {addVal.length > 0 || loading ? (
                     <ConfirmBtn
+                        aria-label="addConfirmBtn"
                         token={token}
                         onConfirm={handleConfirm}
                         loading={loading}
                     />
                 ) : (
                     <CancelBtn
+                        aria-label="addBtn"
                         token={token}
                         toogleAddState={toogleAddState}
                         state={isAdding}

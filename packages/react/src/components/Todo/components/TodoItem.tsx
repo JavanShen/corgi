@@ -20,7 +20,7 @@ interface TodoItemProps {
 }
 
 interface CheckboxChangeEventCustome extends CheckboxChangeEvent {
-    target: CheckboxChangeEvent['target'] & { 'aria-label': string }
+    target: CheckboxChangeEvent['target'] & { 'data-name': string }
 }
 
 const { useToken } = theme
@@ -41,7 +41,7 @@ const TodoItem = ({
     const [tooltipShow, setTooltipShow] = useState(false)
 
     const handleChange = ({ target }: CheckboxChangeEventCustome) => {
-        const targetName = target['aria-label']
+        const targetName = target['data-name']
         onChange(target.checked, targetName)
     }
 
@@ -56,7 +56,7 @@ const TodoItem = ({
     }
 
     return (
-        <Tooltip title={label} open={tooltipShow}>
+        <Tooltip title={label} open={tooltipShow} aria-label="tooltip">
             <ListItem
                 key={name}
                 style={{
@@ -65,9 +65,11 @@ const TodoItem = ({
                 }}
                 onMouseEnter={openTooltip}
                 onMouseLeave={closeTooltip}
+                aria-label="todo"
             >
                 <Checkbox
-                    aria-label={name}
+                    data-name={name}
+                    aria-label="checkbox"
                     checked={done}
                     disabled={disabled || completeLoading || uncompleteLoading}
                     onChange={handleChange as (e: CheckboxChangeEvent) => void}
