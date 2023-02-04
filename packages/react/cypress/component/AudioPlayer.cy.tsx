@@ -1,7 +1,7 @@
 import { readMP3File } from '@corgii/utils/cypress/file'
 import { move } from '@corgii/utils/cypress/action'
 import AudioPlayer from '../../src/components/AudioPlayer'
-import selector from '../data/selector'
+import { audioPlayerSelector } from '../data/selector'
 
 const link =
     'https://howlerjs.com/assets/howler.js/examples/player/audio/rave_digger.webm'
@@ -20,7 +20,7 @@ const {
     volumeButtonSelector,
     muteIconSelector,
     volumeIconSelector
-} = selector
+} = audioPlayerSelector
 
 const AudioLink = () => <AudioPlayer source={link} />
 

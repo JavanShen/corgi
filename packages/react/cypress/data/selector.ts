@@ -1,6 +1,6 @@
-import { prefix } from '@corgii/utils/cypress/selector'
+import { generateSelectors } from '@corgii/utils/cypress/selector'
 
-const collect = [
+const audioPlayerCollect = [
     'title',
     'artist',
     'play',
@@ -13,22 +13,6 @@ const collect = [
     'volumeIcon'
 ] as const
 
-type Collect = (typeof collect)[number]
+const audioPlayerSelector = generateSelectors(audioPlayerCollect)
 
-type SelectorCollect = {
-    [key in Collect as `${key}Selector`]: `[aria-label=${key}]`
-}
-
-const generateSelectors = () => {
-    const obj: Record<string, string> = {}
-
-    new Set(collect).forEach(val => {
-        obj[prefix('Selector', val)] = `[${prefix(val)}]`
-    })
-
-    return obj as SelectorCollect
-}
-
-const selector: SelectorCollect = generateSelectors()
-
-export default selector
+export { audioPlayerSelector }
