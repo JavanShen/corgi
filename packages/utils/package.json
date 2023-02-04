@@ -17,7 +17,8 @@
   },
   "scripts": {
     "build": "tsc && vite build",
-    "test": "vitest --coverage"
+    "test": "vitest --coverage",
+    "tsc": "tsc"
   },
   "keywords": ["corgii", "utils"],
   "author": "apine",

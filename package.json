@@ -20,6 +20,13 @@
     "test:utils": "pnpm run --filter @corgii/utils test",
     "test:hooks": "pnpm run --filter @corgii/hooks test",
     "test:react": "pnpm run --filter @corgii/react test",
+    "tsc": "pnpm run tsc:react && pnpm run tsc:vue && pnpm run tsc:utils && pnpm run tsc:types && pnpm run tsc:composables && pnpm run tsc:hooks",
+    "tsc:react": "pnpm run --filter @corgii/react tsc",
+    "tsc:vue": "pnpm run --filter @corgii/vue tsc",
+    "tsc:utils": "pnpm run --filter @corgii/utils tsc",
+    "tsc:types": "pnpm run --filter @corgii/types tsc",
+    "tsc:composables": "pnpm run --filter @corgii/composables tsc",
+    "tsc:hooks": "pnpm run --filter @corgii/hooks tsc",
     "prepare": "husky install"
   },
   "keywords": [

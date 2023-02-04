@@ -2,7 +2,9 @@
   "name": "@corgii/vue",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "tsc": "vue-tsc"
+  },
   "dependencies": {
     "@corgii/composables": "workspace:^1.0.0",
     "@corgii/utils": "workspace:^1.0.0"

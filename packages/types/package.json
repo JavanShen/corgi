@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "tsc": "tsc --project tsconfig.check.json",
     "prepublishOnly": "pnpm run build"
   },
   "keywords": ["corgii", "type"],
