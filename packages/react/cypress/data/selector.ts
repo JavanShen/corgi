@@ -13,6 +13,17 @@ const audioPlayerCollect = [
     'volumeIcon'
 ] as const
 
-const audioPlayerSelector = generateSelectors(audioPlayerCollect)
+const todoCollect = [
+    'addBtn',
+    'addConfirmBtn',
+    'addInput',
+    'removeBtn',
+    'todo',
+    'todoLabel',
+    'strikethrough'
+] as const
 
-export { audioPlayerSelector }
+const audioPlayerSelector = generateSelectors(audioPlayerCollect)
+const todoSelector = generateSelectors(todoCollect)
+
+export { audioPlayerSelector, todoSelector }
