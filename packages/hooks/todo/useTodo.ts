@@ -151,7 +151,12 @@ const useTodo = (todoList: TodoList) => {
 
         let res = true
 
-        if (type !== 'add') setLoad(payload.name, type, true)
+        if (type === 'add') {
+            if (findTodoIndexByName(payload.newTodo.name, todos) > -1)
+                return false
+        } else {
+            setLoad(payload.name, type, true)
+        }
 
         try {
             const callbackRes = await eventEmitter.emit('update', ...arg)
