@@ -60,6 +60,7 @@ const CancelBtn = ({
                 />
             }
             onClick={toogleAddState}
+            aria-label="addBtn"
         />
     )
 }
@@ -95,6 +96,7 @@ const ConfirmBtn = ({
         }
         onClick={onConfirm}
         loading={loading}
+        aria-label="addConfirmBtn"
     />
 )
 
@@ -164,14 +166,12 @@ const AddTodo = forwardRef<AddTodoRef, Props>(({ onAdd, loading }, ref) => {
             >
                 {addVal.length > 0 || loading ? (
                     <ConfirmBtn
-                        aria-label="addConfirmBtn"
                         token={token}
                         onConfirm={handleConfirm}
                         loading={loading}
                     />
                 ) : (
                     <CancelBtn
-                        aria-label="addBtn"
                         token={token}
                         toogleAddState={toogleAddState}
                         state={isAdding}

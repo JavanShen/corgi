@@ -44,7 +44,9 @@ type TodoUpdateArg =
     | [type: 'remove', payload: TodoEventInfo['remove']]
     | [type: 'change', payload: TodoEventInfo['change']]
 
-type TodoUpdate = (...arg: TodoUpdateArg) => boolean | Promise<boolean> | void
+type TodoUpdate = (
+    ...arg: TodoUpdateArg
+) => boolean | Promise<boolean> | void | Promise<void>
 
 type TodoUpdateCb = TodoUpdate
 
