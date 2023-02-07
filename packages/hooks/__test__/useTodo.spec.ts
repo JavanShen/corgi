@@ -46,33 +46,65 @@ describe('useTodo', () => {
         ])
     })
 
-    it('新增待办', async () => {
-        const { result, waitForNextUpdate } = renderHookWithTodoList()
+    describe('新增待办', () => {
+        it('新增', async () => {
+            const { result, waitForNextUpdate } = renderHookWithTodoList()
 
-        result.current.add({ label: 'three', name: 'three', done: true })
+            result.current.add({ label: 'three', name: 'three', done: true })
 
-        await waitForNextUpdate()
+            await waitForNextUpdate()
 
-        expect(result.current.todos).toStrictEqual(<TodoListWithLoad>[
-            {
-                label: 'one',
-                name: 'one',
-                done: false,
-                loadMap: initLoadMap()
-            },
-            {
-                label: 'two',
-                name: 'two',
-                done: true,
-                loadMap: initLoadMap()
-            },
-            {
-                label: 'three',
-                name: 'three',
-                done: true,
-                loadMap: initLoadMap()
-            }
-        ])
+            expect(result.current.todos).toStrictEqual(<TodoListWithLoad>[
+                {
+                    label: 'one',
+                    name: 'one',
+                    done: false,
+                    loadMap: initLoadMap()
+                },
+                {
+                    label: 'two',
+                    name: 'two',
+                    done: true,
+                    loadMap: initLoadMap()
+                },
+                {
+                    label: 'three',
+                    name: 'three',
+                    done: true,
+                    loadMap: initLoadMap()
+                }
+            ])
+        })
+
+        it('重复新增', async () => {
+            const { result, waitForNextUpdate } = renderHookWithTodoList()
+
+            result.current.add({ label: 'three', name: 'three', done: true })
+            await waitForNextUpdate()
+            result.current.add({ label: 'four', name: 'three', done: false })
+            await waitForNextUpdate()
+
+            expect(result.current.todos).toStrictEqual(<TodoListWithLoad>[
+                {
+                    label: 'one',
+                    name: 'one',
+                    done: false,
+                    loadMap: initLoadMap()
+                },
+                {
+                    label: 'two',
+                    name: 'two',
+                    done: true,
+                    loadMap: initLoadMap()
+                },
+                {
+                    label: 'three',
+                    name: 'three',
+                    done: true,
+                    loadMap: initLoadMap()
+                }
+            ])
+        })
     })
 
     it('删除待办', async () => {
