@@ -215,9 +215,15 @@ describe('<Todo>', () => {
             )
 
             getElementByIndex(todoLabelSelector)
-                .find(strikethroughSelector)
-                .parent()
-                .should('have.css', 'width', '26.450000762939453px')
+                .find('span')
+                .then($label => {
+                    const width = $label.width() || 0
+
+                    getElementByIndex(todoLabelSelector)
+                        .find(strikethroughSelector)
+                        .parent()
+                        .should('have.css', 'width', `${width}px`)
+                })
         }
 
         it('确认完成', () => {
