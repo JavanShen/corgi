@@ -71,11 +71,12 @@ describe('<Todo>', () => {
 
             cy.get(todoItemSelector)
                 .should('have.length', len)
-                .get(`${todoItemSelector}:last`)
+                .eq(-1)
+                .as('last')
                 .find(todoLabelSelector)
                 .find('span')
                 .should('have.text', label)
-                .get(`${todoItemSelector}:last`)
+                .get('@last')
                 .find('input[type="checkbox"]')
                 .should('not.be.checked')
         }
@@ -182,9 +183,15 @@ describe('<Todo>', () => {
             )
 
             getElementByIndex(todoLabelSelector)
-                .find(strikethroughSelector)
-                .parent()
-                .should('have.css', 'width', '26.450000762939453px')
+                .find('span')
+                .then($label => {
+                    const width = $label.width() || 0
+
+                    getElementByIndex(todoLabelSelector)
+                        .find(strikethroughSelector)
+                        .parent()
+                        .should('have.css', 'width', `${width}px`)
+                })
         }
 
         const checkUncompleteStyle = () => {
