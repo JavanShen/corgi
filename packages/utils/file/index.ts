@@ -15,3 +15,4 @@ const fileToBlob = async (file: File) => {
 }
 
 export { arrayBufferToBase64, fileToBlob }
+export { id3FromFile, id3FromUrl } from './id3'

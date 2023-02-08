@@ -1,7 +1,11 @@
-import { fromFile, fromUrl } from 'id3js'
 import type { AudioSource } from '@corgii/types'
 import { secondsToMinutes } from '../time'
-import { arrayBufferToBase64, fileToBlob } from '../file'
+import {
+    arrayBufferToBase64,
+    fileToBlob,
+    id3FromFile,
+    id3FromUrl
+} from '../file'
 import { getType } from '../verify'
 
 export type { AudioSource }
@@ -39,8 +43,8 @@ export default class Player extends Audio {
                 const { source } = this
                 const tags =
                     typeof source === 'string'
-                        ? await fromUrl(source)
-                        : await fromFile(
+                        ? await id3FromUrl(source)
+                        : await id3FromFile(
                               getType(source) === 'File'
                                   ? ((await fileToBlob(source as File)) as File)
                                   : (source as File)
