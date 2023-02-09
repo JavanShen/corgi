@@ -5,8 +5,7 @@ import type { AudioSource } from '@corgii/utils'
 
 export type { AudioSource }
 
-// TODO 卸载后移除监听事件
-export default function usePlayAudio(source: AudioSource, loaded?: () => void) {
+const usePlayAudio = (source: AudioSource, loaded?: () => void) => {
     const [player, setPlayer] = useState<null | Player>(null)
 
     const [currentTime, setCurrentTime] = useState(0)
@@ -62,6 +61,10 @@ export default function usePlayAudio(source: AudioSource, loaded?: () => void) {
             setImageSrc(i)
         })
     }, [player])
+
+    useEffect(() => {
+        player?.destroy()
+    }, [])
 
     const play = () => {
         player?.play()
@@ -124,3 +127,5 @@ export default function usePlayAudio(source: AudioSource, loaded?: () => void) {
         unmute
     }
 }
+
+export default usePlayAudio
