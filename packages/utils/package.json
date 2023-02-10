@@ -1,7 +1,7 @@
 {
-  "name": "@corgii/utils",
+  "name": "@corgwn/utils",
   "version": "1.0.0",
-  "description": "utils for corgii",
+  "description": "utils for corgwn",
   "files": ["es", "lib"],
   "publishConfig": {
     "main": "./lib/index.js",
@@ -20,11 +20,11 @@
     "test": "vitest --coverage",
     "tsc": "tsc"
   },
-  "keywords": ["corgii", "utils"],
+  "keywords": ["corgwn", "utils"],
   "author": "apine",
   "license": "MIT",
   "dependencies": {
     "id3js": "^2.1.1",
-    "@corgii/types": "workspace:^1.0.0"
+    "@corgwn/types": "workspace:^1.0.0"
   }
 }

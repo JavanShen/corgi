@@ -1,5 +1,5 @@
 {
-  "name": "@corgii/demo-react",
+  "name": "@corgwn/demo-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,6 @@
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "@corgii/react": "workspace:^1.0.0"
+    "@corgwn/react": "workspace:^1.0.0"
   }
 }

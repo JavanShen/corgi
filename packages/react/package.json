@@ -1,5 +1,5 @@
 {
-  "name": "@corgii/react",
+  "name": "@corgwn/react",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -18,13 +18,13 @@
     "react",
     "antd",
     "components",
-    "corgi"
+    "corgwn"
   ],
   "dependencies": {
-    "@corgii/hooks": "workspace:^1.0.0",
-    "@corgii/utils": "workspace:^1.0.0"
+    "@corgwn/hooks": "workspace:^1.0.0",
+    "@corgwn/utils": "workspace:^1.0.0"
   },
   "devDependencies": {
-    "@corgii/types": "workspace:^1.0.0"
+    "@corgwn/types": "workspace:^1.0.0"
   }
 }

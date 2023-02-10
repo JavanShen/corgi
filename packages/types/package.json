@@ -1,7 +1,7 @@
 {
-  "name": "@corgii/types",
+  "name": "@corgwn/types",
   "version": "1.0.0",
-  "description": "types for corgii",
+  "description": "types for corgwn",
   "publishConfig": {
     "types": "index.d.ts",
     "access": "public"
@@ -11,7 +11,7 @@
     "tsc": "tsc --project tsconfig.check.json",
     "prepublishOnly": "pnpm run build"
   },
-  "keywords": ["corgii", "type"],
+  "keywords": ["corgwn", "type"],
   "files": ["**/*.d.ts"],
   "author": "apine",
   "repository": {

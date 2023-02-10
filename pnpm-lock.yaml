@@ -129,65 +129,65 @@ importers:
 
   demo/react:
     specifiers:
-      '@corgii/react': workspace:^1.0.0
+      '@corgwn/react': workspace:^1.0.0
     dependencies:
-      '@corgii/react': link:../../packages/react
+      '@corgwn/react': link:../../packages/react
 
   docs/react:
     specifiers:
-      '@corgii/demo-react': workspace:^1.0.0
-      '@corgii/react': workspace:^1.0.0
+      '@corgwn/demo-react': workspace:^1.0.0
+      '@corgwn/react': workspace:^1.0.0
     dependencies:
-      '@corgii/demo-react': link:../../demo/react
-      '@corgii/react': link:../../packages/react
+      '@corgwn/demo-react': link:../../demo/react
+      '@corgwn/react': link:../../packages/react
 
   packages/composables:
     specifiers:
-      '@corgii/utils': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0
     dependencies:
-      '@corgii/utils': link:../utils
+      '@corgwn/utils': link:../utils
 
   packages/hooks:
     specifiers:
-      '@corgii/types': workspace:^1.0.0
-      '@corgii/utils': workspace:^1.0.0
+      '@corgwn/types': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0
     dependencies:
-      '@corgii/utils': link:../utils
+      '@corgwn/utils': link:../utils
     devDependencies:
-      '@corgii/types': link:../types
+      '@corgwn/types': link:../types
 
   packages/react:
     specifiers:
-      '@corgii/hooks': workspace:^1.0.0
-      '@corgii/types': workspace:^1.0.0
-      '@corgii/utils': workspace:^1.0.0
+      '@corgwn/hooks': workspace:^1.0.0
+      '@corgwn/types': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0
     dependencies:
-      '@corgii/hooks': link:../hooks
-      '@corgii/utils': link:../utils
+      '@corgwn/hooks': link:../hooks
+      '@corgwn/utils': link:../utils
     devDependencies:
-      '@corgii/types': link:../types
+      '@corgwn/types': link:../types
 
   packages/types:
     specifiers: {}
 
   packages/utils:
     specifiers:
-      '@corgii/types': workspace:^1.0.0
+      '@corgwn/types': workspace:^1.0.0
       id3js: ^2.1.1
     dependencies:
-      '@corgii/types': link:../types
+      '@corgwn/types': link:../types
       id3js: 2.1.1
 
   packages/vue:
     specifiers:
-      '@corgii/composables': workspace:^1.0.0
-      '@corgii/types': workspace:^1.0.0
-      '@corgii/utils': workspace:^1.0.0
+      '@corgwn/composables': workspace:^1.0.0
+      '@corgwn/types': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0
     dependencies:
-      '@corgii/composables': link:../composables
-      '@corgii/utils': link:../utils
+      '@corgwn/composables': link:../composables
+      '@corgwn/utils': link:../utils
     devDependencies:
-      '@corgii/types': link:../types
+      '@corgwn/types': link:../types
 
 packages:
 

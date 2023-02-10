@@ -1,5 +1,5 @@
 {
-  "name": "@corgii/hooks",
+  "name": "@corgwn/hooks",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -10,9 +10,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@corgii/utils": "workspace:^1.0.0"
+    "@corgwn/utils": "workspace:^1.0.0"
   },
   "devDependencies": {
-    "@corgii/types": "workspace:^1.0.0"
+    "@corgwn/types": "workspace:^1.0.0"
   }
 }

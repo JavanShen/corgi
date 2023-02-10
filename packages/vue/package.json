@@ -1,15 +1,15 @@
 {
-  "name": "@corgii/vue",
+  "name": "@corgwn/vue",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "tsc": "vue-tsc"
   },
   "dependencies": {
-    "@corgii/composables": "workspace:^1.0.0",
-    "@corgii/utils": "workspace:^1.0.0"
+    "@corgwn/composables": "workspace:^1.0.0",
+    "@corgwn/utils": "workspace:^1.0.0"
   },
   "devDependencies": {
-    "@corgii/types": "workspace:^1.0.0"
+    "@corgwn/types": "workspace:^1.0.0"
   }
 }
