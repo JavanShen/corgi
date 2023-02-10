@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { renderHook, act } from '@testing-library/react-hooks'
-import type { TodoList, TodoListWithLoad, LoadMap } from '@corgii/types'
+import type { TodoList, TodoListWithLoad, LoadMap } from '@corgwn/types'
 import useTodo from '../todo/useTodo'
 
 /* eslint-disable @typescript-eslint/no-empty-function */
