@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "types for corgii",
   "publishConfig": {
-    "types": "dist/index.d.ts",
+    "types": "index.d.ts",
     "access": "public"
   },
   "scripts": {
@@ -12,7 +12,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "keywords": ["corgii", "type"],
-  "files": ["dist/**"],
+  "files": ["**/*.d.ts"],
   "author": "apine",
   "repository": {
     "type": "git",
