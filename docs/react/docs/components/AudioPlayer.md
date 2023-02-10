@@ -9,8 +9,8 @@ group:
 
 # 音频播放器
 
-<code src='@corgii/demo-react/examples/AudioPlayer/link.tsx' title='使用链接' description='通过请求一个音频链接来播放音频'></code>
-<code src='@corgii/demo-react/examples/AudioPlayer/file.tsx' title='使用文件' description='播放一个本地音频文件'></code>
+<code src='@corgwn/demo-react/examples/AudioPlayer/link.tsx' title='使用链接' description='通过请求一个音频链接来播放音频'></code>
+<code src='@corgwn/demo-react/examples/AudioPlayer/file.tsx' title='使用文件' description='播放一个本地音频文件'></code>
 
 ## API
 

@@ -1,7 +1,7 @@
 ---
-title: 'Corgii'
+title: 'Corgwn'
 hero:
-  title: Corgii
+  title: Corgwn
   description: 
   actions:
     - text: Hello

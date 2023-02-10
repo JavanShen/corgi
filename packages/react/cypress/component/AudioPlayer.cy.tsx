@@ -1,5 +1,5 @@
-import { readMP3File } from '@corgii/utils/cypress/file'
-import { move } from '@corgii/utils/cypress/action'
+import { readMP3File } from '@corgwn/utils/cypress/file'
+import { move } from '@corgwn/utils/cypress/action'
 import AudioPlayer from '../../src/components/AudioPlayer'
 import { audioPlayerSelector } from '../data/selector'
 

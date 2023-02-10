@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import { Player, secondsToMinutes } from '@corgii/utils'
+import { Player, secondsToMinutes } from '@corgwn/utils'
 
-import type { AudioSource } from '@corgii/utils'
+import type { AudioSource } from '@corgwn/utils'
 
 export type { AudioSource }
 

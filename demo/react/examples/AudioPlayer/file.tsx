@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Upload, Button, Space } from 'antd'
-import { AudioPlayer } from '@corgii/react'
+import { AudioPlayer } from '@corgwn/react'
 
 const AudioPlayerDemo = () => {
     const [file, setFile] = useState<null | File>(null)

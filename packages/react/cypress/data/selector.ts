@@ -1,4 +1,4 @@
-import { generateSelectors } from '@corgii/utils/cypress/selector'
+import { generateSelectors } from '@corgwn/utils/cypress/selector'
 
 const audioPlayerCollect = [
     'title',

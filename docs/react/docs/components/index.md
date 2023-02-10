@@ -10,7 +10,7 @@ nav:
  * inline: true
  */
 
-import Overview from '@corgii/demo-react/examples/Overview.tsx'
+import Overview from '@corgwn/demo-react/examples/Overview.tsx'
 
 export default () => <Overview />
 ```

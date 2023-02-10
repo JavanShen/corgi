@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { Card, Slider, Button, Image } from 'antd'
-import { usePlayAudio } from '@corgii/hooks'
-import type { AudioPlayerProps } from '@corgii/types'
+import { usePlayAudio } from '@corgwn/hooks'
+import type { AudioPlayerProps } from '@corgwn/types'
 import type { CSSProperties } from 'react'
 import Volume from './components/Volume'
 import { PlayIcon, PauseIcon } from '../../icons'
@@ -16,7 +16,7 @@ import {
 } from './styled'
 
 export type { AudioPlayerProps }
-export type { AudioSource } from '@corgii/hooks'
+export type { AudioSource } from '@corgwn/hooks'
 
 const AudioPlayer = ({
     source,

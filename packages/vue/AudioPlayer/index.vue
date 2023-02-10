@@ -13,8 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import { usePlayAudio } from '@corgii/composables'
-import type { AudioSource } from '@corgii/types'
+import { usePlayAudio } from '@corgwn/composables'
+import type { AudioSource } from '@corgwn/types'
 
 interface Props {
     source: AudioSource

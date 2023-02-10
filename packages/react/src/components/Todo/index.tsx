@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { CSSProperties } from 'react'
 import { Card, Space, Divider } from 'antd'
-import { useTodo } from '@corgii/hooks'
+import { useTodo } from '@corgwn/hooks'
 import { TransitionGroup } from 'react-transition-group'
 import type {
     TodoProps,
@@ -10,7 +10,7 @@ import type {
     TodoEvent,
     TodoList,
     TodoListItem
-} from '@corgii/types'
+} from '@corgwn/types'
 import Transition from '../../common/components/Transition'
 import AddTodo from './components/AddTodo'
 import type { AddTodoRef } from './components/AddTodo'

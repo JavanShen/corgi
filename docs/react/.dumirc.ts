@@ -2,7 +2,7 @@ import { defineConfig } from 'dumi'
 
 export default defineConfig({
     themeConfig: {
-        name: 'Corgii',
+        name: 'Corgwn',
         logo: '/corgi.png'
     },
     favicons: ['/corgi.png'],

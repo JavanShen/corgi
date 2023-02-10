@@ -1,4 +1,4 @@
-import { getElementByIndex } from '@corgii/utils/cypress/get'
+import { getElementByIndex } from '@corgwn/utils/cypress/get'
 import { todoSelector } from '../data/selector'
 import Todo from '../../src/components/Todo'
 import type { TodoList } from '../../src/components/Todo'

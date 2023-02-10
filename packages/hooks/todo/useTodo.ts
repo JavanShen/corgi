@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { current } from 'immer'
 import { useImmerReducer } from 'use-immer'
 import type { ImmerReducer } from 'use-immer'
-import { EventEmitter } from '@corgii/utils'
+import { EventEmitter } from '@corgwn/utils'
 import type {
     TodoList,
     TodoListItem,
@@ -14,7 +14,7 @@ import type {
     TodoEvent,
     TodoEventInfo,
     LoadMap
-} from '@corgii/types'
+} from '@corgwn/types'
 
 export type {
     TodoList,

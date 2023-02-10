@@ -1,4 +1,4 @@
-import type { AudioSource } from '@corgii/types'
+import type { AudioSource } from '@corgwn/types'
 import { secondsToMinutes } from '../time'
 import {
     arrayBufferToBase64,

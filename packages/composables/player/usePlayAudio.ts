@@ -1,6 +1,6 @@
 import { ref } from 'vue'
-import { Player } from '@corgii/utils'
-import type { AudioSource } from '@corgii/utils'
+import { Player } from '@corgwn/utils'
+import type { AudioSource } from '@corgwn/utils'
 
 export type { AudioSource }
 
