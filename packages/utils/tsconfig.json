@@ -1,6 +1,4 @@
 {
     "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "typeRoots": ["../../packages/types"]
-    }
+    "exclude": ["cypress", "__test__", "vite.config.ts", "vitest.config.ts"]
 }
