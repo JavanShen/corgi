@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@corgwn/utils": "workspace:^1.0.0"
+    "@corgwn/utils": "workspace:^1.0.0-alpha.1"
   },
   "devDependencies": {
     "@corgwn/types": "workspace:^1.0.0"

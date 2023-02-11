@@ -6,8 +6,7 @@ export default defineConfig({
     plugins: [
         dts({
             tsConfigFilePath: resolve(__dirname, './tsconfig.json'),
-            outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')],
-            insertTypesEntry: true
+            outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')]
         })
     ],
     build: {
@@ -17,18 +16,15 @@ export default defineConfig({
             fileName: 'utils'
         },
         rollupOptions: {
-            external: ['id3js'],
             output: [
                 {
                     format: 'es',
                     entryFileNames: '[name].js',
-                    preserveModules: true,
                     dir: 'es'
                 },
                 {
                     format: 'cjs',
                     entryFileNames: '[name].js',
-                    preserveModules: true,
                     dir: 'lib'
                 }
             ]

@@ -143,14 +143,14 @@ importers:
 
   packages/composables:
     specifiers:
-      '@corgwn/utils': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0-alpha.1
     dependencies:
       '@corgwn/utils': link:../utils
 
   packages/hooks:
     specifiers:
       '@corgwn/types': workspace:^1.0.0
-      '@corgwn/utils': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0-alpha.1
     dependencies:
       '@corgwn/utils': link:../utils
     devDependencies:
@@ -160,7 +160,7 @@ importers:
     specifiers:
       '@corgwn/hooks': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.0
-      '@corgwn/utils': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0-alpha.1
     dependencies:
       '@corgwn/hooks': link:../hooks
       '@corgwn/utils': link:../utils
@@ -175,14 +175,15 @@ importers:
       '@corgwn/types': workspace:^1.0.0
       id3js: ^2.1.1
     dependencies:
-      '@corgwn/types': link:../types
       id3js: 2.1.1
+    devDependencies:
+      '@corgwn/types': link:../types
 
   packages/vue:
     specifiers:
       '@corgwn/composables': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.0
-      '@corgwn/utils': workspace:^1.0.0
+      '@corgwn/utils': workspace:^1.0.0-alpha.1
     dependencies:
       '@corgwn/composables': link:../composables
       '@corgwn/utils': link:../utils

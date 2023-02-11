@@ -1,12 +1,12 @@
 {
   "name": "@corgwn/utils",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "description": "utils for corgwn",
   "files": ["es", "lib"],
   "publishConfig": {
     "main": "./lib/index.js",
     "module": "./es/index.js",
-    "types": "./es/utils.d.ts",
+    "types": "./es/utils/index.d.ts",
     "access": "public",
     "exports": {
       ".": {
@@ -18,13 +18,16 @@
   "scripts": {
     "build": "tsc && vite build",
     "test": "vitest --coverage",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": ["corgwn", "utils"],
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "id3js": "^2.1.1",
+    "id3js": "^2.1.1"
+  },
+  "devDependencies": {
     "@corgwn/types": "workspace:^1.0.0"
   }
 }
