@@ -143,16 +143,20 @@ importers:
 
   packages/composables:
     specifiers:
-      '@corgwn/utils': workspace:^1.0.0-alpha.1
+      '@corgwn/utils': workspace:^1.0.0-alpha.2
     dependencies:
       '@corgwn/utils': link:../utils
 
   packages/hooks:
     specifiers:
       '@corgwn/types': workspace:^1.0.0
-      '@corgwn/utils': workspace:^1.0.0-alpha.1
+      '@corgwn/utils': workspace:^1.0.0-alpha.2
+      immer: ^9.0.18
+      use-immer: ^0.8.1
     dependencies:
       '@corgwn/utils': link:../utils
+      immer: 9.0.18
+      use-immer: 0.8.1_immer@9.0.18
     devDependencies:
       '@corgwn/types': link:../types
 
@@ -160,7 +164,7 @@ importers:
     specifiers:
       '@corgwn/hooks': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.0
-      '@corgwn/utils': workspace:^1.0.0-alpha.1
+      '@corgwn/utils': workspace:^1.0.0-alpha.2
     dependencies:
       '@corgwn/hooks': link:../hooks
       '@corgwn/utils': link:../utils
@@ -173,17 +177,14 @@ importers:
   packages/utils:
     specifiers:
       '@corgwn/types': workspace:^1.0.0
-      id3js: ^2.1.1
     dependencies:
-      id3js: 2.1.1
-    devDependencies:
       '@corgwn/types': link:../types
 
   packages/vue:
     specifiers:
       '@corgwn/composables': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.0
-      '@corgwn/utils': workspace:^1.0.0-alpha.1
+      '@corgwn/utils': workspace:^1.0.0-alpha.2
     dependencies:
       '@corgwn/composables': link:../composables
       '@corgwn/utils': link:../utils
@@ -14439,6 +14440,15 @@ packages:
       punycode: 1.3.2
       querystring: 0.2.0
     dev: true
+
+  /use-immer/0.8.1_immer@9.0.18:
+    resolution: {integrity: sha512-OfTFf1pL+ICjjcLPn9+ZnaJO/Yg4MBzYZtACEe2mZ/W2A5col28PNUnwowOAaBuOogACOK/37TU17KgsIhUpOw==}
+    peerDependencies:
+      immer: '>=2.0.0'
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      immer: 9.0.18
+    dev: false
 
   /use-immer/0.8.1_immer@9.0.18+react@18.2.0:
     resolution: {integrity: sha512-OfTFf1pL+ICjjcLPn9+ZnaJO/Yg4MBzYZtACEe2mZ/W2A5col28PNUnwowOAaBuOogACOK/37TU17KgsIhUpOw==}

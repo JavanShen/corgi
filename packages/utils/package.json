@@ -1,6 +1,6 @@
 {
   "name": "@corgwn/utils",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "utils for corgwn",
   "files": ["es", "lib"],
   "publishConfig": {
@@ -25,9 +25,6 @@
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "id3js": "^2.1.1"
-  },
-  "devDependencies": {
     "@corgwn/types": "workspace:^1.0.0"
   }
 }

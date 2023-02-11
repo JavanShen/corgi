@@ -26,7 +26,7 @@
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "@corgwn/utils": "workspace:^1.0.0-alpha.1",
+    "@corgwn/utils": "workspace:^1.0.0-alpha.2",
     "immer": "^9.0.18",
     "use-immer": "^0.8.1"
   },

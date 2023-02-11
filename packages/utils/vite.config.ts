@@ -16,6 +16,7 @@ export default defineConfig({
             fileName: 'utils'
         },
         rollupOptions: {
+            external: ['@corgwn/types'],
             output: [
                 {
                     format: 'es',
