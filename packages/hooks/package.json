@@ -2,17 +2,39 @@
   "name": "@corgwn/hooks",
   "version": "1.0.0",
   "type": "module",
+  "description": "hooks for corgwn",
   "scripts": {
     "test": "vitest --coverage",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build": "tsc && vite build",
+    "prepublishOnly": "pnpm run build"
   },
-  "keywords": [],
-  "author": "",
+  "files": ["es", "lib"],
+  "publishConfig": {
+    "main": "./lib/index.js",
+    "module": "./es/index.js",
+    "types": "./es/hooks/index.d.ts",
+    "access": "public",
+    "exports": {
+      ".": {
+        "import": "./es/index.js",
+        "require": "./lib/index.js"
+      }
+    }
+  },
+  "keywords": ["hook", "react", "corgwn"],
+  "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "@corgwn/utils": "workspace:^1.0.0-alpha.1"
+    "@corgwn/utils": "workspace:^1.0.0-alpha.1",
+    "immer": "^9.0.18",
+    "use-immer": "^0.8.1"
   },
   "devDependencies": {
     "@corgwn/types": "workspace:^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
