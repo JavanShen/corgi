@@ -1,4 +1,10 @@
 {
     "extends": "../../tsconfig.json",
-    "exclude": ["cypress", "__test__", "vite.config.ts", "vitest.config.ts", "./node_modules/@corgwn/types"]
+    "exclude": [
+        "cypress",
+        "__test__",
+        "vite.config.ts",
+        "vitest.config.ts",
+        "./node_modules/@corgwn/types"
+    ]
 }

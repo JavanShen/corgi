@@ -2,7 +2,10 @@
   "name": "@corgwn/utils",
   "version": "1.0.0-alpha.2",
   "description": "utils for corgwn",
-  "files": ["es", "lib"],
+  "files": [
+    "es",
+    "lib"
+  ],
   "publishConfig": {
     "main": "./lib/index.js",
     "module": "./es/index.js",
@@ -21,10 +24,16 @@
     "tsc": "tsc",
     "prepublishOnly": "pnpm run build"
   },
-  "keywords": ["corgwn", "utils"],
+  "keywords": [
+    "corgwn",
+    "utils"
+  ],
   "author": "apine",
   "license": "MIT",
   "dependencies": {
     "@corgwn/types": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "id3js": "^2.1.1"
   }
 }
