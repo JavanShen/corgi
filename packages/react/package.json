@@ -2,18 +2,31 @@
   "name": "@corgwn/react",
   "version": "1.0.0",
   "type": "module",
+  "description": "Explore the components you need",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
     "test": "pnpm run test:component",
     "test:component": "cypress open --component -b edge",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "prepublishOnly": "pnpm run build"
   },
   "files": [
     "lib",
     "es"
   ],
+  "publishConfig": {
+    "main": "./lib/index.js",
+    "module": "./es/index.js",
+    "types": "./es/react/index.d.ts",
+    "access": "public",
+    "exports": {
+      ".": {
+        "import": "./es/index.js",
+        "require": "./lib/index.js"
+      }
+    }
+  },
   "keywords": [
     "react",
     "antd",
@@ -22,9 +35,16 @@
   ],
   "dependencies": {
     "@corgwn/hooks": "workspace:1.0.0-alpha.1",
-    "@corgwn/utils": "workspace:1.0.0-alpha.3"
+    "@corgwn/utils": "workspace:1.0.0-alpha.3",
+    "@corgwn/types": "workspace:^1.0.1",
+    "@ant-design/icons": "^5.0.0",
+    "react-transition-group": "^4.4.5",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4"
   },
-  "devDependencies": {
-    "@corgwn/types": "workspace:^1.0.1"
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "antd": "^5.1.1"
   }
 }

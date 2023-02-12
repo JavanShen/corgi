@@ -8,7 +8,6 @@ import { resolve } from 'path'
 export default defineConfig({
     plugins: [
         dts({
-            entryRoot: resolve(__dirname, 'src'),
             tsConfigFilePath: resolve(__dirname, './tsconfig.json'),
             outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')]
         }),
@@ -27,8 +26,14 @@ export default defineConfig({
             fileName: 'components'
         },
         rollupOptions: {
-            external: ['react', 'antd'],
-            input: [resolve(__dirname, './index.ts')],
+            external: [
+                'react',
+                'antd',
+                'react-transition-group',
+                '@ant-design/icons',
+                /@corgwn/,
+                /@emotion/
+            ],
             output: [
                 {
                     format: 'es',
