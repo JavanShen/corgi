@@ -143,14 +143,14 @@ importers:
 
   packages/composables:
     specifiers:
-      '@corgwn/utils': workspace:1.0.0-alpha.2
+      '@corgwn/utils': workspace:1.0.0-alpha.3
     dependencies:
       '@corgwn/utils': link:../utils
 
   packages/hooks:
     specifiers:
       '@corgwn/types': workspace:^1.0.1
-      '@corgwn/utils': workspace:^1.0.0-alpha.2
+      '@corgwn/utils': workspace:1.0.0-alpha.3
       immer: ^9.0.18
       use-immer: ^0.8.1
     dependencies:
@@ -164,7 +164,7 @@ importers:
     specifiers:
       '@corgwn/hooks': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.1
-      '@corgwn/utils': workspace:^1.0.0-alpha.2
+      '@corgwn/utils': workspace:1.0.0-alpha.3
     dependencies:
       '@corgwn/hooks': link:../hooks
       '@corgwn/utils': link:../utils
@@ -187,7 +187,7 @@ importers:
     specifiers:
       '@corgwn/composables': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.1
-      '@corgwn/utils': workspace:^1.0.0-alpha.2
+      '@corgwn/utils': workspace:1.0.0-alpha.3
     dependencies:
       '@corgwn/composables': link:../composables
       '@corgwn/utils': link:../utils

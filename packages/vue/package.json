@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@corgwn/composables": "workspace:^1.0.0",
-    "@corgwn/utils": "workspace:^1.0.0-alpha.2"
+    "@corgwn/utils": "workspace:1.0.0-alpha.3"
   },
   "devDependencies": {
     "@corgwn/types": "workspace:^1.0.1"
