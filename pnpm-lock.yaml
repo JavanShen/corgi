@@ -129,14 +129,14 @@ importers:
 
   demo/react:
     specifiers:
-      '@corgwn/react': workspace:^1.0.0
+      '@corgwn/react': workspace:1.0.0-alpha.1
     dependencies:
       '@corgwn/react': link:../../packages/react
 
   docs/react:
     specifiers:
       '@corgwn/demo-react': workspace:^1.0.0
-      '@corgwn/react': workspace:^1.0.0
+      '@corgwn/react': workspace:1.0.0-alpha.1
     dependencies:
       '@corgwn/demo-react': link:../../demo/react
       '@corgwn/react': link:../../packages/react

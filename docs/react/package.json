@@ -13,6 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "@corgwn/demo-react": "workspace:^1.0.0",
-    "@corgwn/react": "workspace:^1.0.0"
+    "@corgwn/react": "workspace:1.0.0-alpha.1"
   }
 }

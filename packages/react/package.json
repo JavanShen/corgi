@@ -1,6 +1,6 @@
 {
   "name": "@corgwn/react",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "type": "module",
   "description": "Explore the components you need",
   "scripts": {
