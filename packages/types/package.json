@@ -1,6 +1,6 @@
 {
   "name": "@corgwn/types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "types for corgwn",
   "publishConfig": {
     "types": "index.d.ts",
@@ -22,7 +22,9 @@
     "url": "https://github.com/JavanShen/corgi/issues"
   },
   "license": "MIT",
-  "peerDependencies": {
-    "typescript": "^4.6.4"
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
   }
 }

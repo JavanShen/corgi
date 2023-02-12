@@ -31,7 +31,7 @@
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "@corgwn/types": "workspace:^1.0.0"
+    "@corgwn/types": "workspace:^1.0.1"
   },
   "devDependencies": {
     "id3js": "^2.1.1"

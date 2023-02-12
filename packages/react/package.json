@@ -25,6 +25,6 @@
     "@corgwn/utils": "workspace:^1.0.0-alpha.2"
   },
   "devDependencies": {
-    "@corgwn/types": "workspace:^1.0.0"
+    "@corgwn/types": "workspace:^1.0.1"
   }
 }

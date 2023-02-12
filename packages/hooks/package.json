@@ -9,7 +9,10 @@
     "build": "tsc && vite build",
     "prepublishOnly": "pnpm run build"
   },
-  "files": ["es", "lib"],
+  "files": [
+    "es",
+    "lib"
+  ],
   "publishConfig": {
     "main": "./lib/index.js",
     "module": "./es/index.js",
@@ -22,7 +25,11 @@
       }
     }
   },
-  "keywords": ["hook", "react", "corgwn"],
+  "keywords": [
+    "hook",
+    "react",
+    "corgwn"
+  ],
   "author": "apine",
   "license": "MIT",
   "dependencies": {
@@ -31,7 +38,7 @@
     "use-immer": "^0.8.1"
   },
   "devDependencies": {
-    "@corgwn/types": "workspace:^1.0.0"
+    "@corgwn/types": "workspace:^1.0.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",
