@@ -154,11 +154,10 @@ importers:
       immer: ^9.0.18
       use-immer: ^0.8.1
     dependencies:
+      '@corgwn/types': link:../types
       '@corgwn/utils': link:../utils
       immer: 9.0.18
       use-immer: 0.8.1_immer@9.0.18
-    devDependencies:
-      '@corgwn/types': link:../types
 
   packages/react:
     specifiers:

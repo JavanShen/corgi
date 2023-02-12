@@ -16,7 +16,13 @@ export default defineConfig({
             fileName: 'hooks'
         },
         rollupOptions: {
-            external: ['@corgwn/utils', 'react', 'immer', 'use-immer'],
+            external: [
+                '@corgwn/utils',
+                '@corgwn/types',
+                'react',
+                'immer',
+                'use-immer'
+            ],
             output: [
                 {
                     format: 'es',
