@@ -30,6 +30,7 @@ const AudioMedia = styled.div({
 const Title = styled.div({
     fontSize: 22,
     color: 'black',
+    textAlign: 'start',
     ...textOmission
 })
 

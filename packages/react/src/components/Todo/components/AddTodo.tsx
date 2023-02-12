@@ -44,7 +44,8 @@ const CancelBtn = ({
             style={{
                 marginLeft: 5,
                 transform: `rotate(${state ? -45 : 0}deg)`,
-                transition: 'transform 220ms ease-in-out'
+                transition: 'transform 220ms ease-in-out',
+                border: 'none'
             }}
             icon={
                 <AddIcon
@@ -77,7 +78,8 @@ const ConfirmBtn = ({
     <Button
         style={{
             transform: 'rotate(-45deg)',
-            marginLeft: 5
+            marginLeft: 5,
+            border: 'none'
         }}
         type="link"
         icon={

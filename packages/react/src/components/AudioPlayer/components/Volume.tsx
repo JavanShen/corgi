@@ -30,6 +30,7 @@ const Volume = ({ volume, isMute, updateVolume, onClick }: Props) => {
                 shape="circle"
                 size="large"
                 type="link"
+                style={{ border: 'none' }}
                 icon={
                     isMute ? (
                         <MuteIcon aria-label="muteIcon" />

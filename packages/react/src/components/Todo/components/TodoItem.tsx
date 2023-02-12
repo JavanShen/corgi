@@ -95,6 +95,7 @@ const TodoItem = ({
                         />
                     }
                     type="link"
+                    style={{ border: 'none' }}
                     loading={removeLoading}
                     onClick={() => {
                         onRemove(name)

@@ -85,6 +85,7 @@ const AudioPlayer = ({
                             size="large"
                             type="text"
                             shape="circle"
+                            style={{ border: 'none' }}
                             disabled={!isCanPlay}
                             aria-label={isPlay ? 'pause' : 'play'}
                             icon={isPlay ? <PauseIcon /> : <PlayIcon />}
