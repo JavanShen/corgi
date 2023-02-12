@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import type { CSSProperties } from 'react'
+import type { CSSProperties, FC } from 'react'
 import { Card, Space, Divider } from 'antd'
 import { useTodo } from '@corgwn/hooks'
 import { TransitionGroup } from 'react-transition-group'
@@ -27,12 +27,12 @@ export type {
 }
 
 // TODO 更加合理的宽高控制
-const Todo = ({
+const Todo: FC<TodoProps & { style?: CSSProperties }> = ({
     todoList,
     style,
     update,
     updated
-}: TodoProps & { style?: CSSProperties }) => {
+}) => {
     const { todos, complete, uncomplete, add, remove, event, addLoading } =
         useTodo(todoList)
     const addTodoRef = useRef<AddTodoRef>(null)

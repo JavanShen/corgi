@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { Card, Slider, Button, Image } from 'antd'
 import { usePlayAudio } from '@corgwn/hooks'
 import type { AudioPlayerProps } from '@corgwn/types'
-import type { CSSProperties } from 'react'
+import type { CSSProperties, FC } from 'react'
 import Volume from './components/Volume'
 import { PlayIcon, PauseIcon } from '../../icons'
 import {
@@ -18,7 +18,7 @@ import {
 export type { AudioPlayerProps }
 export type { AudioSource } from '@corgwn/hooks'
 
-const AudioPlayer = ({
+const AudioPlayer: FC<AudioPlayerProps & { style?: CSSProperties }> = ({
     source,
     loaded,
     cover,
@@ -26,7 +26,7 @@ const AudioPlayer = ({
     artist,
     showVolumeControl = false,
     style
-}: AudioPlayerProps & { style?: CSSProperties }) => {
+}) => {
     const {
         currentTime,
         currentTimeText,
