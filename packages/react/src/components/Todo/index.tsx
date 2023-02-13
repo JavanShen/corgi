@@ -38,7 +38,6 @@ const Todo: FC<TodoProps & { style?: CSSProperties }> = ({
     const addTodoRef = useRef<AddTodoRef>(null)
 
     useEffect(() => {
-        console.log(update)
         event(
             'update',
             update ||
@@ -49,7 +48,7 @@ const Todo: FC<TodoProps & { style?: CSSProperties }> = ({
         event('updated', (type, newTodos) => {
             updated?.(type, newTodos)
         })
-    }, [])
+    }, [todoList])
 
     useEffect(() => {
         if (addLoading === false) {
