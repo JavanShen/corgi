@@ -7,6 +7,7 @@ export default defineConfig({
     },
     favicons: ['/corgi.png'],
     autoAlias: false,
+    extraBabelPresets: ['@emotion/babel-preset-css-prop'],
     theme: {
         '@c-primary': '#e0b55b'
     }

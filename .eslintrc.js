@@ -28,7 +28,7 @@ module.exports = {
                     './',
                     'packages/react',
                     'packages/vue',
-                    'docs/react'
+                    'demo/react'
                 ],
                 devDependencies: true
             }
