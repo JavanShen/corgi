@@ -35,3 +35,5 @@ lib
 es
 
 coverage
+
+*.cy.tsx.mp4
