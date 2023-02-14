@@ -11,6 +11,6 @@
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "@corgwn/react": "workspace:1.0.0-alpha.2"
+    "@corgwn/react": "workspace:1.0.0-alpha.3"
   }
 }
