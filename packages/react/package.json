@@ -1,15 +1,16 @@
 {
   "name": "@corgwn/react",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "type": "module",
   "description": "Explore the components you need",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "pnpm run test:component",
-    "test:component": "cypress open --component -b edge",
+    "test:dev": "cypress open --component -b edge",
+    "test:component": "cypress run --component",
     "tsc": "tsc",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run test && pnpm run build"
   },
   "files": [
     "lib",
