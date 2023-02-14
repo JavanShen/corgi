@@ -9,7 +9,8 @@ export default defineConfig({
     plugins: [
         dts({
             tsConfigFilePath: resolve(__dirname, './tsconfig.json'),
-            outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')]
+            outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')],
+            exclude: ['cypress', 'node_modules/**', 'global.d.ts']
         }),
         react(),
         svgr()
