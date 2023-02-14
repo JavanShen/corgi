@@ -160,7 +160,7 @@ importers:
   packages/react:
     specifiers:
       '@ant-design/icons': ^5.0.0
-      '@corgwn/hooks': workspace:1.0.0-alpha.1
+      '@corgwn/hooks': workspace:1.0.0-alpha.2
       '@corgwn/types': workspace:^1.0.1
       '@corgwn/utils': workspace:1.0.0-alpha.3
       '@emotion/react': ^11.10.4
