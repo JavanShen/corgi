@@ -27,8 +27,16 @@ const Overview = () => (
         renderItem={({ name, label }) => (
             <List.Item>
                 <Link to={`/components/${hyphen(name)}`}>
-                    <Card title={`${name} ${label}`} hoverable>
-                        <Image src={`../assets/${name}.png`} preview={false} />
+                    <Card
+                        title={`${name} ${label}`}
+                        bodyStyle={{ textAlign: 'center' }}
+                        hoverable
+                    >
+                        <Image
+                            height={160}
+                            src={`../assets/${name}.png`}
+                            preview={false}
+                        />
                     </Card>
                 </Link>
             </List.Item>
