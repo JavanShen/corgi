@@ -11,6 +11,7 @@
     "docs:react": "pnpm run --filter @corgwn/docs-react start",
     "docs-build:react": "pnpm run --filter @corgwn/docs-react build",
     "demo:react": "pnpm run --filter @corgwn/demo-react dev",
+    "demo:vue": "pnpm run --filter @corgwn/demo-vue dev",
     "lint": "npm run lint:eslint",
     "lint:eslint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx --no-fix",
     "lint-staged": "lint-staged",
@@ -44,6 +45,7 @@
     "@ant-design/icons": "^5.0.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "ant-design-vue": "^3.2.15",
     "antd": "^5.1.1",
     "element-plus": "^2.2.27",
     "id3js": "^2.1.1",
@@ -53,7 +55,8 @@
     "react-router-dom": "^6.6.1",
     "react-transition-group": "^4.4.5",
     "use-immer": "^0.8.1",
-    "vue": "^3.2.40"
+    "vue": "^3.2.40",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
