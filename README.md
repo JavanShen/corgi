@@ -6,7 +6,7 @@
     Corgwn
 </h1>
 
-[![CI](https://github.com/JavanShen/corgi/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/JavanShen/corgi/actions/workflows/ci.yml) [![corgii](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/count/6jecso/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/6jecso/runs) [![codecov](https://codecov.io/gh/JavanShen/corgi/branch/main/graph/badge.svg)](https://codecov.io/gh/JavanShen/corgi) ![npm (tag)](https://img.shields.io/npm/v/@corgwn/react/alpha?label=%40corgwn%2Freact)
+[![CI](https://github.com/JavanShen/corgi/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/JavanShen/corgi/actions/workflows/ci.yml) [![corgii](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/count/6jecso/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/6jecso/runs) [![codecov](https://codecov.io/gh/JavanShen/corgi/branch/main/graph/badge.svg)](https://codecov.io/gh/JavanShen/corgi) [![npm (tag)](https://img.shields.io/npm/v/@corgwn/react/alpha?label=%40corgwn%2Freact)](https://www.npmjs.com/package/@corgwn/react)
 
 ### ✨ 特性
 ---
