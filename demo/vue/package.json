@@ -1,0 +1,12 @@
+{
+  "name": "@corgwn/demo-vue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@corgwn/vue": "workspace:^1.0.0"
+  }
+}
