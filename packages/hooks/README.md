@@ -1,4 +1,6 @@
-![npm (tag)](https://img.shields.io/npm/v/@corgwn/hooks/alpha?label=%40corgwn%2Fhooks)
+[![npm (tag)](https://img.shields.io/npm/v/@corgwn/hooks/alpha?label=%40corgwn%2Fhooks)](https://www.npmjs.com/package/@corgwn/hooks)
+
+包含了 [@corgwn/react](https://corgi-nu.vercel.app/) 组件中完整的功能，可以用来打造你自己的组件
 
 ## 安装
 
@@ -72,7 +74,7 @@ const { add } = useTodo([{
 | complete | 完成待办 | `(name: string) => Promise<void>` | - |
 | uncomplete | 取消已完成 | `(name: string) => Promise<void>` | - |
 | change | 更新待办 | `(name: stirng, newVal: string) => Promise<void>` |
-| event | 监听事件 | `(event: 'update' | 'updated', callback) => void` | 可以在这里监听更新和更新完成事件，其中更新回调可以返回 `false` 来取消此次更新，更新完成回调会获取到最新的数据 |
+| event | 监听事件 | `(event: 'update' \| 'updated', callback) => void` | 可以在这里监听更新和更新完成事件，其中更新回调可以返回 `false` 来取消此次更新，更新完成回调会获取到最新的数据 |
 
 #### 参数
 
