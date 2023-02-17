@@ -33,21 +33,36 @@ const Todo: FC<TodoProps & { style?: CSSProperties }> = ({
     update,
     updated
 }) => {
-    const { todos, complete, uncomplete, add, remove, event, addLoading } =
-        useTodo(todoList)
+    const {
+        todos,
+        complete,
+        uncomplete,
+        add,
+        remove,
+        event,
+        addLoading,
+        unevent
+    } = useTodo(todoList)
     const addTodoRef = useRef<AddTodoRef>(null)
 
     useEffect(() => {
-        event(
-            'update',
+        const updateCb =
             update ||
-                (() => {
-                    // 默认 update
-                })
-        )
-        event('updated', (type, newTodos) => {
+            (() => {
+                // 默认 update
+            })
+
+        const updatedCb: TodoUpdatedCb = (type, newTodos) => {
             updated?.(type, newTodos)
-        })
+        }
+
+        event('update', updateCb)
+        event('updated', updatedCb)
+
+        return () => {
+            unevent('update', updateCb)
+            unevent('updated', updatedCb)
+        }
     }, [todoList])
 
     useEffect(() => {
