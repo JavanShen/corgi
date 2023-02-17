@@ -62,9 +62,12 @@ const usePlayAudio = (source: AudioSource, loaded?: () => void) => {
         })
     }, [player])
 
-    useEffect(() => {
-        player?.destroy()
-    }, [])
+    useEffect(
+        () => () => {
+            player?.destroy()
+        },
+        []
+    )
 
     const play = () => {
         player?.play()
