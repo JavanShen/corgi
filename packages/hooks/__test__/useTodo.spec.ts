@@ -328,6 +328,35 @@ describe('useTodo', () => {
         ])
     })
 
+    it('移除回调', async () => {
+        const { result, waitForNextUpdate } = renderHookWithTodoList()
+        const fn1 = vi.fn(() => {})
+        const fn2 = vi.fn(() => {})
+
+        act(() => {
+            result.current.event('update', fn1)
+            result.current.event('updated', fn2)
+        })
+
+        result.current.complete('one')
+
+        await waitForNextUpdate()
+
+        expect(fn1).toHaveBeenCalledOnce()
+        expect(fn2).toHaveBeenCalledOnce()
+
+        act(() => {
+            result.current.unevent('update', fn1)
+        })
+
+        result.current.uncomplete('one')
+
+        await waitForNextUpdate()
+
+        expect(fn1).toHaveBeenCalledOnce()
+        expect(fn2).toHaveBeenCalledTimes(2)
+    })
+
     it('加载中状态', async () => {
         const { result, waitForNextUpdate } = renderHookWithTodoList()
 

@@ -226,6 +226,7 @@ const useTodo = (todoList: TodoList) => {
         remove,
         change,
         event: eventEmitter.subscribe.bind(eventEmitter),
+        unevent: eventEmitter.unsubscribe.bind(eventEmitter),
         addLoading
     }
 }
