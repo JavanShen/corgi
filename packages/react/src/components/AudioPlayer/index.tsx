@@ -3,8 +3,8 @@ import { Card, Slider, Button, Image } from 'antd'
 import { usePlayAudio } from '@corgwn/hooks'
 import type { AudioPlayerProps } from '@corgwn/types'
 import type { CSSProperties, FC } from 'react'
+import { PlayIcon, PauseIcon } from '@pembroke/icons'
 import Volume from './components/Volume'
-import { PlayIcon, PauseIcon } from '../../icons'
 import {
     AudioContainer,
     AudioContent,

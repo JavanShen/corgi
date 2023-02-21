@@ -2,10 +2,10 @@ import { useRef, useState } from 'react'
 import { Checkbox, Button, theme, Tooltip } from 'antd'
 import type { CheckboxChangeEvent } from 'antd/es/checkbox'
 import { css } from '@emotion/react'
+import { DeleteIcon } from '@pembroke/icons'
 import StrikethroughText from './StrikethroughText'
 import type { StrikethroughTextRef as StrikeTextRef } from './StrikethroughText'
 import { ListItem } from '../styled'
-import { DeleteIcon } from '../../../icons'
 
 interface TodoItemProps {
     name: string
@@ -86,11 +86,11 @@ const TodoItem = ({
                     icon={
                         <DeleteIcon
                             css={css({
-                                fill: '#666666',
+                                color: '#666666',
                                 '&:hover': {
-                                    fill: token.colorError
+                                    color: token.colorError
                                 },
-                                transition: 'fill 220ms ease-in-out'
+                                transition: 'color 220ms ease-in-out'
                             })}
                         />
                     }

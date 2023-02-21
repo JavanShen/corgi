@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Slider, Popover, Button } from 'antd'
-import { VolumeIcon, MuteIcon } from '../../../icons'
+import { VolumeIcon, MuteIcon } from '@pembroke/icons'
 
 interface Props {
     volume: number

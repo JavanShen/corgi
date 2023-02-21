@@ -9,7 +9,7 @@ import type { ChangeEventHandler } from 'react'
 import { Button, Input, theme } from 'antd'
 import type { InputRef } from 'antd'
 import { css } from '@emotion/react'
-import { AddIcon, ConfirmIcon } from '../../../icons'
+import { AddIcon, ConfirmIcon } from '@pembroke/icons'
 import { AddTodoContainer } from '../styled'
 import SwitchTransition from '../../../common/components/SwitchTransition'
 
@@ -50,13 +50,13 @@ const CancelBtn = ({
             icon={
                 <AddIcon
                     css={css({
-                        fill: '#666666',
+                        color: '#666666',
                         '&:hover': {
-                            fill: state
+                            color: state
                                 ? token.colorWarning
                                 : token.colorPrimary
                         },
-                        transition: 'fill 220ms ease-in-out'
+                        transition: 'color 220ms ease-in-out'
                     })}
                 />
             }
@@ -88,11 +88,11 @@ const ConfirmBtn = ({
                     transform: 'rotate(45deg)'
                 }}
                 css={css({
-                    fill: '#666666',
+                    color: '#666666',
                     '&:hover': {
-                        fill: token.colorSuccess
+                        color: token.colorSuccess
                     },
-                    transition: 'fill 220ms ease-in-out'
+                    transition: 'color 220ms ease-in-out'
                 })}
             />
         }

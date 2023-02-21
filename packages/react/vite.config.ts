@@ -31,7 +31,7 @@ export default defineConfig({
                 'react',
                 'antd',
                 'react-transition-group',
-                '@ant-design/icons',
+                '@pembroke/icons',
                 /@corgwn/,
                 /@emotion/
             ],
