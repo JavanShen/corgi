@@ -4,9 +4,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "npm run dev",
+    "start": "pnpm dev",
     "dev": "dumi dev",
-    "build": "dumi build",
+    "build": "pnpm prebuild && dumi build",
+    "prebuild": "pnpm --filter @pembroke/icons build",
     "prepare": "dumi setup"
   },
   "authors": [],
