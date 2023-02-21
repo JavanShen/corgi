@@ -1,0 +1,25 @@
+{
+  "name": "@pembroke/icons",
+  "version": "1.0.0",
+  "description": "React icons for corgwn",
+  "type": "module",
+  "main": "./dist/icons.umd.js",
+  "module": "./dist/icons.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/icons.js",
+      "require": "./dist/icons.umd.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "keywords": ["corgwn", "react", "icon"],
+  "author": "apine",
+  "license": "MIT",
+  "dependencies": {
+    "@ant-design/icons": "^5.0.0"
+  }
+}
