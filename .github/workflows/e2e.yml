@@ -48,6 +48,9 @@ jobs:
       - name: Installing Cypress
         run: pnpm cypress install
 
+      - name: Build Icons
+        run: pnpm build:icons-react
+
       - name: Cypress run
         uses: cypress-io/github-action@v5 
         with:
