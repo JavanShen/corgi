@@ -1,1 +1,1 @@
-export { default as AudioPlayer } from './AudioPlayer/index.vue'
+export * from './src/components'
