@@ -40,5 +40,10 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": ["react"]
+    }
   }
 }

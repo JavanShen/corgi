@@ -47,5 +47,10 @@
     "antd": "^5.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": ["react", "react-dom", "@babel/core"]
+    }
   }
 }
