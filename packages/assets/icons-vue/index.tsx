@@ -1,5 +1,5 @@
 import type { Component, FunctionalComponent, SVGAttributes } from 'vue'
-import Icon from '@ant-design/icons-vue/es/components/Icon'
+import Icon from '@ant-design/icons-vue'
 import type { IconComponentProps } from '@ant-design/icons-vue/es/components/Icon'
 
 type SvgComponent = FunctionalComponent<SVGAttributes, Record<string, never>>
