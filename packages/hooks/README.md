@@ -30,7 +30,7 @@ const { play }  = useAudioPlayer('xxx.mp3')
 | totalTimeText | 当前时间的格式化文本 | `string` | `mm:ss` 格式 |
 | updateTime | 更新当前时间 | `(val: number) => void` | 只会更新 hook 中的时间
 | jump | 更新当前时间 | `(val: number) => void` | 更新播放器的时间，同时 hook 中的时间也会自动更新
-| volume | 音量 | `number | null` | 范围0-100，静音状态下为 null |
+| volume | 音量 | `number \| null` | 范围0-100，静音状态下为 null |
 | updateVolume | 更新音量 | `(val: number) => void` | 超出范围的值会被处理成边界值 |
 | mute | 静音 | `() => void` | - |
 | unmute | 取消静音 | `() => void` | 会将音量恢复为之前的大小 |
