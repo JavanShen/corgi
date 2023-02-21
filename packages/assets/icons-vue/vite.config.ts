@@ -19,7 +19,7 @@ export default defineConfig({
             output: {
                 globals: {
                     vue: 'Vue',
-                    '@ant-design/icons-vue/es/components/Icon': 'Icon'
+                    '@ant-design/icons-vue': 'Icon'
                 }
             }
         }

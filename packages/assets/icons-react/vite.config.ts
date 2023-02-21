@@ -18,7 +18,7 @@ export default defineConfig({
             output: {
                 globals: {
                     react: 'React',
-                    '@ant-design/icons/es/components/Icon': 'Icon'
+                    '@ant-design/icons': 'Icon'
                 }
             }
         }
