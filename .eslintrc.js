@@ -103,7 +103,6 @@ module.exports = {
         'es',
         'lib',
         '.dumi',
-        'auto-imports-vue.d.ts',
-        'components.d.ts'
+        '*.d.ts'
     ]
 }
