@@ -65,6 +65,6 @@ jobs:
       matrix:
         browser: [chrome, firefox, edge]
     uses: ./.github/workflows/e2e.yml
-    withs:
+    with:
       browser: ${{ matrix.browser }}
     secrets: inherit

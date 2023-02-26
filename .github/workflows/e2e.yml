@@ -12,7 +12,7 @@ on:
 jobs:
   test-react-components:
     uses: ./.github/workflows/e2e-react.yml
-    withs:
+    with:
       browser: ${{ inputs.browser }}
     secrets: inherit
       
