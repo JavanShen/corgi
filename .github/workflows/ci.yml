@@ -1,6 +1,19 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - vue
+      - react
+      - docs
+      - demos
+      - composables
+      - hooks
+      - utils
+      - types
+      - assets
+  pull_request:
 
 jobs:
   CI:
