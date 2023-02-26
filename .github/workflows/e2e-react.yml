@@ -33,11 +33,15 @@ jobs:
         with:
           path: |
             **/node_modules
+            ~/.cache/Cypress
           key: ${{runner.OS}}-${{hashFiles('pnpm-lock.yaml')}}
 
       - name: Installing Dependencies
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: pnpm install
+
+      - name: Installing Cypress
+        run: pnpm cypress install
 
       - name: Build Icons
         run: pnpm build:icons-react
