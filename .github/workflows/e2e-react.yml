@@ -5,7 +5,7 @@ on:
     inputs:
       browser:
         description: 'Browser used for testing'
-        default: 'chrome',
+        default: 'chrome'
         required: false
         type: string
 
