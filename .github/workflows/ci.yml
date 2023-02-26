@@ -55,7 +55,6 @@ jobs:
         run: pnpm run lint
       # 运行单元测试
       - name: Running Unit Test
-        # 通过package.js定义的命令行执行自动化测试
         run: pnpm run test:unit
       - name: Upload Coverage
         uses: codecov/codecov-action@v3
