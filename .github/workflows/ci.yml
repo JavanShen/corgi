@@ -59,7 +59,7 @@ jobs:
         with:
           files: packages/utils/coverage/clover.xml,packages/hooks/coverage/clover.xml
 
-  E2E Test:
+  E2E-Test:
     strategy:
       fail-fast: false
       matrix:
