@@ -4,15 +4,6 @@ on:
   push:
     branches:
       - main
-      - vue
-      - react
-      - docs
-      - demos
-      - composables
-      - hooks
-      - utils
-      - types
-      - assets
   pull_request:
 
 jobs:
@@ -60,23 +51,11 @@ jobs:
           files: packages/utils/coverage/clover.xml,packages/hooks/coverage/clover.xml
 
   E2E-Test:
-    if: github.event.pull_request.base.ref == 'main' || github.ref_name == 'main'
     strategy:
       fail-fast: false
       matrix:
         browser: [chrome, firefox, edge]
     uses: ./.github/workflows/e2e.yml
-    with:
-      browser: ${{ matrix.browser }}
-    secrets: inherit
-
-  E2E-Test-React:
-    if: github.event.pull_request.base.ref == 'react' || github.ref_name == 'react'
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chrome, firefox, edge]
-    uses: ./.github/workflows/e2e-react.yml
     with:
       browser: ${{ matrix.browser }}
     secrets: inherit
