@@ -3,12 +3,14 @@ import { defineConfig } from 'dumi'
 export default defineConfig({
     themeConfig: {
         name: 'Corgwn',
-        logo: '/corgi.png',
+        logo: 'https://github.com/JavanShen/corgi/blob/main/packages/assets/pic/corgi.png?raw=true',
         socialLinks: {
             github: 'https://github.com/JavanShen/corgi'
         }
     },
-    favicons: ['/corgi.png'],
+    favicons: [
+        'https://github.com/JavanShen/corgi/blob/main/packages/assets/pic/corgi.png?raw=true'
+    ],
     autoAlias: false,
     extraBabelPresets: ['@emotion/babel-preset-css-prop'],
     theme: {
