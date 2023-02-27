@@ -1,0 +1,61 @@
+name: Test React Components
+
+on:
+  workflow_call:
+    inputs:
+      browser:
+        description: 'Browser used for testing'
+        default: 'chrome'
+        required: false
+        type: string
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: 'pnpm'
+
+      - name: Cache
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+            ~/.cache/Cypress
+          key: ${{runner.OS}}-${{hashFiles('pnpm-lock.yaml')}}
+
+      - name: Installing Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: pnpm install
+
+      - name: Installing Cypress
+        run: pnpm cypress install
+
+      - name: Build Icons
+        run: pnpm build:icons-react
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5 
+        with:
+          install: false
+          working-directory: packages/react
+          browser: ${{ inputs.browser }}
+          component: true
+          record: true
+          group: ${{ inputs.browser }}
+          tag: ${{ inputs.browser }},react
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
