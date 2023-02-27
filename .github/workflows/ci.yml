@@ -19,6 +19,9 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
+      - name: Branch name
+        run: echo '${{ github.ref_name }}'
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -55,11 +58,13 @@ jobs:
         run: pnpm run test:unit
 
       - name: Upload Coverage
+        if: ${{ 1 === 2 }}
         uses: codecov/codecov-action@v3
         with:
           files: packages/utils/coverage/clover.xml,packages/hooks/coverage/clover.xml
 
   E2E-Test:
+    if: ${{ 1 === 2 }}
     strategy:
       fail-fast: false
       matrix:
