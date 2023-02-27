@@ -71,7 +71,7 @@ jobs:
     secrets: inherit
 
   E2E-Test-React:
-    if: github.event.pull_request.base.ref == 'react' || github.ref_name == 'main'
+    if: github.event.pull_request.base.ref == 'react' || github.ref_name == 'react'
     strategy:
       fail-fast: false
       matrix:
