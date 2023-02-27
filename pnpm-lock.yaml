@@ -157,6 +157,12 @@ importers:
     dependencies:
       '@corgwn/demo-react': link:../../demo/react
 
+  docs/vue:
+    specifiers:
+      '@corgwn/demo-vue': workspace:^0.0.0
+    dependencies:
+      '@corgwn/demo-vue': link:../../demo/vue
+
   packages/assets:
     specifiers: {}
 
