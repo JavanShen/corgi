@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="200" src="https://github.com/JavanShen/corgi/blob/main/docs/react/public/corgi.png?raw=true">
+    <img width="200" src="https://github.com/JavanShen/corgi/blob/main/packages/assets/pic/corgi.png?raw=true">
 </p>
 
 <h1 align="center">
