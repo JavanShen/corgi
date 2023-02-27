@@ -10,7 +10,7 @@
                     >
                         <a-image
                             :height="160"
-                            :src="`../assets/${name}.png`"
+                            :src="`https://github.com/JavanShen/corgi/blob/main/packages/assets/pic/${name}.png?raw=true`"
                             :preview="false"
                         />
                     </a-card>
