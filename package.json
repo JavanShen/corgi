@@ -13,6 +13,8 @@
     "build:icons-vue": "pnpm --filter @cardigan/icons build",
     "docs:react": "pnpm run --filter @corgwn/docs-react start",
     "docs-build:react": "pnpm run --filter @corgwn/docs-react build",
+    "docs:vue": "pnpm --filter @corgwn/docs-vue docs:dev",
+    "docs-build:vue": "pnpm --filter @corgwn/docs-vue docs:build",
     "demo:react": "pnpm run --filter @corgwn/demo-react dev",
     "demo:vue": "pnpm run --filter @corgwn/demo-vue dev",
     "lint": "pnpm prelint && pnpm run lint:eslint",
