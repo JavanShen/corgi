@@ -1,7 +1,7 @@
 import { fileReg } from './reg.js'
 
-const matchFileName = (path: string) => {
-    return path.match(fileReg)?.[1] || ''
-}
+const matchFileName = (path: string) => path.match(fileReg)?.[1] || ''
 
-export { matchFileName }
+const matchProp = (element: string, propName: string) =>
+    element.match(new RegExp(`${propName}=["']([^'"]+)["']`))?.[1] || ''
+export { matchFileName, matchProp }
