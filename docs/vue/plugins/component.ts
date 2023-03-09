@@ -1,6 +1,6 @@
 import type MarkdownIt from 'markdown-it'
 import { demoReg } from './utils/reg.js'
-import { matchFileName } from './utils/match.js'
+import { matchDemoProps } from './utils/match.js'
 
 const componentPlugin: MarkdownIt.PluginSimple = md => {
     md.block.ruler.at('html_block', (state, start) => {
@@ -15,12 +15,12 @@ const componentPlugin: MarkdownIt.PluginSimple = md => {
         if (demoReg.test(content)) {
             state.line = start + 1
             const token = state.push('html_inline', '', 0)
-            token.content = content.replace(
-                /src=["']([^"']+)["']/,
-                (match, $1) => {
-                    return match.replace($1, `<${matchFileName($1)} />`)
-                }
-            )
+            const { title, name, desc } = matchDemoProps(content)
+            token.content = `<Demo title="${title}" desc="${desc}" :content="${`${name}Content`}">
+                <template>
+                    <${name} />
+                </template>
+            </Demo>`
             token.map = [start, state.line]
             return true
         }

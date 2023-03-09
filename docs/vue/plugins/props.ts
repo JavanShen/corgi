@@ -1,6 +1,6 @@
 import type MarkdownIt from 'markdown-it'
 import { demoReg } from './utils/reg.js'
-import { matchFileName, matchProp } from './utils/match.js'
+import { matchDemoProps } from './utils/match.js'
 
 /* eslint no-param-reassign: ["error", { "props": true, "ignorePropertyModificationsFor": ["md"] }] */
 
@@ -13,15 +13,7 @@ const propsPlugin: MarkdownIt.PluginSimple = md => {
         const { content } = tokens[idx]
 
         if (demoReg.test(content)) {
-            env.demoInfo = {}
-
-            const matchPropWithContent = (propName: string) =>
-                matchProp(content, propName)
-
-            env.demoInfo.src = matchPropWithContent('src') || ''
-            env.demoInfo.desc = matchPropWithContent('desc') || ''
-            env.demoInfo.title = matchPropWithContent('title') || ''
-            env.demoInfo.name = matchFileName(env.demoInfo.src)
+            env.demoInfo = { ...matchDemoProps(content) }
         }
 
         return htmlInlineRule?.(...arg) || ''
