@@ -1,6 +1,6 @@
 import type MarkdownIt from 'markdown-it'
-import { demoReg } from './utils/reg.js'
-import { matchDemoProps } from './utils/match.js'
+import { demoOpenCloseReg } from './utils/reg.js'
+import { matchDemoProps, matchDemoChildName } from './utils/match.js'
 
 /* eslint no-param-reassign: ["error", { "props": true, "ignorePropertyModificationsFor": ["md"] }] */
 
@@ -12,8 +12,11 @@ const propsPlugin: MarkdownIt.PluginSimple = md => {
 
         const { content } = tokens[idx]
 
-        if (demoReg.test(content)) {
-            env.demoInfo = { ...matchDemoProps(content) }
+        if (demoOpenCloseReg.test(content) && env.demoInfo) {
+            env.demoInfo.push({
+                ...matchDemoProps(content),
+                name: matchDemoChildName(content)
+            })
         }
 
         return htmlInlineRule?.(...arg) || ''

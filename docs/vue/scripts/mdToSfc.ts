@@ -5,6 +5,7 @@ import { Transform } from 'stream'
 import markdownIt from 'markdown-it'
 import componentPlugin from '../plugins/component.js'
 import propsPlugin from '../plugins/props.js'
+import type { DemoInfo } from '../plugins/types/demo'
 
 /* eslint-disable no-console */
 
@@ -81,10 +82,29 @@ for await (const filePath of docsFileList) {
         )
         const mdTransform = new Transform({
             transform(chunk, _, callback) {
-                const env = {}
+                const env: {
+                    demoInfo: DemoInfo
+                } = { demoInfo: [] }
                 const renderRes = md.render(chunk.toString(), env)
 
-                callback(null, vueTemplate(renderRes))
+                callback(
+                    null,
+                    vueTemplate(
+                        renderRes,
+                        env.demoInfo.length > 0
+                            ? env.demoInfo
+                                  .map(
+                                      item =>
+                                          `import ${item.name} from "${
+                                              item.src
+                                          }"\nimport ${`${item.name}Content`} from "${
+                                              item.src
+                                          }?raw"`
+                                  )
+                                  .join('\n')
+                            : ''
+                    )
+                )
             }
         })
         readableStream

@@ -1,5 +1,5 @@
 import type MarkdownIt from 'markdown-it'
-import { demoReg } from './utils/reg.js'
+import { demoSelfClosingReg } from './utils/reg.js'
 import { matchDemoProps } from './utils/match.js'
 
 const componentPlugin: MarkdownIt.PluginSimple = md => {
@@ -12,15 +12,16 @@ const componentPlugin: MarkdownIt.PluginSimple = md => {
 
         const content = state.src.slice(pos, max)
 
-        if (demoReg.test(content)) {
+        if (demoSelfClosingReg.test(content)) {
             state.line = start + 1
             const token = state.push('html_inline', '', 0)
-            const { title, name, desc } = matchDemoProps(content)
-            token.content = `<Demo title="${title}" desc="${desc}" :content="${`${name}Content`}">
+            const { title, name, desc, src } = matchDemoProps(content)
+            token.content = `<Demo title="${title}" desc="${desc}" src="${src}" :code="${name}Content">
                 <template>
                     <${name} />
                 </template>
-            </Demo>`
+            </Demo>
+            `
             token.map = [start, state.line]
             return true
         }

@@ -10,7 +10,7 @@ const matchProps = <T extends readonly string[]>(
     propsName: T
 ) =>
     propsName.reduce(
-        (pre, cur) => ({ ...pre, cur: matchProp(element, cur) }),
+        (pre, cur) => ({ ...pre, [cur]: matchProp(element, cur) }),
         {}
     ) as { [K in T[number]]: string } & { name: string }
 
@@ -18,4 +18,14 @@ const matchDemoProps = (demo: string) => ({
     ...matchProps(demo, ['src', 'desc', 'title'] as const),
     name: matchFileName(matchProp(demo, 'src'))
 })
-export { matchFileName, matchProp, matchProps, matchDemoProps }
+
+const matchDemoChildName = (demo: string) =>
+    demo.match(/<template>\s*<([a-zA-Z-]+) \/>\s*<\/template>/)?.[1] || ''
+
+export {
+    matchFileName,
+    matchProp,
+    matchProps,
+    matchDemoProps,
+    matchDemoChildName
+}
