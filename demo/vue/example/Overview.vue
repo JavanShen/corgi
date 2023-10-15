@@ -1,24 +1,25 @@
 <template>
-    <a-list :grid="{ gutter: 16, column: 3 }" :data-source="componentsList">
+    <List :grid="{ gutter: 16, column: 3 }" :data-source="componentsList">
         <template #renderItem="{ item: { name, label } }">
-            <a-list-item>
-                <router-link :to="`/components/${name}`">
-                    <a-card
+            <ListItem>
+                <RouterLink :to="`/components/${name}`">
+                    <Card
                         :title="`${name} ${label}`"
                         :bodyStyle="{ textAlign: 'center' }"
                         hoverable
                     >
-                        <a-image
+                        <Image
                             :height="160"
                             :src="`https://github.com/JavanShen/corgi/blob/main/packages/assets/pic/${name}.png?raw=true`"
                             :preview="false"
                         />
-                    </a-card>
-                </router-link>
-            </a-list-item>
+                    </Card>
+                </RouterLink>
+            </ListItem>
         </template>
-    </a-list>
+    </List>
 </template>
 <script setup lang="ts">
+import { List, ListItem, Card, Image } from 'ant-design-vue'
 import componentsList from '../componentsList'
 </script>

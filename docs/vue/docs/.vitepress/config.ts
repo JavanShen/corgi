@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { componentPreview, containerPreview } from './plugin/core'
 
 export default defineConfig({
     title: 'Corgwn',
@@ -14,5 +15,11 @@ export default defineConfig({
                 ]
             }
         ]
+    },
+    markdown: {
+        config(md) {
+            md.use(componentPreview)
+            md.use(containerPreview)
+        }
     }
 })
