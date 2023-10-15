@@ -1,5 +1,5 @@
 <template>
-    <a-card class="card">
+    <Card class="card">
         <div class="audio-container">
             <div class="audio-content">
                 <div
@@ -16,7 +16,7 @@
                 >
                     {{ artist || id3Artist }}
                 </div>
-                <a-slider
+                <Slider
                     :value="currentTime"
                     :max="totalTime"
                     :tooltip-visible="false"
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="flex-between">
-                    <a-button
+                    <Button
                         size="large"
                         type="text"
                         shape="circle"
@@ -54,10 +54,10 @@
                         "
                     >
                         <template #icon>
-                            <pause-icon v-if="isPlay" />
-                            <play-icon v-else />
+                            <PauseIcon v-if="isPlay" />
+                            <PlayIcon v-else />
                         </template>
-                    </a-button>
+                    </Button>
                     <Volume
                         :volume="volume || 0"
                         :isMute="!volume"
@@ -75,19 +75,20 @@
                 aria-label="cover"
                 v-if="(imageSrc || cover) && cover !== false"
             >
-                <a-image
+                <Image
                     :preview="false"
                     :src="cover || imageSrc"
                     :height="175"
                     :width="175"
-                ></a-image>
+                ></Image>
             </div>
         </div>
-    </a-card>
+    </Card>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { Card, Image, Button, Slider } from 'ant-design-vue'
 import { PlayIcon, PauseIcon } from '@cardigan/icons'
 import { usePlayAudio } from '@corgwn/composables'
 import type { AudioSource } from '@corgwn/types'
