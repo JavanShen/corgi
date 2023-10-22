@@ -94,7 +94,7 @@
     "cypress": "^13.3.2",
     "dumi": "^2.1.10",
     "eslint": "^8.25.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
