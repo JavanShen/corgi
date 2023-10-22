@@ -38,7 +38,7 @@ importers:
       cypress: ^13.3.2
       dumi: ^2.1.10
       eslint: ^8.25.0
-      eslint-config-prettier: ^8.5.0
+      eslint-config-prettier: ^9.0.0
       eslint-import-resolver-typescript: ^3.5.1
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.2.1
@@ -122,10 +122,10 @@ importers:
       cypress: 13.3.2
       dumi: 2.1.10_2r7jdxejt2nmb4ojtgbydu7t3u
       eslint: 8.32.0
-      eslint-config-prettier: 8.6.0_eslint@8.32.0
+      eslint-config-prettier: 9.0.0_eslint@8.32.0
       eslint-import-resolver-typescript: 3.5.3_yx6e7nyocrpjlofwba2pq5a2ny
       eslint-plugin-import: 2.27.4_4756j3647qadtsumplfkcvuy34
-      eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
+      eslint-plugin-prettier: 4.2.1_aywzcs64jzz2yewuaphtvqqghy
       eslint-plugin-react: 7.32.0_eslint@8.32.0
       eslint-plugin-vue: 9.9.0_eslint@8.32.0
       happy-dom: 8.1.4
@@ -8172,8 +8172,8 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /eslint-config-prettier/8.6.0_eslint@8.32.0:
-    resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
+  /eslint-config-prettier/9.0.0_eslint@8.32.0:
+    resolution: {integrity: sha512-IcJsTkJae2S35pRsRAwoCE+925rJJStOdkKnLVgtE+tEpqU0EVVM7OqrwxqgptKdX29NUwC82I5pXsGFIgSevw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -8330,7 +8330,7 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_cn4lalcyadplruoxa5mhp7j3dq:
+  /eslint-plugin-prettier/4.2.1_aywzcs64jzz2yewuaphtvqqghy:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -8342,7 +8342,7 @@ packages:
         optional: true
     dependencies:
       eslint: 8.32.0
-      eslint-config-prettier: 8.6.0_eslint@8.32.0
+      eslint-config-prettier: 9.0.0_eslint@8.32.0
       prettier: 2.8.3
       prettier-linter-helpers: 1.0.0
     dev: true
