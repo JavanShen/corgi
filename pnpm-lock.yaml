@@ -20,7 +20,7 @@ importers:
       '@types/babel__core': ^7.20.3
       '@types/eslint': ^8.44.6
       '@types/jsdom': ^21.0.0
-      '@types/markdown-it': ^12.2.3
+      '@types/markdown-it': ^13.0.0
       '@types/node': ^18.11.0
       '@types/react': ^18.0.21
       '@types/react-dom': ^18.0.6
@@ -106,7 +106,7 @@ importers:
       '@types/babel__core': 7.20.3
       '@types/eslint': 8.44.6
       '@types/jsdom': 21.1.0
-      '@types/markdown-it': 12.2.3
+      '@types/markdown-it': 13.0.4
       '@types/node': 18.11.18
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
@@ -3728,13 +3728,6 @@ packages:
     resolution: {integrity: sha512-euUVSCx2+tGV8BlI7yA7AXmNsLzYCoUbg/O2jJ0wzV/0oxKbmd5RJZI2map8cuEKgmjNy13ndFWRZZO+6rl0GA==}
     dependencies:
       '@types/markdown-it': 13.0.1
-    dev: true
-
-  /@types/markdown-it/12.2.3:
-    resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
-    dependencies:
-      '@types/linkify-it': 3.0.3
-      '@types/mdurl': 1.0.2
     dev: true
 
   /@types/markdown-it/13.0.1:
