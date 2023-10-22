@@ -1,7 +1,7 @@
 <template>
-    <a-popover placement="top" overlay-class-name="volume-control">
+    <Popover placement="top" overlay-class-name="volume-control">
         <template #content>
-            <a-slider
+            <Slider
                 :value="volume"
                 :tooltip-visible="false"
                 vertical
@@ -9,7 +9,7 @@
                 class="volume-slider"
             />
         </template>
-        <a-button
+        <Button
             shape="circle"
             size="large"
             type="link"
@@ -22,13 +22,14 @@
             aria-label="volumeButton"
         >
             <template #icon>
-                <mute-icon v-if="isMute" aria-label="muteIcon" />
-                <volume-icon v-else aria-label="volumeIcon" />
+                <MuteIcon v-if="isMute" aria-label="muteIcon" />
+                <VolumeIcon v-else aria-label="volumeIcon" />
             </template>
-        </a-button>
-    </a-popover>
+        </Button>
+    </Popover>
 </template>
 <script setup lang="ts">
+import { Popover, Button, Slider } from 'ant-design-vue'
 import { VolumeIcon, MuteIcon } from '@cardigan/icons'
 
 interface VolumeProps {
