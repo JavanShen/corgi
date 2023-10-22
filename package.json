@@ -90,7 +90,7 @@
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vitest/coverage-c8": "^0.27.0",
     "@vue/eslint-config-airbnb": "^7.0.0",
-    "cypress": "^12.0.0",
+    "cypress": "^13.3.2",
     "dumi": "^2.1.10",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",

@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "Vue icons for corgwn",
   "type": "module",
-  "main": "./dist/icons.umd.js",
-  "module": "./dist/icons.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
+  "files": ["dist"],
+  "publishConfig": {
+    "main": "./dist/icons.umd.js",
+    "module": "./dist/icons.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
     ".": {
       "import": "./dist/icons.js",
       "require": "./dist/icons.umd.js"
     }
   },
-  "files": ["dist"],
-  "publishConfig": {
     "access": "public"
   },
   "scripts": {
