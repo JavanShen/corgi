@@ -24,7 +24,7 @@
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "@ant-design/icons-vue": "^6.1.0"
+    "@ant-design/icons-vue": "^7.0.0"
   },
   "pnpm": {
     "peerDependencyRules": {
