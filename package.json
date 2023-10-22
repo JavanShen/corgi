@@ -110,7 +110,7 @@
     "prettier": "^2.7.1",
     "react-is": "^18.2.0",
     "react-test-renderer": "^18.2.0",
-    "rollup": "^3.9.1",
+    "rollup": "^4.0.0",
     "styled-components": "^5.3.6",
     "stylelint": "^15.0.0",
     "typescript": "^5.2.2",
