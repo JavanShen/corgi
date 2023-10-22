@@ -35,7 +35,7 @@
   "dependencies": {
     "@corgwn/utils": "workspace:1.0.0-alpha.3",
     "@corgwn/types": "workspace:^1.0.1",
-    "immer": "^9.0.18",
+    "immer": "^10.0.0",
     "use-immer": "^0.9.0"
   },
   "peerDependencies": {
