@@ -193,9 +193,9 @@ importers:
 
   packages/assets/icons-vue:
     specifiers:
-      '@ant-design/icons-vue': ^6.1.0
+      '@ant-design/icons-vue': ^7.0.0
     dependencies:
-      '@ant-design/icons-vue': 6.1.0
+      '@ant-design/icons-vue': 7.0.1
 
   packages/composables:
     specifiers:
@@ -474,8 +474,8 @@ packages:
   /@ant-design/icons-svg/4.2.1:
     resolution: {integrity: sha512-EB0iwlKDGpG93hW8f85CTJTs4SvMX7tt5ceupvhALp1IF44SeUFOMhKUOYqpsoYWQKAOuTRDMqn75rEaKDp0Xw==}
 
-  /@ant-design/icons-vue/6.1.0:
-    resolution: {integrity: sha512-EX6bYm56V+ZrKN7+3MT/ubDkvJ5rK/O2t380WFRflDcVFgsvl3NLH7Wxeau6R8DbrO5jWR6DSTC3B6gYFp77AA==}
+  /@ant-design/icons-vue/7.0.1:
+    resolution: {integrity: sha512-eCqY2unfZK6Fe02AwFlDHLfoyEFreP6rBwAZMIJ1LugmfMiVgwWDYlp1YsRugaPtICYOabV1iWxXdP12u9U43Q==}
     peerDependencies:
       vue: '>=3.0.3'
     dependencies:
