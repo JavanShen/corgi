@@ -1,8 +1,0 @@
-{
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "noEmit": false,
-        "outDir": ".scripts"
-    },
-    "files": ["scripts/mdToSfc.ts"]
-}

@@ -3,11 +3,13 @@ import MarkdownIt from 'markdown-it'
 import Token from 'markdown-it/lib/token'
 import { resolve, dirname } from 'path'
 import { readFileSync } from 'fs'
+import os from 'os'
 import {
     composeComponentName,
     injectComponentImportScript,
     isCheckingRelativePath,
-    transformHighlightCode
+    transformHighlightCode,
+    tsToJs
 } from './utils'
 
 const titleRegex = /title="(.*?)"/
@@ -75,10 +77,23 @@ export const transformPreview = (md: MarkdownIt, token: Token, env: any) => {
         suffixName
     )
 
+    // TS 转换为 JS 后的源码
+    const scriptContentRE = /(?<=<script[^>]*>)([\s\S]*)(?=<\/script>)/
+    const JSSourceCode = componentSourceCode
+        .replace(scriptContentRE, str => os.EOL + tsToJs(str) + os.EOL)
+        .replace(/lang=['"]ts['"]/, '')
+    const compileHighlightJSCode = transformHighlightCode(
+        md,
+        JSSourceCode,
+        suffixName
+    )
+
     const code = encodeURI(componentSourceCode)
     const showCode = encodeURIComponent(compileHighlightCode)
+    const JSCode = encodeURI(JSSourceCode)
+    const showJSCode = encodeURIComponent(compileHighlightJSCode)
 
-    const sourceCode = `<demo-preview title="${componentProps.title}" description="${componentProps.description}" code="${code}" showCode="${showCode}" suffixName="${suffixName}" absolutePath="${componentPath}" relativePath="${componentProps.path}">
+    const sourceCode = `<demo-preview title="${componentProps.title}" description="${componentProps.description}" code="${code}" showCode="${showCode}" JSCode="${JSCode}" showJSCode = "${showJSCode}" suffixName="${suffixName}" absolutePath="${componentPath}" relativePath="${componentProps.path}">
     <${componentName}></${componentName}>
   </demo-preview>`
 

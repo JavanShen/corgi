@@ -9,4 +9,4 @@ one `two` three
 
 ### xl
 
-<preview path="@corgwn/demo-vue/example/AudioPlayer/Link.vue"  />
+<preview title="使用链接" path="@corgwn/demo-vue/example/AudioPlayer/Link.vue" description="这是个一个音频播放器组件" />

@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-underscore-dangle */
 import MarkdownIt from 'markdown-it'
+import { transformSync } from '@babel/core'
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
 
 // componentPreview check
 export const isCheckPreviewCom1 = /^<preview (.*)><\/preview>$/
@@ -108,6 +112,25 @@ export const transformHighlightCode = (
     sourceCode: string,
     suffix: string
 ) => mdInstance.options.highlight!(sourceCode, suffix, '')
+
+export const tsToJs = (sourceCode: string) => {
+    if (!sourceCode) return ''
+
+    const { code } =
+        transformSync(sourceCode, {
+            configFile: false,
+            plugins: [
+                [
+                    require.resolve('@babel/plugin-transform-typescript'),
+                    {
+                        isTSX: false
+                    }
+                ]
+            ]
+        }) || {}
+
+    return code || ''
+}
 
 /**
  * 获取文件名作为组件名称
