@@ -20,8 +20,16 @@
                     :value="currentTime"
                     :max="totalTime"
                     :tooltip-visible="false"
-                    @change="(val)=>{updateTime(val as number)}"
-                    @after-change="(val)=>{jump(val as number)}"
+                    @change="
+                        val => {
+                            updateTime(val as number)
+                        }
+                    "
+                    @after-change="
+                        val => {
+                            jump(val as number)
+                        }
+                    "
                     :disabled="!isCanPlay"
                     class="progress-bar"
                 />

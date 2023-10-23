@@ -40,7 +40,7 @@ importers:
       eslint-config-prettier: ^9.0.0
       eslint-import-resolver-typescript: ^3.5.1
       eslint-plugin-import: ^2.26.0
-      eslint-plugin-prettier: ^4.2.1
+      eslint-plugin-prettier: ^5.0.1
       eslint-plugin-react: ^7.31.9
       eslint-plugin-vue: ^9.6.0
       happy-dom: ^12.0.0
@@ -123,7 +123,7 @@ importers:
       eslint-config-prettier: 9.0.0_eslint@8.32.0
       eslint-import-resolver-typescript: 3.5.3_yx6e7nyocrpjlofwba2pq5a2ny
       eslint-plugin-import: 2.27.4_4756j3647qadtsumplfkcvuy34
-      eslint-plugin-prettier: 4.2.1_3jzfc754auwcfop3gdziob6usy
+      eslint-plugin-prettier: 5.0.1_aaaohigg4kqcp7pepvyxuwa2uu
       eslint-plugin-react: 7.32.0_eslint@8.32.0
       eslint-plugin-vue: 9.9.0_eslint@8.32.0
       happy-dom: 12.9.1
@@ -8321,21 +8321,26 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_3jzfc754auwcfop3gdziob6usy:
-    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
-    engines: {node: '>=12.0.0'}
+  /eslint-plugin-prettier/5.0.1_aaaohigg4kqcp7pepvyxuwa2uu:
+    resolution: {integrity: sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      eslint: '>=7.28.0'
+      '@types/eslint': '>=8.0.0'
+      eslint: '>=8.0.0'
       eslint-config-prettier: '*'
-      prettier: '>=2.0.0'
+      prettier: '>=3.0.0'
     peerDependenciesMeta:
+      '@types/eslint':
+        optional: true
       eslint-config-prettier:
         optional: true
     dependencies:
+      '@types/eslint': 8.44.6
       eslint: 8.32.0
       eslint-config-prettier: 9.0.0_eslint@8.32.0
       prettier: 3.0.3
       prettier-linter-helpers: 1.0.0
+      synckit: 0.8.5
     dev: true
 
   /eslint-plugin-react-hooks/4.5.0_eslint@8.32.0:
@@ -15955,7 +15960,15 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@pkgr/utils': 2.3.1
-      tslib: 2.4.1
+      tslib: 2.5.0
+    dev: true
+
+  /synckit/0.8.5:
+    resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    dependencies:
+      '@pkgr/utils': 2.3.1
+      tslib: 2.5.0
     dev: true
 
   /tabbable/6.2.0:
@@ -16270,10 +16283,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: true
-
-  /tslib/2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
     dev: true
 
   /tslib/2.5.0:
