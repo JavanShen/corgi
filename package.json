@@ -111,7 +111,7 @@
     "react-is": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "rollup": "^4.0.0",
-    "styled-components": "^5.3.6",
+    "styled-components": "^6.0.0",
     "stylelint": "^15.0.0",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
