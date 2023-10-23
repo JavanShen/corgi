@@ -8,8 +8,8 @@ import { resolve } from 'path'
 export default defineConfig({
     plugins: [
         dts({
-            tsConfigFilePath: resolve(__dirname, './tsconfig.json'),
-            outputDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')],
+            tsconfigPath: resolve(__dirname, './tsconfig.json'),
+            outDir: [resolve(__dirname, 'es'), resolve(__dirname, 'lib')],
             exclude: ['cypress', 'node_modules/**', 'global.d.ts']
         }),
         react(),
