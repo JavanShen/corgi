@@ -17,7 +17,7 @@ const initLoadMap = () =>
         change: false,
         complete: false,
         uncomplete: false
-    } as LoadMap)
+    }) as LoadMap
 
 const renderHookWithTodoList = () =>
     renderHook(({ todoList }) => useTodo(todoList), {

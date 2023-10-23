@@ -5,7 +5,11 @@
                 :value="volume"
                 :tooltip-visible="false"
                 vertical
-                @change="(val)=>{emit('update', val as number)}"
+                @change="
+                    val => {
+                        emit('update', val as number)
+                    }
+                "
                 class="volume-slider"
             />
         </template>
