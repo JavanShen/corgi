@@ -115,7 +115,7 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vite-plugin-dts": "^3.6.0",
-    "vite-plugin-svgr": "^2.4.0",
+    "vite-plugin-svgr": "^4.0.0",
     "vite-svg-loader": "^4.0.0",
     "vitepress": "1.0.0-rc.23",
     "vitest": "^0.34.6",
