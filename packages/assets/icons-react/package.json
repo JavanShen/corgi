@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "React icons for corgwn",
   "type": "module",
+  "main": "./dist/icons.umd.js",
+  "module": "./dist/icons.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/icons.js",
+      "require": "./dist/icons.umd.js"
+    }
+  },
   "publishConfig": {
-    "main": "./dist/icons.umd.js",
-    "module": "./dist/icons.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-      ".": {
-        "import": "./dist/icons.js",
-        "require": "./dist/icons.umd.js"
-      }
-    },
     "access": "public"
   },
   "files": ["dist"],
