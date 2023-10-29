@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import svgLoader from 'vite-svg-loader'
 import { componentPreview, containerPreview } from './plugin/core'
 
 export default defineConfig({
@@ -21,5 +23,8 @@ export default defineConfig({
             md.use(componentPreview)
             md.use(containerPreview)
         }
+    },
+    vite: {
+        plugins: [vueJsx(), svgLoader()]
     }
 })

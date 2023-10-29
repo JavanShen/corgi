@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "start": "pnpm dev",
-    "dev": "dumi dev",
-    "build": "pnpm prebuild && dumi build",
-    "prebuild": "pnpm --filter @pembroke/icons build",
+    "dev": "pnpm build:icons && dumi dev",
+    "build": "pnpm build:icons && dumi build",
+    "build:icons": "pnpm --filter @pembroke/icons build",
     "prepare": "dumi setup"
   },
   "authors": [],
