@@ -88,6 +88,11 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': [
             'error',
             { ignoreRestSiblings: true }
+        ],
+        // 允许带有描述的 ts-ignore
+        '@typescript-eslint/ban-ts-comment': [
+            'error',
+            { 'ts-ignore': 'allow-with-description' }
         ]
     },
     // 解决报错unable resolve
