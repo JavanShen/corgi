@@ -1,4 +1,3 @@
-// @ts-ignore 等待类型修补
 import styled from '@emotion/styled'
 import { theme } from 'antd'
 import { mapValues } from 'lodash-es'
@@ -17,10 +16,11 @@ type StyleWithToken = {
     >
 }
 
-// TODO 类型修补
 const styledWithToken: StyleWithToken = mapValues(
     styled,
+    // @ts-ignore 等待类型修补
     val => fn =>
+        // @ts-ignore 等待类型修补
         val(props => {
             const { token } = theme.useToken()
             return fn({ ...props, token })
