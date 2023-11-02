@@ -208,7 +208,7 @@ importers:
   packages/hooks:
     specifiers:
       '@corgwn/types': workspace:^1.0.1
-      '@corgwn/utils': workspace:1.0.0-alpha.3
+      '@corgwn/utils': workspace:1.0.0
       immer: ^10.0.0
       use-immer: ^0.9.0
     dependencies:

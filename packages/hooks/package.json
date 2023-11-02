@@ -1,6 +1,6 @@
 {
   "name": "@corgwn/hooks",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0",
   "type": "module",
   "description": "hooks for corgwn",
   "scripts": {
@@ -33,8 +33,8 @@
   "author": "apine",
   "license": "MIT",
   "dependencies": {
-    "@corgwn/utils": "workspace:1.0.0-alpha.3",
     "@corgwn/types": "workspace:^1.0.1",
+    "@corgwn/utils": "workspace:1.0.0",
     "immer": "^10.0.0",
     "use-immer": "^0.9.0"
   },
@@ -43,7 +43,9 @@
   },
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["react"]
+      "ignoreMissing": [
+        "react"
+      ]
     }
   }
 }
