@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Slider, Popover, Button } from 'antd'
+import { Slider, Popover, Button, theme } from 'antd'
 import { VolumeIcon, MuteIcon } from '@pembroke/icons'
 
 interface Props {
@@ -10,6 +10,8 @@ interface Props {
 }
 
 const Volume = ({ volume, isMute, updateVolume, onClick }: Props) => {
+    const { token } = theme.useToken()
+
     return (
         <Popover
             content={
@@ -33,9 +35,17 @@ const Volume = ({ volume, isMute, updateVolume, onClick }: Props) => {
                 style={{ border: 'none' }}
                 icon={
                     isMute ? (
-                        <MuteIcon aria-label="muteIcon" />
+                        <MuteIcon
+                            style={{ color: token.colorText }}
+                            aria-label="muteIcon"
+                        />
                     ) : (
-                        <VolumeIcon aria-label="volumeIcon" />
+                        <VolumeIcon
+                            style={{
+                                color: token.colorText
+                            }}
+                            aria-label="volumeIcon"
+                        />
                     )
                 }
                 onClick={onClick}

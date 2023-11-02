@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { Card, Slider, Button, Image } from 'antd'
+import { Card, Slider, Button, Image, theme } from 'antd'
 import { usePlayAudio } from '@corgwn/hooks'
 import type { AudioPlayerProps } from '@corgwn/types'
 import type { CSSProperties, FC } from 'react'
@@ -47,6 +47,8 @@ const AudioPlayer: FC<AudioPlayerProps & { style?: CSSProperties }> = ({
         unmute
     } = usePlayAudio(source || '', loaded)
 
+    const { token } = theme.useToken()
+
     return (
         <Card
             style={{
@@ -88,7 +90,19 @@ const AudioPlayer: FC<AudioPlayerProps & { style?: CSSProperties }> = ({
                             style={{ border: 'none' }}
                             disabled={!isCanPlay}
                             aria-label={isPlay ? 'pause' : 'play'}
-                            icon={isPlay ? <PauseIcon /> : <PlayIcon />}
+                            icon={
+                                isPlay ? (
+                                    <PauseIcon
+                                        style={{ color: token.colorText }}
+                                    />
+                                ) : (
+                                    <PlayIcon
+                                        style={{
+                                            color: token.colorText
+                                        }}
+                                    />
+                                )
+                            }
                             onClick={() => {
                                 return isPlay ? pause() : play()
                             }}

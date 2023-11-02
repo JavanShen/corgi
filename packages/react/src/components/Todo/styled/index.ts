@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import styledWithToken from '../../../common/hoc/styledWithToken'
 
 const padding = '5px 12px'
 const width = 200
@@ -40,11 +41,11 @@ const AddTodoContainer = styled.div({
     flex: 1
 })
 
-const Line = styled.div({
+const Line = styledWithToken.div(({ token }) => ({
     height: 2,
     width: '100%',
-    backgroundColor: '#2d2d2d',
+    backgroundColor: token?.colorText,
     borderRadius: 3
-})
+}))
 
 export { List, ListItem, TodoText, Header, AddTodoContainer, Line }

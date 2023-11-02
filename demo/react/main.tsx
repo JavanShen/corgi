@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import { ConfigProvider, theme } from 'antd'
 import RouteTable from './router'
 import componentsList from './componentsList'
 
@@ -12,12 +13,18 @@ const Demo = componentsList.find(item => item.name === component)
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
-        {Demo ? (
-            <Demo />
-        ) : (
-            <BrowserRouter>
-                <RouteTable />
-            </BrowserRouter>
-        )}
+        <ConfigProvider
+            theme={{
+                algorithm: theme.darkAlgorithm
+            }}
+        >
+            {Demo ? (
+                <Demo />
+            ) : (
+                <BrowserRouter>
+                    <RouteTable />
+                </BrowserRouter>
+            )}
+        </ConfigProvider>
     </React.StrictMode>
 )

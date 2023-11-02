@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import styledWithToken from '../../../common/hoc/styledWithToken'
 
 const textOmission = {
     overflow: 'hidden',
@@ -27,24 +28,24 @@ const AudioMedia = styled.div({
     width: 175
 })
 
-const Title = styled.div({
+const Title = styledWithToken.div(({ token }) => ({
     fontSize: 22,
-    color: 'black',
     textAlign: 'start',
+    color: token?.colorText,
     ...textOmission
-})
+}))
 
-const SubTitle = styled.div({
+const SubTitle = styledWithToken.div(({ token }) => ({
     fontSize: 16,
-    color: '#838383',
+    color: token?.colorTextDescription,
     ...textOmission
-})
+}))
 
-const SubTitle2 = styled.div({
+const SubTitle2 = styledWithToken.div(({ token }) => ({
     fontSize: 14,
-    color: '#838383',
+    color: token?.colorTextDescription,
     ...textOmission
-})
+}))
 
 const FlexBetween = styled.div({
     display: 'flex',
