@@ -32,6 +32,11 @@
   ],
   "author": "apine",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JavanShen/corgi.git"
+  },
+  "homepage": "https://github.com/JavanShen/corgi",
   "dependencies": {
     "@corgwn/types": "workspace:^1.0.1",
     "@corgwn/utils": "workspace:1.0.0",
