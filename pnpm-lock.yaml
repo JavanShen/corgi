@@ -201,7 +201,7 @@ importers:
 
   packages/composables:
     specifiers:
-      '@corgwn/utils': workspace:1.0.0-alpha.3
+      '@corgwn/utils': workspace:1.0.0
     dependencies:
       '@corgwn/utils': link:../utils
 
@@ -219,9 +219,9 @@ importers:
 
   packages/react:
     specifiers:
-      '@corgwn/hooks': workspace:1.0.0-alpha.2
+      '@corgwn/hooks': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.1
-      '@corgwn/utils': workspace:1.0.0-alpha.3
+      '@corgwn/utils': workspace:^1.0.0
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
       '@pembroke/icons': workspace:^1.0.0
@@ -252,7 +252,7 @@ importers:
       '@cardigan/icons': workspace:^1.0.0
       '@corgwn/composables': workspace:^1.0.0
       '@corgwn/types': workspace:^1.0.1
-      '@corgwn/utils': workspace:1.0.0-alpha.3
+      '@corgwn/utils': workspace:^1.0.0
     dependencies:
       '@cardigan/icons': link:../assets/icons-vue
       '@corgwn/composables': link:../composables
