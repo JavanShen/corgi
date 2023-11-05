@@ -70,7 +70,7 @@ importers:
       vite-plugin-dts: ^3.6.0
       vite-plugin-svgr: ^2.4.0
       vite-svg-loader: ^4.0.0
-      vitepress: 1.0.0-rc.24
+      vitepress: 1.0.0-rc.25
       vitest: ^0.34.6
       vue: ^3.3.4
       vue-clipboard3: ^2.0.0
@@ -148,7 +148,7 @@ importers:
       vite-plugin-dts: 3.6.0_xucgfgwxvfvfpllyhn3ntrhypa
       vite-plugin-svgr: 2.4.0_rollup@4.1.4+vite@4.5.0
       vite-svg-loader: 4.0.0
-      vitepress: 1.0.0-rc.24_klzb3x73b6qd4dqduoysgkvkku
+      vitepress: 1.0.0-rc.25_klzb3x73b6qd4dqduoysgkvkku
       vitest: 0.34.6_pdabtaoxkzyjpl7pphb5rqd7p4
       vue-tsc: 1.8.19_typescript@5.2.2
       webpack: 5.75.0
@@ -16952,8 +16952,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-rc.24_klzb3x73b6qd4dqduoysgkvkku:
-    resolution: {integrity: sha512-RpnL8cnOGwiRlBbrYQUm9sYkJbtyOt/wYXk2diTcokY4yvks/5lq9LuSt+MURWB6ZqwpSNHvTmxgaSfLoG0/OA==}
+  /vitepress/1.0.0-rc.25_klzb3x73b6qd4dqduoysgkvkku:
+    resolution: {integrity: sha512-1dqWiHNThNrVZ08ixmfEDBEH+764KOgnev9oXga/x6cN++Vb9pnuu8p3K6DQP+KZrYcG+WiX7jxal0iSNpAWuQ==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4.3.2
