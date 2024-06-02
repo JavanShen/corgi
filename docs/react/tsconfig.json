@@ -5,9 +5,17 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@@/*": [".dumi/tmp/*"]
+      "@@/*": [
+        ".dumi/tmp/*"
+      ]
     }
   },
-  "include": [".dumi/**/*", ".dumirc.ts"],
-  "references": [{ "path": "./tsconfig.react.json" }]
+  "include": [
+    ".dumirc.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.react.json"
+    }
+  ]
 }
