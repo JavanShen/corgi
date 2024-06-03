@@ -5,7 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "vite"
+    "dev": " pnpm build:icons && vite",
+    "build:icons": "pnpm --filter @pembroke/icons build"
   },
   "keywords": [],
   "author": "apine",
