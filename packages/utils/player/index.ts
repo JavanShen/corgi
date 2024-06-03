@@ -27,8 +27,8 @@ export default class Player extends Audio {
             typeof source === 'string'
                 ? source
                 : /^audio\//.test(source?.type)
-                ? URL.createObjectURL(source)
-                : ''
+                  ? URL.createObjectURL(source)
+                  : ''
         super(url)
         this.source = source
 

@@ -38,8 +38,8 @@ type reducerAction =
           ? T extends 'add'
               ? { type: 'add'; newTodo: TodoListItemWithLoad }
               : T extends 'change'
-              ? { type: 'change'; name: string; newVal: string }
-              : { type: T; name: string }
+                ? { type: 'change'; name: string; newVal: string }
+                : { type: T; name: string }
           : never)
     | {
           type: 'loading'
