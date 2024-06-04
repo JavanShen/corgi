@@ -12,7 +12,7 @@ importers:
       '@babel/plugin-transform-typescript': ^7.22.15
       '@commitlint/cli': ^18.0.0
       '@commitlint/config-conventional': ^18.0.0
-      '@edge-runtime/vm': 3.1.7
+      '@edge-runtime/vm': 3.2.0
       '@emotion/babel-preset-css-prop': ^11.10.0
       '@emotion/react': ^11.10.4
       '@emotion/styled': ^11.10.4
@@ -101,7 +101,7 @@ importers:
       '@babel/plugin-transform-typescript': 7.22.15_@babel+core@7.20.12
       '@commitlint/cli': 18.0.0
       '@commitlint/config-conventional': 18.0.0
-      '@edge-runtime/vm': 3.1.7
+      '@edge-runtime/vm': 3.2.0
       '@emotion/babel-preset-css-prop': 11.10.0_@babel+core@7.20.12
       '@testing-library/react-hooks': 8.0.1_ukj6e7lljkv3jczigzxc3nf53a
       '@types/babel__core': 7.20.3
@@ -149,7 +149,7 @@ importers:
       vite-plugin-svgr: 2.4.0_rollup@4.1.4+vite@4.5.0
       vite-svg-loader: 4.0.0
       vitepress: 1.0.0-rc.25_klzb3x73b6qd4dqduoysgkvkku
-      vitest: 1.6.0_ht7ajx3kjg4mz4pumbyalpydcq
+      vitest: 1.6.0_zoqrrjgaxerh3um2qbcfhqqjv4
       vue-tsc: 1.8.19_typescript@5.2.2
       webpack: 5.75.0
 
@@ -1806,16 +1806,16 @@ packages:
     resolution: {integrity: sha512-+nxncfwHM5SgAtrVzgpzJOI1ol0PkumhVo469KCf9lUi21IGcY90G98VuHm9VRrUypmAzawAHO9bs6hqeADaVg==}
     dev: true
 
-  /@edge-runtime/primitives/4.0.5:
-    resolution: {integrity: sha512-t7QiN5d/KpXgCvIfSt6Nm9Hj3WVdNgc5CpOD73jasY+9EvTI7Ngdj5cXvjcHrPcmYWJZMySPgeEeoL/1N/Llag==}
+  /@edge-runtime/primitives/4.1.0:
+    resolution: {integrity: sha512-Vw0lbJ2lvRUqc7/soqygUX216Xb8T3WBZ987oywz6aJqRxcwSVWwr9e+Nqo2m9bxobA9mdbWNNoRY6S9eko1EQ==}
     engines: {node: '>=16'}
     dev: true
 
-  /@edge-runtime/vm/3.1.7:
-    resolution: {integrity: sha512-hUMFbDQ/nZN+1TLMi6iMO1QFz9RSV8yGG8S42WFPFma1d7VSNE0eMdJUmwjmtav22/iQkzHMmu6oTSfAvRGS8g==}
+  /@edge-runtime/vm/3.2.0:
+    resolution: {integrity: sha512-0dEVyRLM/lG4gp1R/Ik5bfPl/1wX00xFwd5KcNH602tzBa09oF7pbTKETEhR1GjZ75K6OJnYFu8II2dyMhONMw==}
     engines: {node: '>=16'}
     dependencies:
-      '@edge-runtime/primitives': 4.0.5
+      '@edge-runtime/primitives': 4.1.0
     dev: true
 
   /@emotion/babel-plugin-jsx-pragmatic/0.2.0_@babel+core@7.20.12:
@@ -5080,7 +5080,7 @@ packages:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.6.0_ht7ajx3kjg4mz4pumbyalpydcq
+      vitest: 1.6.0_zoqrrjgaxerh3um2qbcfhqqjv4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -17707,7 +17707,7 @@ packages:
       - universal-cookie
     dev: true
 
-  /vitest/1.6.0_ht7ajx3kjg4mz4pumbyalpydcq:
+  /vitest/1.6.0_zoqrrjgaxerh3um2qbcfhqqjv4:
     resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -17732,7 +17732,7 @@ packages:
       jsdom:
         optional: true
     dependencies:
-      '@edge-runtime/vm': 3.1.7
+      '@edge-runtime/vm': 3.2.0
       '@types/node': 20.8.8
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
