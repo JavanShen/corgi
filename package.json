@@ -89,7 +89,7 @@
     "@vitejs/plugin-react": "^4.0.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
-    "@vitest/coverage-v8": "^0.34.6",
+    "@vitest/coverage-v8": "^1.0.0",
     "@vue/eslint-config-airbnb": "^7.0.0",
     "cypress": "^13.3.2",
     "dumi": "^2.1.10",
@@ -120,7 +120,7 @@
     "vite-plugin-svgr": "^2.4.0",
     "vite-svg-loader": "^4.0.0",
     "vitepress": "1.0.0-rc.25",
-    "vitest": "^0.34.6",
+    "vitest": "^1.0.0",
     "vue-tsc": "^1.8.19",
     "webpack": "^5.75.0"
   },
