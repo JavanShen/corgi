@@ -181,7 +181,7 @@ importers:
       '@corgwn/demo-vue': link:../../demo/vue
     devDependencies:
       '@types/markdown-it': 13.0.1
-      '@types/markdown-it-container': 2.0.6
+      '@types/markdown-it-container': 2.0.10
       markdown-it-container: 3.0.0
 
   packages/assets:
@@ -4207,8 +4207,8 @@ packages:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
-  /@types/markdown-it-container/2.0.6:
-    resolution: {integrity: sha512-euUVSCx2+tGV8BlI7yA7AXmNsLzYCoUbg/O2jJ0wzV/0oxKbmd5RJZI2map8cuEKgmjNy13ndFWRZZO+6rl0GA==}
+  /@types/markdown-it-container/2.0.10:
+    resolution: {integrity: sha512-zv+YxrlSYRq51e9kzm3orv4OvF4U79Ll1OyplNXr00o4ZC/8PukJk/jEWH7CnsMtrSWZlyv0czhz42jm9J4uLw==}
     dependencies:
       '@types/markdown-it': 13.0.1
     dev: true
