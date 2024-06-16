@@ -121,12 +121,12 @@ importers:
       '@vitest/coverage-v8': 1.6.0_vitest@1.6.0
       '@vue/eslint-config-airbnb': 7.0.0_z2llyao5iztmug3n267ssp6fbm
       cypress: 13.10.0
-      dumi: 2.1.10_3opjy7bxac7qku4wy7xax6pdju
+      dumi: 2.1.10_2lcsowkd3z3dsv3xc5gfogqmze
       eslint: 8.32.0
       eslint-config-prettier: 9.0.0_eslint@8.32.0
       eslint-import-resolver-typescript: 3.5.3_yx6e7nyocrpjlofwba2pq5a2ny
       eslint-plugin-import: 2.27.4_4756j3647qadtsumplfkcvuy34
-      eslint-plugin-prettier: 5.0.1_qsgl53nkm3kvb5ckdb2m7ibqgi
+      eslint-plugin-prettier: 5.0.1_zst74mmx7loijcbaratwqzkhju
       eslint-plugin-react: 7.32.0_eslint@8.32.0
       eslint-plugin-vue: 9.9.0_eslint@8.32.0
       happy-dom: 12.9.1
@@ -137,7 +137,7 @@ importers:
       markdown-it: 13.0.1
       naive-ui: 2.34.3_vue@3.3.4
       postcss: 8.4.38
-      prettier: 3.3.0
+      prettier: 3.3.2
       react-is: 18.2.0
       react-test-renderer: 18.2.0_react@18.2.0
       rollup: 4.1.4
@@ -7540,7 +7540,7 @@ packages:
     resolution: {integrity: sha512-a/Y5lf0G6gwsEQ9hop/n03CcjmHsGBk384Cz/AEX6mRYrfSpUx/lQvP9HLoXkCzScl9PL1sSmLPnMkgaXDCZLA==}
     dev: true
 
-  /dumi/2.1.10_3opjy7bxac7qku4wy7xax6pdju:
+  /dumi/2.1.10_2lcsowkd3z3dsv3xc5gfogqmze:
     resolution: {integrity: sha512-W6HeZgXNoP8bYuMvg+QQwAYO2doIez53C70Uy7D7/HHetCeecWxyzNA6jeFB63+R9NqxVwr8qGuHYn5WMQOBjg==}
     hasBin: true
     peerDependencies:
@@ -7597,7 +7597,7 @@ packages:
       remark-rehype: 10.1.0
       sass: 1.57.1
       sitemap: 7.1.1
-      umi: 4.0.51_hsrt4hwzyho45vae3ffpbpnnm4
+      umi: 4.0.51_tl3365cv7ozm6x3vrmmknjo3ma
       unified: 10.1.2
       unist-util-visit: 4.1.1
       unist-util-visit-parents: 5.1.1
@@ -8422,7 +8422,7 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /eslint-plugin-prettier/5.0.1_qsgl53nkm3kvb5ckdb2m7ibqgi:
+  /eslint-plugin-prettier/5.0.1_zst74mmx7loijcbaratwqzkhju:
     resolution: {integrity: sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -8439,7 +8439,7 @@ packages:
       '@types/eslint': 8.44.6
       eslint: 8.32.0
       eslint-config-prettier: 9.0.0_eslint@8.32.0
-      prettier: 3.3.0
+      prettier: 3.3.2
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.5
     dev: true
@@ -13398,7 +13398,7 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier-plugin-organize-imports/3.2.2_exawvig3ejr5zhl5j6iwgekyw4:
+  /prettier-plugin-organize-imports/3.2.2_4jnbcqfup3jugzta2vbnpx7tra:
     resolution: {integrity: sha512-e97lE6odGSiHonHJMTYC0q0iLXQyw0u5z/PJpvP/3vRy6/Zi9kLBwFAbEGjDzIowpjQv8b+J04PDamoUSQbzGA==}
     peerDependencies:
       '@volar/vue-language-plugin-pug': ^1.0.4
@@ -13411,11 +13411,11 @@ packages:
       '@volar/vue-typescript':
         optional: true
     dependencies:
-      prettier: 3.3.0
+      prettier: 3.3.2
       typescript: 5.2.2
     dev: true
 
-  /prettier-plugin-packagejson/2.3.0_prettier@3.3.0:
+  /prettier-plugin-packagejson/2.3.0_prettier@3.3.2:
     resolution: {integrity: sha512-2SAPMMk1UDkqsB7DifWKcwCm6VC52JXMrzLHfbcQHJRWhRCj9zziOy+s+2XOyPBeyqFqS+A/1IKzOrxKFTo6pw==}
     peerDependencies:
       prettier: '>= 1.16.0'
@@ -13423,12 +13423,12 @@ packages:
       prettier:
         optional: true
     dependencies:
-      prettier: 3.3.0
+      prettier: 3.3.2
       sort-package-json: 1.57.0
     dev: true
 
-  /prettier/3.3.0:
-    resolution: {integrity: sha512-J9odKxERhCQ10OC2yb93583f6UnYutOeiV5i0zEDS7UGTdUt0u+y8erxl3lBKvwo/JHyyoEdXjwp4dke9oyZ/g==}
+  /prettier/3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -16294,7 +16294,7 @@ packages:
     resolution: {integrity: sha512-uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==}
     dev: true
 
-  /umi/4.0.51_hsrt4hwzyho45vae3ffpbpnnm4:
+  /umi/4.0.51_tl3365cv7ozm6x3vrmmknjo3ma:
     resolution: {integrity: sha512-6wAX/DGOKlGJBDdHlQEEfnITgrZlR060/R6Q6Q7gzPVEClDpW2BONoilePr2SmL83ISwzZ7vooFORfG45gvNnA==}
     engines: {node: '>=14'}
     hasBin: true
@@ -16309,8 +16309,8 @@ packages:
       '@umijs/server': 4.0.51
       '@umijs/test': 4.0.51_@babel+core@7.24.7
       '@umijs/utils': 4.0.51
-      prettier-plugin-organize-imports: 3.2.2_exawvig3ejr5zhl5j6iwgekyw4
-      prettier-plugin-packagejson: 2.3.0_prettier@3.3.0
+      prettier-plugin-organize-imports: 3.2.2_4jnbcqfup3jugzta2vbnpx7tra
+      prettier-plugin-packagejson: 2.3.0_prettier@3.3.2
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/node'
