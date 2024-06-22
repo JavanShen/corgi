@@ -49,7 +49,7 @@ importers:
       id3js: ^2.1.1
       immer: ^10.0.0
       jsdom: ^22.0.0
-      lint-staged: 15.2.5
+      lint-staged: 15.2.7
       lodash-es: ^4.17.21
       markdown-it: ^14.0.0
       naive-ui: ^2.33.4
@@ -132,7 +132,7 @@ importers:
       happy-dom: 12.9.1
       husky: 8.0.3
       jsdom: 22.1.0
-      lint-staged: 15.2.5
+      lint-staged: 15.2.7
       lodash-es: 4.17.21
       markdown-it: 14.1.0
       naive-ui: 2.34.3_vue@3.3.4
@@ -11199,8 +11199,8 @@ packages:
       uc.micro: 2.1.0
     dev: true
 
-  /lint-staged/15.2.5:
-    resolution: {integrity: sha512-j+DfX7W9YUvdzEZl3Rk47FhDF6xwDBV5wwsCPw6BwWZVPYJemusQmvb9bRsW23Sqsaa+vRloAWogbK4BUuU2zA==}
+  /lint-staged/15.2.7:
+    resolution: {integrity: sha512-+FdVbbCZ+yoh7E/RosSdqKJyUM2OEjTciH0TFNkawKgvFp1zbGlEC39RADg+xKBG1R4mhoH2j85myBQZ5wR+lw==}
     engines: {node: '>=18.12.0'}
     hasBin: true
     dependencies:
