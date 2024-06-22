@@ -125,8 +125,8 @@
     "webpack": "^5.75.0"
   },
   "engines": {
-    "pnpm": "7.13.6",
-    "node": "18.12.1"
+    "pnpm": "7",
+    "node": "<=18"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": [
