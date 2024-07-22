@@ -66,7 +66,7 @@ importers:
       stylelint: ^16.0.0
       typescript: ^5.2.2
       use-immer: ^0.9.0
-      vite: ^4.5.0
+      vite: ^5.0.0
       vite-plugin-dts: ^3.6.0
       vite-plugin-svgr: ^2.4.0
       vite-svg-loader: ^5.0.0
@@ -115,9 +115,9 @@ importers:
       '@types/react-transition-group': 4.4.10
       '@typescript-eslint/eslint-plugin': 6.8.0_7v3lxx7zdgmwgdwfwqc4hyc4dq
       '@typescript-eslint/parser': 6.8.0_ui53fvh6rotodantljygdnrauu
-      '@vitejs/plugin-react': 4.1.0_vite@4.5.0
-      '@vitejs/plugin-vue': 4.0.0_vite@4.5.0+vue@3.3.4
-      '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.5.0+vue@3.3.4
+      '@vitejs/plugin-react': 4.1.0_vite@5.2.12
+      '@vitejs/plugin-vue': 4.0.0_vite@5.2.12+vue@3.3.4
+      '@vitejs/plugin-vue-jsx': 3.0.0_vite@5.2.12+vue@3.3.4
       '@vitest/coverage-v8': 1.6.0_vitest@1.6.0
       '@vue/eslint-config-airbnb': 7.0.0_z2llyao5iztmug3n267ssp6fbm
       cypress: 13.10.0
@@ -144,9 +144,9 @@ importers:
       styled-components: 6.1.0_biqbaboplfbrettd7655fr4n2y
       stylelint: 16.6.1_typescript@5.2.2
       typescript: 5.2.2
-      vite: 4.5.0_@types+node@20.8.8
-      vite-plugin-dts: 3.6.0_xucgfgwxvfvfpllyhn3ntrhypa
-      vite-plugin-svgr: 2.4.0_rollup@4.1.4+vite@4.5.0
+      vite: 5.2.12_@types+node@20.8.8
+      vite-plugin-dts: 3.6.0_c2ouhn7qvb7e5577oer7digxle
+      vite-plugin-svgr: 2.4.0_rollup@4.1.4+vite@5.2.12
       vite-svg-loader: 5.1.0_vue@3.3.4
       vitepress: 1.0.0-rc.25_ectzt7fqj5kj2tdxnianlmcbc4
       vitest: 1.6.0_zoqrrjgaxerh3um2qbcfhqqjv4
@@ -3235,7 +3235,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
       rollup: 4.1.4
@@ -3882,7 +3882,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.44.6
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
     dev: true
 
   /@types/eslint/8.44.6:
@@ -3895,7 +3895,7 @@ packages:
   /@types/estree-jsx/1.0.0:
     resolution: {integrity: sha512-3qvGd0z8F2ENTGr/GG1yViqfiKmRfrXVx5sJyHGFu3z7m5g5utCQtGp/g29JnjflhtQJBv1WDQukHiT58xPcYQ==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
     dev: true
 
   /@types/estree/0.0.51:
@@ -4813,7 +4813,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react/4.1.0_vite@4.5.0:
+  /@vitejs/plugin-react/4.1.0_vite@5.2.12:
     resolution: {integrity: sha512-rM0SqazU9iqPUraQ2JlIvReeaxOoRj6n+PzB1C0cBzIbd8qP336nC39/R9yPi3wVcah7E7j/kdU1uCUqMEU4OQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -4824,12 +4824,12 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5_@babel+core@7.24.7
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 4.5.0_@types+node@20.8.8
+      vite: 5.2.12_@types+node@20.8.8
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue-jsx/3.0.0_vite@4.5.0+vue@3.3.4:
+  /@vitejs/plugin-vue-jsx/3.0.0_vite@5.2.12+vue@3.3.4:
     resolution: {integrity: sha512-vurkuzgac5SYuxd2HUZqAFAWGTF10diKBwJNbCvnWijNZfXd+7jMtqjPFbGt7idOJUn584fP1Ar9j/GN2jQ3Ew==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -4839,20 +4839,20 @@ packages:
       '@babel/core': 7.24.7
       '@babel/plugin-transform-typescript': 7.22.15_@babel+core@7.24.7
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.24.7
-      vite: 4.5.0_@types+node@20.8.8
+      vite: 5.2.12_@types+node@20.8.8
       vue: 3.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue/4.0.0_vite@4.5.0+vue@3.3.4:
+  /@vitejs/plugin-vue/4.0.0_vite@5.2.12+vue@3.3.4:
     resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.0_@types+node@20.8.8
+      vite: 5.2.12_@types+node@20.8.8
       vue: 3.3.4
     dev: true
 
@@ -8729,7 +8729,7 @@ packages:
   /estree-util-attach-comments/2.1.0:
     resolution: {integrity: sha512-rJz6I4L0GaXYtHpoMScgDIwM0/Vwbu5shbMeER596rB2D1EWF6+Gj0e0UKzJPZrpoOc87+Q2kgVFHfjAymIqmw==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
     dev: true
 
   /estree-util-is-identifier-name/2.0.1:
@@ -8757,7 +8757,7 @@ packages:
   /estree-walker/3.0.3:
     resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
     dev: true
 
   /esutils/2.0.3:
@@ -9776,7 +9776,7 @@ packages:
   /hast-util-to-estree/2.2.0:
     resolution: {integrity: sha512-QFMTJsd3+lr0TKiObJ6PWwpWqFjD+T28dVSazcPAslHjHGMXxs5xFvjLbUf6e6O3/dfHb9iourepMlSh5x7lIA==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
       '@types/estree-jsx': 1.0.0
       '@types/hast': 2.3.4
       '@types/unist': 2.0.6
@@ -16774,7 +16774,7 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-dts/3.6.0_xucgfgwxvfvfpllyhn3ntrhypa:
+  /vite-plugin-dts/3.6.0_c2ouhn7qvb7e5577oer7digxle:
     resolution: {integrity: sha512-doxhDRFJCZD2sGjIp4V800nm8Y19GvmwckjG5vYPuiqJ7OBjc9NlW1Vp9Gkyh2aXlUs1jTDRH/lxWfcsPLOQHg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -16790,7 +16790,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.8.0
       typescript: 5.2.2
-      vite: 4.5.0_@types+node@20.8.8
+      vite: 5.2.12_@types+node@20.8.8
       vue-tsc: 1.8.19_typescript@5.2.2
     transitivePeerDependencies:
       - '@types/node'
@@ -16798,14 +16798,14 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-svgr/2.4.0_rollup@4.1.4+vite@4.5.0:
+  /vite-plugin-svgr/2.4.0_rollup@4.1.4+vite@5.2.12:
     resolution: {integrity: sha512-q+mJJol6ThvqkkJvvVFEndI4EaKIjSI0I3jNFgSoC9fXAz1M7kYTVUin8fhUsFojFDKZ9VHKtX6NXNaOLpbsHA==}
     peerDependencies:
       vite: ^2.6.0 || 3 || 4
     dependencies:
       '@rollup/pluginutils': 5.0.2_rollup@4.1.4
       '@svgr/core': 6.5.1
-      vite: 4.5.0_@types+node@20.8.8
+      vite: 5.2.12_@types+node@20.8.8
     transitivePeerDependencies:
       - rollup
       - supports-color
